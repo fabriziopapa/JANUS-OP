@@ -17,7 +17,7 @@ Università Telematica Pegaso
 | **Relatore** | Prof. Pasquale Sasso |
 | **ORCID Relatore** | [0000-0002-7996-2602](https://orcid.org/0000-0002-7996-2602) |
 | **Insegnamento** | Innovation & Cybersecurity Management per la PA |
-| **Anno Accademico** | 2024/2025 |
+| **Anno Accademico** | 2025/2026 |
 
 ## Struttura
 
