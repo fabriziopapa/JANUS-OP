@@ -5,77 +5,212 @@
 \chapter{Digital Government, innovazione e cybersecurity nella PA}
 \label{chap:digital-government}
 
-% --- Introduzione al capitolo ---
-Il presente capitolo ricostruisce l'evoluzione del paradigma di governo digitale, dall'e-Government al Digital Government, analizzando le principali strategie, infrastrutture e politiche che guidano la trasformazione digitale della Pubblica Amministrazione italiana ed europea. Particolare attenzione è dedicata al Piano Triennale ICT, alla cloud strategy, alla cybersecurity e agli indicatori di maturità digitale.
+Il presente capitolo ricostruisce il percorso evolutivo che ha condotto le pubbliche amministrazioni europee e, in particolare, quella italiana, dal paradigma dell'\textit{e-Government} a quello, più maturo e sistemico, del \textit{Digital Government}. Si analizzano le principali strategie nazionali --- il Piano Triennale ICT e la Strategia Cloud Italia --- e il quadro normativo in materia di cybersecurity, dalla Direttiva NIS\,2 al Perimetro di Sicurezza Nazionale Cibernetica. L'ultimo paragrafo propone una lettura quantitativa della maturità digitale italiana attraverso gli indicatori europei DESI e l'\textit{OECD Digital Government Index}. Il filo conduttore dell'analisi è la domanda che guida l'intera tesi: in che misura le scelte infrastrutturali e di \textit{deployment} --- e segnatamente l'adozione di sistemi di Intelligenza Artificiale in ambiente \textit{on-premise} --- possano concorrere alla costruzione di una Pubblica Amministrazione digitale, sicura e capace di decisioni strategiche informate.
 
 
 % ============================================================
 \section{Evoluzione del paradigma: da e-Government a Digital Government}
 \label{sec:evoluzione-paradigma}
 
-% --- Da completare ---
-% Contenuti suggeriti:
-% - Definizione di e-Government e Digital Government
-% - Evoluzione storica: dalla digitalizzazione dei servizi alla trasformazione dei processi
-% - Il paradigma "digital by default" e "once only"
-% - Ruolo del PNRR nella transizione digitale
-% - Confronto tra approccio italiano ed europeo
-% - Riferimenti: Commissione Europea, OECD, AgID
+\subsection{Dalla digitalizzazione dei servizi alla trasformazione dei processi}
+
+A partire dalla seconda metà degli anni Novanta, i governi di tutto il mondo hanno avviato iniziative di \textit{e-Government} con l'obiettivo primario di rendere disponibili in rete i servizi amministrativi tradizionali. Questa prima fase, caratterizzata dalla semplice trasposizione online di moduli e procedure cartacee, ha prodotto risultati significativi in termini di accessibilità, ma ha presto mostrato i propri limiti strutturali: la digitalizzazione del \textit{front-office} non incideva sulla frammentazione dei \textit{back-office}, né sulla qualità dei processi decisionali interni. Come evidenziato dall'OCSE nel \textit{Digital Government Policy Framework} \textcite{OECDDigitalGovFramework}, il passaggio dall'\textit{e-Government} al \textit{Digital Government} implica un cambio di paradigma: non si tratta più di «mettere online» i servizi esistenti, bensì di ripensare in chiave digitale l'intera catena del valore pubblico, dalle politiche alla loro attuazione, dal disegno dei servizi alla valutazione dell'impatto.
+
+Il \textit{framework} dell'OCSE, pubblicato nel 2020, individua sei dimensioni fondamentali che caratterizzano un governo propriamente digitale: \textbf{\textit{digital by design}}, ossia la progettazione nativa dei processi in forma digitale; \textbf{\textit{data-driven public sector}}, cioè l'uso sistematico dei dati per orientare le decisioni; \textbf{\textit{government as a platform}}, che promuove la creazione di infrastrutture comuni riutilizzabili; \textbf{\textit{open by default}}, l'apertura come postura predefinita dei dati e dei processi pubblici; \textbf{\textit{user-driven}}, la centralità dell'utente nella progettazione; e, infine, \textbf{\textit{proactiveness}}, la capacità di anticipare i bisogni dei cittadini anche mediante tecnologie emergenti come l'intelligenza artificiale \parencite{OECDDigitalGovFramework}. \textcite{OECDELeadersHandbook} ha successivamente declinato queste dimensioni in raccomandazioni operative di governance, sottolineando il ruolo cruciale della leadership amministrativa e della formazione delle competenze digitali nei vertici della PA.
+
+\subsection{Principi fondativi: digital by default, once only, interoperabilità}
+
+Tre principi cardine scandiscono il passaggio al \textit{Digital Government}. Il primo è il \textbf{\textit{digital by default}}: i servizi pubblici devono essere progettati anzitutto per il canale digitale, pur garantendo l'accesso alternativo a chi ne necessiti. Il secondo è il principio \textbf{\textit{once only}}, secondo il quale il cittadino o l'impresa non devono fornire più volte alla PA le stesse informazioni: è compito delle amministrazioni condividere i dati già in loro possesso attraverso piattaforme interoperabili. L'Unione Europea ha fatto proprio questo principio fin dall'\textit{eGovernment Action Plan 2016--2020}, individuando nell'Estonia un esempio avanzato grazie al \textit{Public Information Act} del 2007; uno studio dell'Harvard Ash Center \textcite{OnceOnlyHarvard} ha dimostrato che l'applicazione rigorosa del \textit{once only} riduce in media del 30\% i tempi delle procedure amministrative e aumenta significativamente la fiducia dei cittadini nelle istituzioni. Il terzo principio è l'\textbf{interoperabilità \textit{by design}}, che richiede la definizione ex ante di standard tecnici e semantici per consentire lo scambio di dati tra sistemi eterogenei.
+
+\subsection{Il Decennio Digitale europeo e il PNRR italiano}
+
+L'impulso europeo alla transizione digitale ha trovato la propria cornice strategica nella Decisione (UE) 2022/2481, il cosiddetto programma \textbf{«Decennio Digitale 2030»} \parencite{DecisioneDecennioDigitale}. Esso articola gli obiettivi in quattro dimensioni: competenze digitali, servizi pubblici digitali, digitalizzazione delle imprese e infrastrutture sicure e sostenibili. Per i servizi pubblici, il target prevede che entro il 2030 il 100\% delle procedure amministrative chiave sia disponibile online per cittadini e imprese. 
+
+L'Italia ha recepito questi obiettivi in modo significativo attraverso il Piano Nazionale di Ripresa e Resilienza \parencite{PNRR}, che destina il 27\% delle risorse complessive alla transizione digitale, con circa 6,74 miliardi di euro specificamente allocati per la digitalizzazione della PA (Missione~1, Componente~1). Tale investimento costituisce il più ampio stanziamento nella storia italiana per la modernizzazione tecnologica delle amministrazioni pubbliche, e rappresenta il 25,6\% del budget digitale complessivo previsto dalla \textit{roadmap} nazionale, pari a 32,5 miliardi di euro (1,6\% del PIL) \parencite{ItalyDigitalDecade2025}.
+
+\subsection{Verso una PA proattiva: il ruolo emergente dell'IA}
+
+Il passaggio più recente --- e più significativo per la presente tesi --- è quello dalla PA reattiva alla PA \textbf{proattiva}: un'amministrazione che, anziché limitarsi a rispondere alle richieste, anticipa i bisogni dei cittadini e personalizza i servizi attraverso l'analisi predittiva e l'intelligenza artificiale. L'\textit{eGovernment Benchmark 2025}, condotto da Capgemini per la Commissione Europea su 14.104 siti in 39 paesi, rileva che il 43\% dei portali pubblici europei integra già forme di supporto automatizzato basato su IA, tipicamente \textit{chatbot} e assistenti virtuali, e che il 93\% delle procedure previste dal \textit{Single Digital Gateway} è ormai accessibile online \parencite{eGovBenchmark2025}. Lo stesso rapporto evidenzia tuttavia che meno dell'1\% dei siti istituzionali soddisfa tutti i 13 criteri minimi di \textit{cybersecurity} analizzati, segnalando un divario strutturale tra adozione tecnologica e maturità nella protezione dei dati \parencite{eGovBenchmark2025}.
+
+Questo tema --- la tensione tra innovazione e sicurezza --- attraversa l'intero capitolo e, come si vedrà, costituisce una delle ragioni fondamentali per cui un modello di \textit{deployment} dell'IA in ambiente \textit{on-premise} può offrire vantaggi strategici alla PA. La sezione successiva analizza lo strumento programmatico più rilevante in ambito italiano: il Piano Triennale per l'informatica nella Pubblica Amministrazione.
 
 
 % ============================================================
 \section{Piano Triennale ICT 2024--2026}
 \label{sec:piano-triennale}
 
-% --- Da completare ---
-% Contenuti suggeriti:
-% - Obiettivi strategici del Piano Triennale 2024-2026
-% - Linee di azione: dati, interoperabilità, piattaforme, sicurezza
-% - Ruolo di AgID e del Dipartimento per la Trasformazione Digitale
-% - Cloud Italia e Polo Strategico Nazionale (PSN)
-% - Indicatori di risultato e monitoraggio
-% - Riferimenti: AgID, Piano Triennale, Strategia Cloud Italia
+\subsection{Genesi, finalità e struttura del Piano}
+
+Il Piano Triennale per l'informatica nella Pubblica Amministrazione rappresenta, dal 2017, il principale strumento di indirizzo strategico per la trasformazione digitale delle amministrazioni italiane. L'edizione 2024--2026, approvata a dicembre 2023, segna un significativo salto qualitativo rispetto alle precedenti: come annunciato dal Dipartimento per la Trasformazione Digitale \parencite{InnovGovPianoTriennale}, per la prima volta il Piano affronta in modo esplicito il tema dell'intelligenza artificiale come leva di innovazione nei servizi pubblici \parencite{AgIDPianoTriennale2024}. L'Agenzia per l'Italia Digitale (AgID), responsabile della redazione e del monitoraggio del Piano, lo ha strutturato in tre parti complementari: la \textbf{Parte~1}, dedicata alle componenti strategiche (visione, principi guida, contesto normativo); la \textbf{Parte~2}, che dettaglia le componenti tecnologiche, articolate in cinque aree --- servizi, piattaforme, dati e intelligenza artificiale, infrastrutture, sicurezza ---; e la \textbf{Parte~3}, che descrive gli strumenti attuativi, tra cui indicatori di monitoraggio e linee guida operative \parencite{AgIDPianoTriennale2024}.
+
+\subsection{I principi guida}
+
+Il Piano definisce undici principi guida che le amministrazioni sono tenute a seguire nella progettazione e nell'evoluzione dei propri sistemi informativi:
+
+\begin{enumerate}[label=\arabic*., noitemsep]
+  \item \textit{Digital \& mobile first}
+  \item \textit{Cloud first}
+  \item \textit{API-first}
+  \item \textit{Digital identity only}
+  \item \textit{User-centric}
+  \item \textit{Open data by design}
+  \item \textit{Data protection by design}
+  \item \textit{Once only}
+  \item \textit{Openness}
+  \item Sostenibilità digitale
+  \item Sussidiarietà
+\end{enumerate}
+
+Di particolare rilievo per la presente ricerca è il principio \textit{cloud first}, secondo il quale le PA devono adottare il \textit{cloud computing} come paradigma infrastrutturale predefinito, senza tuttavia escludere soluzioni \textit{on-premise} o ibride qualora ragioni di sicurezza, sovranità dei dati o specificità operative lo richiedano \parencite{AgIDPianoTriennale2024}. Analogamente, il principio \textit{data protection by design} impone che la tutela dei dati personali sia integrata fin dalla fase progettuale, in piena coerenza con il Regolamento (UE) 2016/679 \parencite{GDPR}, creando un vincolo progettuale che --- come si argomenterà nei capitoli successivi --- favorisce architetture in cui i dati sensibili non abbandonano il perimetro dell'ente.
+
+\subsection{L'ecosistema delle piattaforme nazionali}
+
+Il Piano Triennale individua un insieme di \textbf{piattaforme nazionali abilitanti} che costituiscono l'ossatura tecnologica del \textit{Digital Government} italiano. Tra queste si annoverano: \textbf{pagoPA}, per i pagamenti digitali verso la PA; l'app \textbf{IO}, punto di accesso unico ai servizi pubblici da dispositivo mobile; \textbf{SEND}, il servizio di notifiche digitali; \textbf{SPID} e la \textbf{CIE} (Carta d'Identità Elettronica), per l'identità digitale; \textbf{NoiPA}, per la gestione del personale; il \textbf{Fascicolo Sanitario Elettronico (FSE)}, per la sanità digitale; i \textbf{SUAP/SUE}, sportelli unici per le attività produttive e l'edilizia; e \textbf{SIOPE+}, per il monitoraggio della spesa pubblica \parencite{AgIDPianoTriennale2024}. A queste piattaforme si affiancano i registri nazionali --- l'\textbf{ANPR} (Anagrafe Nazionale della Popolazione Residente), l'\textbf{INAD} (Indice Nazionale dei Domicili Digitali), l'\textbf{ANIS} (Anagrafe Nazionale degli Iscritti alla Scuola) e l'\textbf{ANIST} --- che alimentano l'interoperabilità dei dati tra enti.
+
+\subsection{L'aggiornamento 2026 e le novità sull'IA}
+
+L'aggiornamento 2026 del Piano Triennale \parencite{PianoTriennaleAgg2026} introduce significative novità. In primo luogo, viene istituita l'\textbf{AgID Academy}, un programma strutturato di formazione e \textit{upskilling} per i dipendenti pubblici, con particolare attenzione alle competenze digitali avanzate e all'uso responsabile dell'IA. In secondo luogo, il Piano prevede l'integrazione dell'\textbf{IT-Wallet}, il portafoglio digitale europeo dell'identità (in attuazione del Regolamento eIDAS~2), destinato a unificare documenti di identità, attributi verificabili e credenziali professionali in un unico strumento. Infine, il capitolo dedicato all'intelligenza artificiale viene aggiornato alla luce dell'entrata in vigore dell'AI Act europeo \parencite{AIAct2024}, con indicazioni specifiche sull'uso di modelli di \textit{machine learning} e \textit{Large Language Model} nella PA, sulla trasparenza algoritmica e sulla valutazione del rischio \parencite{PianoTriennaleAgg2026}.
+
+Parallelamente, la \textbf{Strategia Italiana per l'Intelligenza Artificiale 2024--2026} \parencite{StrategiaIA2024} definisce le linee di indirizzo per lo sviluppo e l'adozione dell'IA nel settore pubblico e privato, ponendo enfasi sulla necessità di garantire la \textbf{sovranità tecnologica} e la conformità al quadro regolatorio europeo. Il raccordo tra il Piano Triennale ICT e la Strategia IA configura un ecosistema programmatico coerente in cui l'adozione dell'intelligenza artificiale nella PA è concepita come un processo governato, progressivo e rispettoso dei principi di legalità, trasparenza e protezione dei dati. Tali requisiti, come si analizzerà nei capitoli successivi, trovano una declinazione operativa particolarmente efficace nelle architetture \textit{on-premise}.
 
 
 % ============================================================
 \section{Infrastrutture digitali e cloud strategy nella PA}
 \label{sec:infrastrutture-cloud}
 
-% --- Da completare ---
-% Contenuti suggeriti:
-% - Classificazione dei dati e servizi (ordinari, critici, strategici)
-% - Polo Strategico Nazionale: architettura e governance
-% - Cloud qualificato: marketplace AgID/ACN
-% - Migrazione al cloud: stato dell'arte e criticità
-% - On-premise vs cloud nella PA: criteri di scelta
-% - Riferimenti: Strategia Cloud Italia, ACN, PSN
+\subsection{La Strategia Cloud Italia: direttrici e classificazione dei dati}
+
+Nel settembre 2021, il Dipartimento per la Trasformazione Digitale e l'allora nascente Agenzia per la Cybersicurezza Nazionale (ACN) hanno pubblicato la \textbf{Strategia Cloud Italia} \parencite{StrategiaCloudItalia}, un documento programmatico che definisce il percorso di migrazione al \textit{cloud} per l'intera PA. La Strategia si articola lungo tre direttrici fondamentali: la \textbf{classificazione dei dati e dei servizi}, la \textbf{qualificazione dei servizi \textit{cloud}} e la realizzazione del \textbf{Polo Strategico Nazionale (PSN)} \parencite{StrategiaCloudItalia}.
+
+La prima direttrice introduce un sistema di classificazione tripartito che costituisce una delle innovazioni più rilevanti del modello italiano, ponendo il Paese tra i primi in Europa ad adottare un approccio strutturato alla categorizzazione dei dati pubblici per finalità di \textit{cloud deployment} \parencite{ClassificazioneDatiCloud}:
+
+\begin{table}[H]
+\centering
+\caption{Classificazione dei dati della PA ai fini della strategia \textit{cloud}.}
+\label{tab:classificazione-dati}
+\begin{tabularx}{\textwidth}{l l X}
+\toprule
+\textbf{Categoria} & \textbf{Livello di rischio} & \textbf{Requisiti di hosting} \\
+\midrule
+Ordinari & Basso & Cloud pubblico qualificato; nessun vincolo di localizzazione specifico \\
+Critici & Medio & Cloud qualificato con garanzie rafforzate; cifratura; localizzazione in UE \\
+Strategici & Alto & PSN o infrastruttura equivalente; \textit{on-premise} qualificato; piena sovranità nazionale \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Questa tassonomia implica che i \textbf{dati strategici} --- tra cui rientrano quelli relativi alla sicurezza nazionale, alla difesa, alle funzioni essenziali dello Stato e, potenzialmente, ai modelli di IA addestrati su dati classificati --- possano essere trattati esclusivamente in infrastrutture a piena sovranità nazionale, incluse soluzioni \textit{on-premise}. Si tratta di un elemento di centrale importanza per la tesi qui proposta, poiché circoscrive uno spazio legittimo e normato per il \textit{deployment} di sistemi di IA al di fuori del \textit{cloud} pubblico.
+
+\subsection{La qualificazione dei servizi cloud: da AgID ad ACN}
+
+Il secondo pilastro della Strategia riguarda il sistema di \textbf{qualificazione dei servizi \textit{cloud}} destinati alla PA. Fino al 18 gennaio 2023, la qualificazione era gestita da AgID; con il Decreto Direttoriale n.\,29 del 2 gennaio 2023, la competenza è passata all'ACN \parencite{ACNQualificazioneCloud}, che ha introdotto requisiti più stringenti in materia di sicurezza, protezione dei dati e localizzazione dei \textit{data center}. Il nuovo regime prevede quattro livelli di qualificazione (QI1--QI4), crescenti per garanzie di sicurezza e sovranità, coerenti con la classificazione tripartita dei dati sopra descritta.
+
+Questo passaggio istituzionale --- da un'agenzia tecnica (AgID) a un'autorità specificamente dedicata alla cybersicurezza (ACN) --- riflette la crescente consapevolezza che le scelte infrastrutturali della PA non sono meri problemi ingegneristici, bensì questioni di sicurezza nazionale. Il principio di \textbf{\textit{cloud first}} enunciato nel Piano Triennale \parencite{AgIDPianoTriennale2024} va pertanto letto in combinato con i vincoli di qualificazione: non ogni \textit{cloud} è idoneo per ogni tipologia di dato, e per i dati strategici l'alternativa \textit{on-premise} qualificata resta non soltanto ammessa, ma talvolta necessaria.
+
+\subsection{Il Polo Strategico Nazionale}
+
+Il \textbf{Polo Strategico Nazionale (PSN)} rappresenta il terzo e più ambizioso pilastro della strategia infrastrutturale italiana. Finanziato nell'ambito della Missione~1, Componente~1, Investimento~1.1 del PNRR \parencite{PNRR}, il PSN è un'infrastruttura \textit{cloud} distribuita geograficamente sul territorio nazionale, progettata per ospitare dati e servizi critici e strategici della PA con i massimi standard di sicurezza, ridondanza e continuità operativa \parencite{PSN2024}. L'obiettivo dichiarato è raggiungere la migrazione al \textit{cloud} del 75\% delle amministrazioni entro il 2026.
+
+Il PSN supporta modelli di erogazione multipli --- \textit{private cloud}, \textit{hybrid cloud}, IaaS e PaaS --- consentendo alle amministrazioni di scegliere la configurazione più adeguata in funzione della natura dei dati trattati e dei requisiti di sicurezza. Come definito da \textcite{NIST_SP800_145}, il \textit{cloud computing} è un modello che abilita l'accesso ubiquitario a risorse computazionali condivise, ma la declinazione italiana introduce un elemento distintivo: la sovranità infrastrutturale come requisito non negoziabile per i dati di interesse nazionale.
+
+\subsection{Il nodo irrisolto: cloud, on-premise e ibrido}
+
+La coesistenza del principio \textit{cloud first} con il sistema di classificazione dei dati genera un panorama architetturale necessariamente ibrido. Per i servizi basati su dati ordinari, il \textit{cloud} pubblico qualificato offre vantaggi evidenti in termini di scalabilità, elasticità e riduzione dei costi operativi. Per i dati critici e strategici, tuttavia, le esigenze di sicurezza, conformità normativa e controllo dei flussi informativi possono rendere preferibile --- o obbligatoria --- un'architettura \textit{on-premise} o \textit{private cloud}. Questa tensione, lungi dall'essere un difetto del sistema, ne costituisce un tratto di maturità: riconosce che non esiste una soluzione infrastrutturale universale e che le scelte di \textit{deployment} devono essere guidate da un'analisi del rischio e della criticità dei dati.
+
+Nel contesto specifico dell'intelligenza artificiale nella PA, il tema assume un rilievo particolare: i modelli di \textit{machine learning} e i \textit{Large Language Model} richiedono l'accesso a ingenti quantità di dati, spesso sensibili o riservati, e il loro addestramento o \textit{fine-tuning} implica il trattamento ripetuto e intensivo di tali informazioni. La scelta dell'infrastruttura di \textit{deployment} diventa dunque una decisione strategica che interseca sicurezza, privacy, sovranità e prestazioni. La sezione successiva approfondisce il quadro normativo che vincola e orienta tale decisione.
 
 
 % ============================================================
 \section{Cybersecurity e sovranità digitale}
 \label{sec:cybersecurity}
 
-% --- Da completare ---
-% Contenuti suggeriti:
-% - Agenzia per la Cybersicurezza Nazionale (ACN)
-% - Strategia Nazionale di Cybersicurezza 2022-2026
-% - NIS2 e recepimento italiano
-% - Perimetro di Sicurezza Nazionale Cibernetica
-% - Sovranità digitale e autonomia tecnologica
-% - Implicazioni per la scelta on-premise
-% - Riferimenti: ACN, NIS2, Perimetro Cibernetico
+\subsection{L'Agenzia per la Cybersicurezza Nazionale e il Perimetro Cibernetico}
+
+L'Italia ha istituito il proprio framework nazionale di cybersicurezza con il Decreto-Legge 21 settembre 2019, n.\,105, convertito con modificazioni dalla Legge 18 novembre 2019, n.\,133, che ha introdotto il \textbf{Perimetro di Sicurezza Nazionale Cibernetica} \parencite{PerimetroCibernetico}. Il Perimetro identifica gli operatori --- pubblici e privati --- che svolgono funzioni essenziali per lo Stato e impone loro obblighi stringenti in materia di gestione degli incidenti, notifica alle autorità competenti, valutazione del rischio e adozione di misure di sicurezza adeguate. Successivamente, il D.L. 14 giugno 2021, n.\,82 ha istituito l'\textbf{Agenzia per la Cybersicurezza Nazionale (ACN)}, affidandole il ruolo di autorità nazionale in materia di cybersicurezza, con competenze che spaziano dalla regolazione alla risposta operativa, dalla certificazione alla formazione \parencite{ACN2022}.
+
+La \textbf{Strategia Nazionale di Cybersicurezza 2022--2026} \parencite{ACN2022}, elaborata dall'ACN e approvata dal Comitato Interministeriale per la Cybersicurezza, definisce 82 misure articolate in quattro aree: protezione, risposta, sviluppo e resilienza. La Strategia enfatizza la necessità di raggiungere l'\textbf{autonomia tecnologica} in settori critici, riducendo la dipendenza da fornitori extra-europei, e promuove lo sviluppo di competenze nazionali in ambito crittografico, di analisi delle minacce e di sicurezza delle infrastrutture \textit{cloud}. Il collegamento con il tema della presente tesi è diretto: un sistema di IA \textit{on-premise}, ospitato all'interno del perimetro dell'ente, riduce per costruzione la superficie di attacco e il rischio di esfiltrazione dei dati, rispondendo in modo nativo alle esigenze di protezione identificate dalla Strategia.
+
+\subsection{La Direttiva NIS\,2 e il recepimento italiano}
+
+A livello europeo, la \textbf{Direttiva (UE) 2022/2555}, nota come NIS\,2 \parencite{NIS2Directive}, ha sostituito la precedente Direttiva NIS del 2016, ampliandone significativamente l'ambito di applicazione e rafforzandone gli obblighi. La NIS\,2 copre \textbf{18 settori critici} --- tra cui energia, trasporti, sanità, acqua potabile, infrastrutture digitali, PA centrale e regionale --- e introduce il concetto di \textbf{responsabilità personale dei vertici} degli enti, superando il modello precedente in cui la responsabilità era esclusivamente dell'organizzazione.
+
+L'Italia ha recepito la Direttiva con il \textbf{D.Lgs. 4 settembre 2024, n.\,138} \parencite{DLgs138_2024}, che ha definito un calendario di adempimenti stringente:
+
+\begin{itemize}[noitemsep]
+  \item \textbf{15 gennaio 2026}: pubblicazione delle specifiche di base e obbligo di notifica degli incidenti significativi al CSIRT Italia entro 24 ore;
+  \item \textbf{28 febbraio 2026}: aggiornamento dei dati sul portale ACN;
+  \item \textbf{31 ottobre 2026}: implementazione delle misure di sicurezza di base;
+  \item \textbf{Fine 2026}: avvio degli \textit{audit} sui soggetti essenziali;
+  \item \textbf{31 dicembre 2027}: implementazione delle misure avanzate per i soggetti importanti.
+\end{itemize}
+
+Le \textbf{Determinazioni ACN n.\,379887/2025 e n.\,379907/2025} \parencite{DeterminazioniACN2025} hanno successivamente specificato le misure di sicurezza di base e le modalità operative di notifica, dettagliando i requisiti tecnici che i soggetti NIS devono soddisfare. Tra questi figurano obblighi relativi alla crittografia dei dati \textit{at rest} e \textit{in transit}, alla segmentazione delle reti, al \textit{logging} e alla gestione delle vulnerabilità --- tutti aspetti che, in un'architettura \textit{on-premise}, possono essere implementati e verificati con un grado di controllo diretto significativamente superiore rispetto a un ambiente \textit{cloud} multi-tenant.
+
+\subsection{Sovranità digitale: un imperativo strategico}
+
+Il concetto di \textbf{sovranità digitale} ha acquisito centralità nel dibattito europeo a partire dalla Presidenza tedesca del Consiglio dell'UE (2020) e si è progressivamente consolidato come principio ispiratore delle politiche digitali dell'Unione. Nel contesto italiano, la sovranità digitale assume una declinazione particolarmente concreta attraverso la convergenza di tre strumenti normativi: il Perimetro di Sicurezza Nazionale Cibernetica \parencite{PerimetroCibernetico}, la classificazione dei dati prevista dalla Strategia Cloud Italia \parencite{StrategiaCloudItalia} e gli obblighi derivanti dalla NIS\,2 \parencite{NIS2Directive}.
+
+La sovranità digitale non si esaurisce nella localizzazione geografica dei dati: essa implica il \textbf{controllo effettivo} sulla tecnologia, sugli algoritmi, sulle catene di approvvigionamento e sulle competenze necessarie per operarli. Nel campo dell'intelligenza artificiale, questo principio assume un significato particolarmente pregnante: un modello di IA addestrato o eseguito su infrastrutture di fornitori extra-europei espone l'ente al rischio che i dati di addestramento, le interrogazioni (\textit{prompt}) e le risposte generate siano soggetti a giurisdizioni straniere, con potenziali conflitti rispetto al Regolamento (UE) 2016/679 \parencite{GDPR} e alle norme sulla sicurezza nazionale. L'adozione di modelli di IA in ambiente \textit{on-premise} consente invece di mantenere l'intero ciclo di vita del dato --- dall'ingestione all'inferenza --- all'interno del perimetro giuridico e fisico dell'ente, garantendo piena conformità normativa e riducendo la dipendenza da \textit{provider} terzi.
+
+\subsection{Il raccordo tra cybersecurity e trasformazione digitale}
+
+Emerge con evidenza un paradosso produttivo: le stesse norme che accelerano la trasformazione digitale della PA --- il Piano Triennale, la Strategia Cloud, il PNRR --- sono accompagnate da un corpus regolatorio di cybersecurity sempre più esigente. Lungi dal costituire un freno all'innovazione, questo quadro normativo crea le condizioni per un'innovazione \textbf{responsabile e sostenibile}. Le amministrazioni che intendono adottare sistemi di IA sono chiamate a operare scelte architetturali che tengano conto simultaneamente degli obiettivi di efficienza, dei vincoli di sicurezza e dei requisiti di protezione dei dati.
+
+Come si analizzerà nel prosieguo della tesi, il modello \textit{on-premise} offre una risposta strutturale a questa triplice esigenza, consentendo di coniugare l'innovazione dei processi decisionali con il pieno controllo dell'infrastruttura e dei flussi informativi. Prima di entrare nel merito delle soluzioni tecnologiche, è tuttavia necessario quantificare la maturità digitale della PA italiana nel contesto europeo: è ciò che fanno gli indicatori analizzati nella sezione conclusiva di questo capitolo.
 
 
 % ============================================================
 \section{Indicatori europei (DESI, Digital Government Index)}
 \label{sec:indicatori-europei}
 
-% --- Da completare ---
-% Contenuti suggeriti:
-% - DESI (Digital Economy and Society Index): struttura e dimensioni
-% - Posizionamento dell'Italia nel DESI
-% - Digital Government Index (OECD)
-% - eGovernment Benchmark (Commissione Europea)
-% - Confronto con altri paesi UE
-% - Gap e aree di miglioramento per l'Italia
-% - Riferimenti: Commissione Europea, OECD, Eurostat
+\subsection{Dal DESI al Digital Decade: evoluzione del sistema di misurazione}
+
+Per oltre un decennio, il \textbf{Digital Economy and Society Index (DESI)} ha rappresentato il principale strumento della Commissione Europea per monitorare i progressi degli Stati membri nella digitalizzazione. A partire dal 2023, il DESI è stato integrato nel sistema di monitoraggio del programma \textbf{Decennio Digitale 2030} \parencite{DecisioneDecennioDigitale}, adottando una struttura articolata in quattro dimensioni: competenze digitali, infrastrutture digitali, digitalizzazione delle imprese e servizi pubblici digitali \parencite{DESI2024}. Questa evoluzione non è meramente cosmetica: il nuovo sistema introduce \textbf{obiettivi quantitativi vincolanti} per il 2030 e un meccanismo di \textit{peer review} che aumenta la pressione sui Paesi in ritardo.
+
+\subsection{Il posizionamento dell'Italia: luci e ombre}
+
+L'analisi comparata del \textit{Country Report} italiano per il Digital Decade 2024 \parencite{ItalyDigitalDecade2024} e dell'aggiornamento 2025 \parencite{ItalyDigitalDecade2025} restituisce un quadro di progressi significativi ma insufficienti rispetto ai target europei. La Tabella~\ref{tab:desi-italia} sintetizza i principali indicatori.
+
+\begin{table}[H]
+\centering
+\caption{Principali indicatori del \textit{Digital Decade} per l'Italia (2024--2025).}
+\label{tab:desi-italia}
+\begin{tabularx}{\textwidth}{X r r r}
+\toprule
+\textbf{Indicatore} & \textbf{Italia 2024} & \textbf{Italia 2025} & \textbf{Media UE} \\
+\midrule
+Competenze digitali di base (\% popolazione) & 45,8\% & --- & 55,6\% \\
+Specialisti ICT (\% occupazione) & 4,0\% & --- & 5,0\% \\
+Servizi digitali ai cittadini (score) & 68,3 & 83,6 & --- \\
+Servizi digitali alle imprese (score) & in crescita & in crescita & --- \\
+e-Health (score su 100) & 82,7 & --- & 79,1 \\
+IA nelle imprese (\%) & 5,1\% & 8,2\% & $>$\,8\% \\
+Cloud nelle imprese (\%) & 55,1\% & --- & --- \\
+Copertura 5G (\% aree popolate) & 99,5\% & --- & $<$\,99\% \\
+FTTP (\% copertura) & 59,6\% & --- & 64,0\% \\
+Uso servizi PA digitali (\% cittadini) & --- & 55,1\% & 70,0\% \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+I dati evidenziano tre tendenze principali. In primo luogo, l'Italia registra un \textbf{deficit strutturale nelle competenze digitali}: soltanto il 45,8\% della popolazione possiede competenze digitali almeno di base, quasi dieci punti percentuali al di sotto della media UE del 55,6\% \parencite{ItalyDigitalDecade2024}. In secondo luogo, i \textbf{servizi digitali pubblici} mostrano un miglioramento marcato, con il punteggio per i servizi ai cittadini che passa da 68,3 nel 2024 a 83,6 nel 2025, con un incremento del 22,4\% \parencite{ItalyDigitalDecade2025}. In terzo luogo, l'\textbf{adozione dell'IA nelle imprese} cresce significativamente (dal 5,1\% all'8,2\%, +62,4\%), ma parte da una base molto bassa e resta al di sotto della media europea \parencite{ItalyDigitalDecade2025}.
+
+Un dato particolarmente critico riguarda l'\textbf{utilizzo effettivo dei servizi pubblici digitali}: secondo le rilevazioni Eurostat riprese dal rapporto 2025, solo il 55,1\% dei cittadini italiani utilizza i servizi online della PA, collocando l'Italia al terzultimo posto nell'UE, ben al di sotto della media del 70\% \parencite{EurostatDigitalPA2025}. Il 73\% degli italiani riconosce peraltro che la digitalizzazione facilita la vita quotidiana \parencite{ItalyDigitalDecade2025}, suggerendo che il divario tra disponibilità dei servizi e loro utilizzo sia imputabile più a carenze nell'alfabetizzazione digitale e nella \textit{user experience} che a un rifiuto del digitale.
+
+\subsection{L'OECD Digital Government Index}
+
+Accanto al sistema di monitoraggio europeo, l'\textbf{OECD Digital Government Index (DGI)} offre una prospettiva complementare, misurando la maturità del governo digitale lungo le sei dimensioni del \textit{Digital Government Policy Framework} analizzato nel paragrafo~\ref{sec:evoluzione-paradigma}. L'edizione 2023 del DGI \textcite{OECD_DGI2023} colloca in testa alla classifica la Corea del Sud, seguita da Danimarca, Regno Unito, Norvegia, Australia, Estonia, Colombia, Irlanda, Francia e Canada. La media OCSE si attesta a 0,605 su 1,0.
+
+L'analisi per dimensioni rivela che la componente più sviluppata a livello aggregato è il \textbf{\textit{digital by design}} (media 0,684), mentre le dimensioni \textbf{\textit{user-driven}} e \textbf{\textit{open by default}} risultano le più deboli \parencite{OECD_DGI2023}. Di particolare interesse per la presente tesi è la dimensione \textbf{\textit{proactiveness}}, che misura la capacità dei governi di anticipare i bisogni dei cittadini anche attraverso l'uso di tecnologie predittive e IA: i Paesi leader in questa dimensione sono la Corea del Sud (0,93), l'Estonia (0,87) e il Regno Unito (0,85) \parencite{OECD_DGI2023}. L'edizione 2025 del DGI \parencite{DGI2025}, anticipata nel rapporto \textit{Government at a Glance 2025} \parencite{eGovBenchmarkGovAtGlance2025}, conferma queste tendenze e segnala una crescente attenzione alla componente di IA nei servizi pubblici.
+
+\subsection{L'eGovernment Benchmark 2025 e la maturità della cybersecurity}
+
+L'\textit{eGovernment Benchmark 2025} \parencite{eGovBenchmark2025}, condotto su 14.104 siti web istituzionali in 39 paesi, fornisce dati granulari sulla maturità dei servizi pubblici digitali. Il rapporto rileva che il \textbf{96,1\%} dei siti offre un'interfaccia mobile \textit{responsive}, indicando un'ampia adozione del principio \textit{mobile first} \parencite{eGovBenchmark2025}. Tuttavia, il dato sulla cybersecurity è allarmante: soltanto il \textbf{45\%} dei test di sicurezza condotti sui portali viene superato, e \textbf{meno dell'1\%} dei siti analizzati soddisfa tutti i 13 criteri di cybersecurity di base \parencite{eGovBenchmark2025}.
+
+Questi dati confermano una lettura ricorrente nella presente tesi: la digitalizzazione della PA procede a ritmi sostenuti, ma la \textbf{maturità in materia di sicurezza} non tiene il passo. In un contesto in cui le amministrazioni sono chiamate ad adottare tecnologie sempre più sofisticate --- IA generativa, \textit{Large Language Model}, analisi predittiva --- il divario tra innovazione e protezione rischia di amplificarsi ulteriormente.
+
+\subsection{Implicazioni per la ricerca}
+
+I \textit{Digital Public Administration Factsheets 2025} \parencite{DigitalPAFactsheets2025}, che coprono 39 paesi europei, e il \textit{Country Report} italiano per il Digital Decade \parencite{ItalyDigitalDecade2025} convergono su un punto: l'Italia sta investendo massicciamente nella trasformazione digitale della PA, con un budget complessivo di 32,5 miliardi di euro (1,6\% del PIL), ma il rendimento di tali investimenti è frenato da tre fattori: il \textit{gap} nelle competenze digitali, la frammentazione degli ecosistemi informativi degli enti e le insufficienze nella sicurezza cibernetica.
+
+Proprio in questo contesto, la presente tesi intende dimostrare che l'adozione di sistemi di intelligenza artificiale in ambiente \textit{on-premise} può contribuire a mitigare almeno due di questi tre fattori: la sicurezza, grazie al pieno controllo dell'infrastruttura e dei dati, e la frammentazione, grazie alla possibilità di integrare i modelli di IA direttamente nei sistemi informativi dell'ente, senza dipendere da API esterne e da connettività verso \textit{data center} remoti. Il capitolo successivo approfondirà il quadro teorico e normativo dell'intelligenza artificiale nella PA, analizzando l'AI Act europeo, i modelli di \textit{deployment} e le implicazioni per la \textit{data governance}.
