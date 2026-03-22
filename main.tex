@@ -1,0 +1,203 @@
+% ============================================================
+% JANUS-OP — Tesi di Laurea Magistrale LM-56
+% Università Telematica Pegaso
+% Candidato: Fabrizio Papa — Matr. 0612400849
+% Relatore: Prof. Pasquale Sasso (ORCID 0000-0002-7996-2602)
+% ============================================================
+\documentclass[12pt,a4paper,oneside]{report}
+
+% === Lingua e codifica ===
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% === Font: Times New Roman (come da linee guida Pegaso) ===
+\usepackage{mathptmx}          % Times-like per testo e matematica
+
+% === Geometria pagina (linee guida Pegaso) ===
+% Margine superiore 2.5 cm, altri lati 2 cm, rilegatura 1 cm
+\usepackage[
+  a4paper,
+  top=2.5cm,
+  bottom=2cm,
+  left=3cm,          % 2 cm + 1 cm rilegatura
+  right=2cm
+]{geometry}
+
+% === Interlinea doppia (linee guida Pegaso) ===
+\usepackage{setspace}
+\doublespacing
+
+% === Rientro prima riga 0.5 cm (linee guida Pegaso) ===
+\setlength{\parindent}{0.5cm}
+
+% === Pacchetti grafici e tabelle ===
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+
+% === Colori e link ===
+\usepackage[dvipsnames]{xcolor}
+\usepackage[
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=blue!70!black,
+  urlcolor=blue!70!black,
+  bookmarks=true,
+  bookmarksopen=false
+]{hyperref}
+
+% === Listati di codice ===
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  numbers=left,
+  numberstyle=\tiny,
+  tabsize=2,
+  captionpos=b
+}
+
+% === Bibliografia (BibLaTeX + Biber) ===
+\usepackage[
+  backend=biber,
+  style=authoryear,
+  sorting=nyt,
+  maxcitenames=2,
+  maxbibnames=99,
+  giveninits=true,
+  uniquename=init,
+  dashed=false
+]{biblatex}
+\addbibresource{bibliografia.bib}
+
+% === Pacchetti accessori ===
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{amsmath,amssymb}
+\usepackage{csquotes}           % Richiesto da biblatex con babel
+\usepackage{fancyhdr}
+\usepackage{emptypage}          % Pagine bianche senza header/footer
+\usepackage{pdfpages}           % Per eventuale inclusione PDF
+\usepackage[acronym,toc]{glossaries}  % Glossario e acronimi
+\usepackage{appendix}
+
+% === Intestazioni e piè di pagina ===
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+% === Formattazione titoli capitoli (linee guida Pegaso) ===
+\usepackage{titlesec}
+% Capitolo: 16pt, grassetto
+\titleformat{\chapter}[display]
+  {\normalfont\fontsize{16}{19}\bfseries}
+  {\chaptertitlename\ \thechapter}{12pt}
+  {\fontsize{16}{19}\bfseries}
+\titlespacing*{\chapter}{0pt}{-20pt}{20pt}
+
+% Sezione: 12pt, grassetto
+\titleformat{\section}
+  {\normalfont\fontsize{12}{14}\bfseries}
+  {\thesection}{1em}{}
+
+% Sottosezione: 12pt, grassetto corsivo
+\titleformat{\subsection}
+  {\normalfont\fontsize{12}{14}\bfseries\itshape}
+  {\thesubsection}{1em}{}
+
+% Sotto-sottosezione: 12pt, corsivo
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{12}{14}\itshape}
+  {\thesubsubsection}{1em}{}
+
+% === Percorso immagini ===
+\graphicspath{{images/}}
+
+% === Glossario (definizioni) ===
+\makeglossaries
+% Esempio: \newacronym{ia}{IA}{Intelligenza Artificiale}
+\newacronym{ia}{IA}{Intelligenza Artificiale}
+\newacronym{pa}{PA}{Pubblica Amministrazione}
+\newacronym{agid}{AgID}{Agenzia per l'Italia Digitale}
+\newacronym{desi}{DESI}{Digital Economy and Society Index}
+\newacronym{pnrr}{PNRR}{Piano Nazionale di Ripresa e Resilienza}
+\newacronym{ict}{ICT}{Information and Communication Technology}
+\newacronym{llm}{LLM}{Large Language Model}
+\newacronym{gdpr}{GDPR}{General Data Protection Regulation}
+\newacronym{nist}{NIST}{National Institute of Standards and Technology}
+\newacronym{dama}{DAMA}{Data Management Association}
+
+% ============================================================
+\begin{document}
+
+% --- Frontespizio ---
+\input{frontmatter/frontespizio}
+\cleardoublepage
+
+% --- Dedica (opzionale) ---
+% \input{frontmatter/dedica}
+% \cleardoublepage
+
+% --- Ringraziamenti ---
+\input{frontmatter/ringraziamenti}
+\cleardoublepage
+
+% --- Indice ---
+\tableofcontents
+\cleardoublepage
+
+% --- Elenco figure e tabelle ---
+\listoffigures
+\cleardoublepage
+\listoftables
+\cleardoublepage
+
+% --- Elenco acronimi ---
+\printglossary[type=\acronymtype,title=Elenco degli Acronimi]
+\cleardoublepage
+
+% === INTRODUZIONE ===
+\input{frontmatter/introduzione}
+\cleardoublepage
+
+% === CAPITOLI ===
+\input{chapters/capitolo1}
+\cleardoublepage
+
+\input{chapters/capitolo2}
+\cleardoublepage
+
+\input{chapters/capitolo3}
+\cleardoublepage
+
+\input{chapters/capitolo4}
+\cleardoublepage
+
+% === CONCLUSIONI ===
+\input{frontmatter/conclusioni}
+\cleardoublepage
+
+% === BIBLIOGRAFIA ===
+\printbibliography[heading=bibintoc,title={Bibliografia}]
+\cleardoublepage
+
+% === APPENDICI (opzionale) ===
+% \begin{appendices}
+% \input{chapters/appendice_a}
+% \end{appendices}
+
+\end{document}
