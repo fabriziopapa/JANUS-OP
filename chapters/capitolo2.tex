@@ -1,341 +1,717 @@
 % ============================================================
-% CAPITOLO 2
-% Intelligenza Artificiale nella Pubblica Amministrazione
+% CAPITOLO 2 — Intelligenza Artificiale nella Pubblica Amministrazione
+% JANUS-OP — Tesi di Laurea Magistrale LM-56
+% Candidato: Fabrizio Papa | Relatore: Prof. Pasquale Sasso
+% Revisione integrata aprile 2026 — aggiornata con letteratura recente
 % ============================================================
+
 \chapter{Intelligenza Artificiale nella Pubblica Amministrazione}
 \label{chap:ia-pa}
 
-Il capitolo precedente ha delineato il percorso di trasformazione digitale della Pubblica Amministrazione italiana, evidenziando come il passaggio dal paradigma dell'\textit{e-Government} a quello del \textit{Digital Government} abbia progressivamente spostato il baricentro strategico dall'infrastruttura alla capacità decisionale. L'intelligenza artificiale si colloca al cuore di questa transizione: non soltanto come strumento tecnologico, ma come fattore abilitante di una nuova modalità di governo, capace di coniugare efficienza operativa, trasparenza e \textit{accountability}. Il presente capitolo analizza il ruolo dell'IA nella trasformazione organizzativa delle amministrazioni pubbliche (§\ref{sec:ia-trasformazione}), il quadro regolatorio europeo che ne disciplina l'adozione --- AI Act, Data Governance Act e Data Act (§\ref{sec:ai-act}) ---, le linee guida nazionali emanate da AgID (§\ref{sec:linee-guida-agid}), i modelli architetturali di \textit{deployment} con particolare attenzione alla dimensione \textit{on-premise} (§\ref{sec:modelli-deployment}) e, infine, i rischi, la \textit{compliance} e l'\textit{accountability} algoritmica (§\ref{sec:rischi-compliance}). Il filo conduttore dell'analisi resta la domanda di ricerca centrale della tesi: in che misura l'adozione di sistemi di IA in ambiente \textit{on-premise} possa rafforzare i processi decisionali strategici della PA, nel rispetto dei vincoli normativi e della sovranità sui dati.
+Il capitolo precedente ha delineato il percorso di trasformazione digitale della
+Pubblica Amministrazione italiana, evidenziando come il passaggio dal paradigma
+dell'\textit{e-Government} a quello del \textit{Digital Government} abbia progressivamente
+spostato il baricentro strategico dall'infrastruttura alla capacità decisionale
+\parencite{OECDDigitalGovFramework}. L'intelligenza artificiale si colloca al cuore
+di questa transizione: non soltanto come strumento tecnologico, ma come fattore
+abilitante di una nuova modalità di governo, capace di coniugare efficienza
+operativa, trasparenza e \textit{accountability}.
 
+L'analisi che segue adotta una \textit{duplice prospettiva}: \textit{normativa},
+per ricostruire il quadro regolatorio europeo e nazionale che disciplina l'uso
+dell'IA nel settore pubblico, e \textit{manageriale}, per interpretare le scelte
+organizzative attraverso i framework teorici già introdotti nel Capitolo~1
+(§\,\ref{chap:digital-government}). In particolare, il \textit{TOE framework}
+\parencite{TornatzkyFleischer1990}, le \textit{Dynamic Capabilities}
+\parencite{Teece2007} e lo \textit{Strategic Alignment Model}
+\parencite{HendersonVenkatraman1993} costituiranno la griglia interpretativa
+con cui leggere ciascuna sezione, nel tentativo di superare una lettura puramente
+descrittiva dell'adozione dell'IA nella PA a favore di un'analisi critica e
+orientata all'azione strategica \parencite{HuergoLora2024}.
+
+Il capitolo è strutturato in cinque sezioni: la prima (§\,\ref{sec:ia-trasformazione})
+analizza la trasformazione organizzativa indotta dall'IA nella PA; la seconda
+(§\,\ref{sec:ai-act}) esamina il quadro normativo europeo (AI Act, DGA, Data Act);
+la terza (§\,\ref{sec:linee-guida-agid}) ricostruisce le linee guida AgID; la quarta
+(§\,\ref{sec:modelli-deployment}) analizza i modelli di \textit{deployment} con una
+lettura strategica e comparativa; la quinta (§\,\ref{sec:rischi-compliance}) affronta
+rischi, compliance e \textit{accountability} algoritmica.
 
 % ============================================================
-\section{IA e trasformazione organizzativa}
+\section{IA e trasformazione organizzativa nella PA}
 \label{sec:ia-trasformazione}
 
+L'intelligenza artificiale non è un semplice strumento di automazione: è una
+tecnologia abilitante che ridefinisce le relazioni tra dati, processi decisionali
+e strutture organizzative \parencite{HuergoLora2024,ValleCruzMacroMesoMicro2024}.
+Nel settore pubblico, questo processo di ridefinizione assume caratteristiche peculiari
+legate alla rigidità normativa, alla cultura burocratica, alla molteplicità degli
+\textit{stakeholder} e alla natura non-\textit{market} dell'attività amministrativa
+\parencite{FernandezRainey2006}.
+
+\textcite{HuergoLora2024} distingue tre gradi di utilizzo della tecnologia digitale
+nell'attività amministrativa: l'\textit{e-Government} (comunicazione elettronica con
+i cittadini), la \textit{robotizzazione} delle attività amministrative reglamentate e,
+al vertice, l'\textit{intelligenza artificiale} propriamente detta, basata su predizioni
+algoritmiche e modelli fondazionali. Questa classificazione si articola in continuità
+con il percorso evolutivo tracciato nel Capitolo~1 e si rivela cruciale per il progetto
+JANUS-OP: il sistema si colloca deliberatamente al terzo livello, orientando l'IA
+\textit{on-premise} verso il supporto alle decisioni strategiche della PA piuttosto
+che alla mera automatizzazione di procedure standardizzate.
+
+% --- §2.1 ---
 \subsection{Framework interpretativi per l'adozione dell'IA nella PA}
 \label{subsec:framework-interpretativi}
 
-L'adozione dell'intelligenza artificiale nella Pubblica Amministrazione non è un fenomeno che possa essere adeguatamente compreso attraverso la sola dimensione normativa o tecnologica. Le scelte delle organizzazioni pubbliche --- quali sistemi adottare, con quale modello di \textit{deployment}, in quale sequenza e con quale grado di ambizione --- sono il prodotto di configurazioni complesse di fattori contestuali, dinamiche istituzionali e capacità organizzative. La letteratura manageriale e degli \textit{Information Systems} offre un insieme di framework teorici che, applicati congiuntamente, consentono di passare da una lettura descrittiva dell'adozione dell'IA a un'analisi critica e orientata all'azione.
+La letteratura manageriale ha elaborato diversi framework per interpretare l'adozione
+di tecnologie innovative nelle organizzazioni. Tre di questi, già introdotti nel
+Capitolo~1, risultano particolarmente fecondi per il contesto della PA.
 
-\subsubsection*{Il TOE Framework applicato all'IA nella PA}
+Il \textbf{TOE framework} (\textit{Technology-Organization-Environment}) di
+\textcite{TornatzkyFleischer1990} scompone i fattori che influenzano l'adozione
+tecnologica in tre dimensioni: il contesto \textit{tecnologico} (caratteristiche e
+disponibilità della tecnologia), il contesto \textit{organizzativo} (struttura,
+processi e risorse dell'ente) e il contesto \textit{ambientale} (quadro normativo,
+mercato, pressioni istituzionali). Applicato all'adozione dell'IA nella PA italiana,
+il TOE rivela immediatamente la centralità del contesto ambientale: l'AI Act, il GDPR,
+il Perimetro di Sicurezza Cibernetica Nazionale e le direttive AgID --- già analizzati
+nel Capitolo~1 nella loro dimensione infrastrutturale --- costituiscono pressioni
+ambientali di primo piano che orientano le scelte tecnologiche e organizzative.
+\textcite{DelBaroneTOE2025} hanno applicato il TOE framework specificamente alle PA
+italiane, confermando che i fattori ambientali risultano determinanti nelle
+amministrazioni pubbliche più che nelle imprese private.
+\textcite{MadanAshok2022} e \textcite{PulkkinenTOE2025} convergono sulla medesima
+conclusione in contesti europei comparati: la pressione regolatoria (AI Act, NIS\,2,
+GDPR) orienta le scelte architetturali verso soluzioni che massimizzano il controllo
+interno, favorendo il modello \textit{on-premise} per i sistemi ad alto rischio.
 
-Il \textbf{\textit{Technology-Organization-Environment framework}} (\textit{TOE}), introdotto da \textcite{TornatzkyFleischer1990}, è il quadro teorico più ampiamente adottato nella letteratura sulle determinanti dell'adozione tecnologica nelle organizzazioni. La sua rilevanza per il settore pubblico è stata confermata da una sistematica \textit{review} condotta da \textcite{MadanAshok2022} su oltre 120 studi, che individua nel \textit{TOE} il framework con maggiore potere esplicativo tra quelli applicati al contesto governativo. Anche l'analisi delle sfide sistemiche all'adozione dell'IA nelle organizzazioni sanitarie pubbliche finlandesi proposta da \textcite{PulkkinenTOE2025} mostra come le barriere all'adozione operino simultaneamente su tutti e tre i livelli del modello.
+Applicato specificamente alla scelta del modello di \textit{deployment on-premise},
+il TOE produce la seguente articolazione. Sul piano \textbf{tecnologico}, i fattori
+determinanti includono la disponibilità di infrastruttura hardware adeguata (server
+GPU, \textit{storage} ad alte prestazioni, rete interna), la compatibilità dei modelli
+\textit{open-source} con i sistemi informativi dell'ente, e la maturità della tecnologia
+disponibile: la recente proliferazione di modelli \textit{open-weight} di qualità
+(Mistral, LLaMA, Falcon) rende tecnicamente praticabile l'\textit{on-premise} anche per
+PA di dimensioni medie \parencite{RolandBergerDC2025}. Sul piano \textbf{organizzativo},
+i fattori critici comprendono le competenze digitali del personale, la struttura
+decisionale dell'ente e la disponibilità di risorse finanziarie per gli investimenti
+iniziali. Sul piano \textbf{ambientale}, la normativa (AI Act, GDPR, NIS\,2, Perimetro
+Cibernetico) e le linee guida AgID esercitano pressioni coercitive che orientano le PA
+verso soluzioni ad alto controllo interno.
 
-Applicato specificamente alla scelta del modello di \textit{deployment on-premise}, il \textit{TOE} produce la seguente articolazione. Sul piano \textbf{tecnologico}, i fattori determinanti includono la disponibilità di infrastruttura hardware adeguata (server GPU, \textit{storage} ad alte prestazioni), la compatibilità dei modelli \textit{open-source} con i sistemi informativi dell'ente e la maturità della tecnologia disponibile: la recente proliferazione di \textit{Large Language Model open-source} ad alta qualità (Llama, Mistral, DeepSeek) ha ridotto significativamente la barriera tecnologica al \textit{deployment on-premise}. Sul piano \textbf{organizzativo}, le variabili chiave sono la disponibilità di competenze interne specializzate, la propensione della leadership alla trasformazione digitale, la capacità di \textit{change management} e la disponibilità di budget CAPEX. Sul piano \textbf{ambientale}, le pressioni più rilevanti sono di natura regolamentare: l'AI Act, la classificazione dei dati strategici prevista dalla Strategia Cloud Italia e gli obblighi della NIS~2 configurano un quadro che, per determinate categorie di dati, rende la scelta \textit{on-premise} normativamente orientata.
+Le \textbf{Dynamic Capabilities} di \textcite{Teece2007} --- \textit{sensing}
+(percepire opportunità e minacce), \textit{seizing} (coglierle con decisioni rapide)
+e \textit{transforming} (riconfigurare le risorse) --- forniscono una chiave di lettura
+per interpretare la capacità di un ente pubblico di adottare e sostenere nel tempo
+sistemi di IA. Nella PA, le \textit{dynamic capabilities} si manifestano nella capacità
+di anticipare i mutamenti del quadro normativo (\textit{sensing}), di selezionare e
+implementare soluzioni tecnologiche adeguate (\textit{seizing}) e di riconfigurare i
+processi amministrativi (\textit{transforming}) senza incorrere in fenomeni di
+\textit{technology lock-in}. Come già osservato nel Capitolo~1, è proprio la
+\textit{sensing capability} --- la capacità di leggere i segnali ambientali deboli ---
+che distingue le PA che anticipano l'innovazione da quelle che vi reagiscono in ritardo
+\parencite{Teece2007}.
 
-Lo schema seguente sintetizza l'applicazione del \textit{TOE} alla scelta \textit{on-premise}:
+Lo \textbf{Strategic Alignment Model} (SAM) di \textcite{HendersonVenkatraman1993},
+integrato con gli aggiornamenti di \textcite{CordeiroSAM2019}, completa il quadro:
+per essere efficace, la scelta di un sistema di IA \textit{on-premise} deve essere
+\textit{allineata} sia con la strategia organizzativa dell'ente (in termini di obiettivi
+istituzionali, autonomia decisionale, gestione dei dati sensibili) sia con
+l'architettura IT esistente. \textcite{CriadoGilGarcia2019} evidenziano come la mancanza
+di allineamento tra strategia IT e strategia organizzativa costituisca la principale
+causa di insuccesso nei progetti di digitalizzazione della PA in Europa.
 
-\begin{description}[noitemsep]
-  \item[Contesto Tecnologico] Maturità LLM \textit{open-source}; disponibilità GPU; integrazione con sistemi PA; complessità implementativa.
-  \item[Contesto Organizzativo] Competenze ML interne; leadership digitale; budget CAPEX; capacità di \textit{change management}.
-  \item[Contesto Ambientale] AI Act; NIS~2; Strategia Cloud Italia (dati strategici); pressione AgID/ACN; best practice PSN.
-\end{description}
+\textcite{MisuracaVanNoort2020}, nella loro indagine JRC su oltre 300 iniziative di IA
+nel settore pubblico europeo, rilevano che le amministrazioni con strutture organizzative
+flessibili e competenze digitali interne mostrano tassi di successo significativamente
+superiori nell'adozione dell'IA --- un dato che conferma empiricamente la centralità
+delle \textit{dynamic capabilities} come variabile discriminante.
 
-\subsubsection*{Le Dynamic Capabilities di Teece e la PA}
+% --- §2.2 ---
+\subsection{Pressioni istituzionali e isomorfismo nell'adozione dell'IA}
+\label{subsec:pressioni-istituzionali}
 
-Il framework delle \textbf{\textit{Dynamic Capabilities}}, elaborato da \textcite{Teece2007}, introduce una prospettiva centrata sulle \textbf{capacità organizzative} che determinano la capacità di un'organizzazione di governare attivamente i processi di cambiamento tecnologico. La capacità di \textbf{\textit{sensing}} designa l'abilità di identificare e interpretare segnali rilevanti nell'ambiente tecnologico e regolatorio. Come evidenziato da \textcite{RolandBergerDC2025}, le amministrazioni con capacità di \textit{sensing} avanzate sono quelle che hanno istituito unità di monitoraggio tecnologico e traducono sistematicamente gli indicatori DESI e DGI in segnali strategici. La capacità di \textbf{\textit{seizing}} concerne la mobilitazione delle risorse per cogliere le opportunità identificate. La ricerca di \textcite{DelBaroneTOE2025} mostra come il \textit{seizing} richieda soprattutto leadership trasformativa capace di allineare gli obiettivi strategici dell'ente con le potenzialità delle soluzioni IA disponibili. La capacità di \textbf{\textit{transforming}}, infine, riguarda la riconfigurazione continua dell'organizzazione: l'adozione di un sistema di IA \textit{on-premise} senza una corrispondente riorganizzazione dei processi decisionali riduce l'innovazione a un esercizio di \textit{window dressing} istituzionale.
+La \textit{Institutional Theory} di DiMaggio e Powell (1983) offre una chiave di
+lettura complementare al TOE: le organizzazioni non adottano tecnologie solo per
+ragioni di efficienza, ma anche per rispondere a pressioni istituzionali che le spingono
+verso forme di \textit{isomorfismo} reciproco. Si distinguono tre meccanismi:
 
-\subsubsection*{Il Strategic Alignment Model e la scelta infrastrutturale}
+\begin{enumerate}
+  \item \textbf{Isomorfismo coercitivo}: deriva da pressioni formali esercitate da
+    organizzazioni da cui si dipende. L'AI Act, il GDPR e le direttive AgID esercitano
+    pressioni coercitive che inducono uniformità nelle scelte architetturali, orientando
+    i sistemi ad alto rischio verso soluzioni \textit{on-premise} dove il controllo è
+    pieno e documentabile \parencite{HohmannKollar2025,EnqvistLena2024}.
 
-Il \textbf{\textit{Strategic Alignment Model}} (SAM), proposto da \textcite{HendersonVenkatraman1993}, articola la relazione tra organizzazione e tecnologia lungo quattro domini: \textit{business strategy}, \textit{IT strategy}, \textit{organizational infrastructure} e \textit{IT infrastructure}. Il SAM postula che la performance sia massimizzata quando esiste un doppio allineamento: \textit{strategico} (verticale, tra strategia istituzionale e strategia IT) e \textit{funzionale} (orizzontale, tra processi organizzativi e infrastruttura IT). Come dimostra \textcite{CordeiroSAM2019}, l'applicazione del SAM al settore pubblico rivela come le scelte infrastrutturali disallineate rispetto alla strategia istituzionale producano sistematicamente inefficienze e rischi di \textit{lock-in}. La dimensione dell'allineamento strategico sarà sviluppata in modo specifico nella sezione~\ref{sec:modelli-deployment}.
+  \item \textbf{Isomorfismo mimetico}: si manifesta quando le PA, in condizioni di
+    incertezza, imitano pratiche di organizzazioni ritenute di successo. Le PA che
+    osservano le scelte di amministrazioni pionieristiche (Estonia, Danimarca, AgID per
+    l'Italia) tendono a replicarle \parencite{SvardGuerrero2024}.
 
-\subsection{Un cambio di paradigma: dalla digitalizzazione all'intelligenza organizzativa}
+  \item \textbf{Isomorfismo normativo}: emerge dalla professionalizzazione del campo.
+    La formazione degli \textit{AI Officer}, le certificazioni ISO\,42001 e i programmi
+    AgID Academy creano standard \textit{de facto} che orientano le scelte indipendentemente
+    dall'obbligo formale \parencite{Haynes2026}.
+\end{enumerate}
 
-L'adozione dell'intelligenza artificiale nel settore pubblico non si riduce alla mera automazione di compiti ripetitivi: essa investe la struttura stessa dei processi decisionali, le competenze del personale e le relazioni tra amministrazione e cittadini. Il rapporto \textit{Governing with Artificial Intelligence}, pubblicato dall'OCSE nel settembre 2025, si inserisce nel solco del \textit{Digital Government Policy Framework} \parencite{OECDDigitalGovFramework} e individua tre macro-aree in cui l'IA può generare valore per le organizzazioni pubbliche: \textbf{produttività}, \textbf{reattività} (\textit{responsiveness}) e \textbf{accountability} \parencite{OECDGoverningAI2025}. Più in dettaglio, lo studio articola quattro ambiti funzionali di applicazione: l'automazione e la semplificazione dei processi amministrativi; il miglioramento delle capacità di \textit{decision-making} e previsione (\textit{forecasting}); il potenziamento dei meccanismi di controllo e rilevamento delle anomalie; l'apertura di nuove opportunità per gli stakeholder esterni, inclusi cittadini e imprese \parencite{OECDAIChapter2025}.
-
-La portata trasformativa dell'IA nella PA si manifesta su più livelli. Sul piano operativo, le tecnologie di \textit{Robotic Process Automation} (RPA) e, in misura crescente, di \textit{Intelligent Process Automation} (IPA) consentono di automatizzare attività a basso valore aggiunto --- dall'istruttoria documentale alla protocollazione, dalla riconciliazione contabile alla gestione delle comunicazioni standardizzate --- liberando risorse umane per funzioni a più alto contenuto analitico. Secondo i dati dell'Osservatorio \textit{Intelligent Business Process Automation} del Politecnico di Milano, nel 2025 il 51\% delle grandi imprese italiane adottava almeno una tecnologia di \textit{Business Process Automation}, con l'Italia che si posizionava tuttavia ultima in Europa per integrazione di componenti di IA nei processi automatizzati: appena il 23\% delle soluzioni BPA includeva moduli di IA, contro il 32\% del Regno Unito \parencite{OsservatoriRPA2025}. L'aggiornamento 2026 dello stesso Osservatorio registra un'accelerazione significativa: il 62\% delle grandi organizzazioni utilizza almeno una tecnologia di \textit{process automation}, con un incremento di dieci punti percentuali rispetto all'anno precedente, e il 30\% delle soluzioni integra ormai componenti di IA \parencite{OsservatoriIPA2026}. Nonostante questa dinamica positiva, soltanto l'8\% delle organizzazioni ha raggiunto una scala di adozione definibile come «larga», segnalando che il percorso verso una piena maturità è ancora agli inizi.
-
+% --- §2.3 ---
 \subsection{Dall'automazione al supporto decisionale strategico}
+\label{subsec:automazione-decisionale}
 
-Sul piano decisionale, l'IA amplia la capacità delle amministrazioni di fondare le proprie scelte su evidenze analitiche piuttosto che su valutazioni puramente discrezionali. Modelli predittivi, tecniche di \textit{Natural Language Processing} (NLP) e sistemi di \textit{knowledge extraction} possono supportare la pianificazione territoriale, l'allocazione delle risorse, la valutazione del rischio e il monitoraggio delle politiche pubbliche. L'OCSE rileva tuttavia che soltanto il \textbf{4\% dei governi} consente ad attori esterni di accedere e utilizzare sistemi di IA sviluppati dalle amministrazioni, evidenziando un approccio ancora prevalentemente interno e sperimentale \parencite{OECDGoverningAI2025}.
+Il passaggio dall'automazione al supporto decisionale strategico richiede una
+trasformazione profonda delle capacità organizzative che va ben oltre l'implementazione
+tecnica. \textcite{CohenLevinthal1990} hanno introdotto il concetto di
+\textit{absorptive capacity} --- la capacità di un'organizzazione di riconoscere il
+valore di conoscenza esterna, assimilarla e applicarla a fini istituzionali.
 
-Un'indagine Deloitte citata nel medesimo rapporto OCSE mostra un dato apparentemente paradossale: i dirigenti della PA sono \textbf{due volte più propensi} rispetto ai colleghi del settore privato a ritenere che l'IA trasformerà radicalmente la propria organizzazione, ma al contempo si dichiarano più cauti riguardo ai guadagni di produttività attesi nel breve periodo \parencite{OECDGoverningAI2025}. Questo scarto tra aspettativa strategica e prudenza operativa riflette la consapevolezza che l'adozione dell'IA nella PA è condizionata da vincoli --- normativi, organizzativi, culturali --- assenti o meno stringenti nel settore privato.
+Nel contesto di JANUS-OP, l'IA \textit{on-premise} può essere letta come uno strumento
+che \textit{potenzia} l'\textit{absorptive capacity} della PA: anziché affidarsi a
+\textit{provider} esterni che elaborano e restituiscono \textit{output} opachi, l'ente
+sviluppa internamente la capacità di trasformare dati grezzi in conoscenza decisionale.
+\textcite{EnqvistLena2024} dimostrano che le amministrazioni con maggiore
+\textit{absorptive capacity} interna distinguono con più precisione quando un sistema IA
+può essere utilizzato per decisioni autonome (sistemi \textit{rule-based}, basso rischio)
+e quando deve limitarsi ad \textit{assistere} il funzionario (sistemi ML ad alto rischio),
+replicando esattamente le distinzioni richieste dall'AI Act all'art.~22 GDPR e agli
+artt.~14--16 AIA.
 
+\textcite{ShresthaAISDM2024} analizzano come l'IA trasformi il processo di
+\textit{strategic decision-making} nella PA, identificando tre modalità di augmentazione
+delle capacità decisionali: l'\textit{automation augmentation} (automatizzazione delle
+decisioni di routine), la \textit{cognitive augmentation} (potenziamento delle capacità
+analitiche del decisore umano) e l'\textit{aggregation augmentation} (sintesi e
+ponderazione delle valutazioni di attori multipli, riducendo i \textit{bias} cognitivi
+individuali). JANUS-OP opera prevalentemente nelle ultime due modalità, in coerenza con
+il principio di \textit{human oversight} dell'AI Act.
+
+% --- §2.4 ---
 \subsection{Rischi organizzativi e resistenza al cambiamento}
+\label{subsec:rischi-organizzativi}
 
-Il rapporto OCSE identifica cinque categorie di rischio specifiche per l'adozione dell'IA nel settore pubblico: rischi \textbf{etici} (discriminazione algoritmica, opacità decisionale), \textbf{operativi} (errori nei modelli, dipendenza tecnologica), di \textbf{esclusione} (aggravamento del \textit{digital divide}), di \textbf{resistenza pubblica} (sfiducia dei cittadini verso decisioni automatizzate) e, infine, il rischio di \textbf{inerzia} --- la mancata adozione dell'IA come scelta strategica che lascia la PA in una condizione di crescente inadeguatezza \parencite{OECDAIChapter2025}. Quest'ultimo rischio assume un rilievo particolare nel contesto italiano, dove la frammentazione amministrativa e la carenza di competenze digitali --- con solo il 45,8\% della popolazione in possesso di competenze di base, come evidenziato nel capitolo precedente --- possono rallentare l'adozione anche in presenza di quadri programmatici ambiziosi.
+L'adozione dell'IA nella PA non è esente da resistenze organizzative strutturali.
+\textcite{FernandezRainey2006} identificano le condizioni necessarie per il successo del
+cambiamento organizzativo nel settore pubblico: supporto della \textit{leadership},
+costruzione della coalizione interna, comunicazione della visione, responsabilizzazione
+del personale e istituzionalizzazione del cambiamento. Il modello rimanda al framework
+di \textcite{Kotter1995}, elaborato in contesti privati ma ampiamente validato nel
+settore pubblico.
 
-\subsection{Il Piano Triennale e gli obiettivi quantitativi per l'IA nella PA}
+Le specificità della resistenza al cambiamento nella PA includono: (i) la
+\textit{rigidità normativa}, che rende difficile modificare processi codificati in norme
+di legge; (ii) la \textit{cultura burocratica}, che privilegia la certezza procedurale
+sull'innovazione; (iii) i \textit{vincoli sindacali}, che possono rallentare la
+riassegnazione di mansioni automatizzabili; (iv) la \textit{scarsità di competenze
+digitali avanzate}, documentata dagli indicatori DESI analizzati nel Capitolo~1 e
+confermata da \textcite{MisuracaVanNoort2020} a livello europeo comparato.
 
-Il quadro programmatico italiano traduce queste aspirazioni in obiettivi misurabili. Il Piano Triennale per l'informatica nella PA 2024--2026, al capitolo 5.4 dedicato all'«Intelligenza Artificiale per la Pubblica Amministrazione», fissa \textit{target} progressivi: 150 progetti IA avviati entro il 2025, 400 entro il 2026; 100 acquisizioni di soluzioni IA entro il 2025, 300 entro il 2026 \parencite{PianoTriennaleIA}. Si tratta di obiettivi ambiziosi che presuppongono non soltanto investimenti tecnologici, ma una profonda riorganizzazione delle competenze interne e dei processi di \textit{procurement}.
+\textcite{SvardGuerrero2024}, nella revisione sistematica sull'uso dell'IA nella
+gestione dei documenti pubblici in Svezia, Finlandia e Sud Africa, rilevano che la
+resistenza organizzativa si manifesta soprattutto nella fase di integrazione tra i nuovi
+sistemi IA e i sistemi documentali esistenti (EDMS, protocolli, archivi storici). Le
+amministrazioni che hanno superato con successo questa fase sono quelle che hanno
+investito nella co-progettazione dei sistemi con il personale operativo.
 
+% --- §2.5 ---
 \subsection{IA come leva strategica e decisionale}
 \label{subsec:ia-leva-strategica}
 
-L'analisi condotta nei paragrafi precedenti ha evidenziato come l'IA nella PA sia stata per lungo tempo confinata al ruolo di strumento di automazione operativa. Una lettura più critica della letteratura recente suggerisce che questa prospettiva sia riduttiva: l'intelligenza artificiale rappresenta anzitutto una \textbf{leva di trasformazione del processo decisionale strategico}.
+La letteratura più recente ha superato la dicotomia tra IA come strumento di efficienza
+operativa e IA come rischio organizzativo, convergendo su un terzo paradigma: l'IA come
+\textit{leva strategica} che trasforma la natura stessa dell'azione pubblica
+\parencite{CriadoGilGarcia2019}.
 
-\textcite{ShresthaAISDM2024}, in un'analisi pubblicata su \textit{Strategy Science}, mostrano come l'IA possa ampliare le capacità decisionali strategiche lungo tre dimensioni: la \textbf{\textit{search augmentation}} (esplorare spazi di soluzione vastissimi e simulare virtualmente scenari complessi), la \textbf{\textit{representation augmentation}} (costruire rappresentazioni più ricche dei problemi, integrando fonti eterogenee di dati) e la \textbf{\textit{aggregation augmentation}} (sintetizzare e ponderare le valutazioni di attori multipli, riducendo i bias cognitivi). Applicata alla PA, questa triplice capacità si traduce nella possibilità di affinare la pianificazione dei servizi, la previsione dei fabbisogni e la valutazione dell'impatto delle politiche pubbliche.
+\textcite{ValleCruzMacroMesoMicro2024} propongono di analizzare l'impatto dell'IA nel
+settore pubblico su tre livelli distinti ma interdipendenti. Al livello \textbf{macro},
+l'IA ridisegna i regimi di \textit{governance} pubblica, abilitando nuove forme di
+\textit{anticipatory governance} --- la capacità di anticipare i problemi collettivi
+prima che si manifestino. Al livello \textbf{meso} (ente pubblico), l'IA trasforma il
+modello organizzativo, spostando il valore dall'esecuzione procedurale all'analisi e
+alla decisione. Al livello \textbf{micro} (processo amministrativo), l'IA accelera la
+fase istruttoria, riduce i tempi di risposta al cittadino e aumenta la coerenza delle
+decisioni. \textcite{LoreBasile2023} dimostrano empiricamente, attraverso il framework
+INTREPID per la PA italiana, come un sistema di IA possa ridurre significativamente i
+tempi di verifica della conformità GDPR dei documenti pubblici con un'accuratezza
+comparabile a quella degli esperti di dominio.
 
-Il \textbf{framework macro-meso-micro} elaborato da \textcite{ValleCruzMacroMesoMicro2024} offre un'ulteriore prospettiva. Al livello \textbf{macro}, l'IA ridisegna i regimi di governance e le strategie nazionali; al livello \textbf{meso}, trasforma le organizzazioni pubbliche, i rapporti tra enti e le catene del valore dei servizi --- è a questo livello che si collocano le scelte di \textit{deployment}; al livello \textbf{micro}, modifica i comportamenti dei dirigenti e dei cittadini. La PA proattiva non è semplicemente quella che «usa l'IA», ma quella che ha sviluppato la capacità --- a tutti e tre i livelli --- di impiegare l'intelligenza artificiale come strumento di anticipazione strategica. La scelta del modello \textit{on-premise} è una precondizione per esercitare pienamente questa \textit{proactiveness}, perché garantisce l'indipendenza operativa necessaria ad adattare continuamente i sistemi alle esigenze dell'ente.
-
-\subsection{Pressioni istituzionali e isomorfismo nell'adozione dell'IA}
-\label{subsec:isomorfismo-ia}
-
-La comprensione delle ragioni per cui le PA adottano l'intelligenza artificiale non può limitarsi a considerazioni di efficienza. La \textbf{\textit{Institutional Theory}}, e in particolare l'\textbf{isomorfismo istituzionale} di \textcite{DiMaggioPow1983}, illumina le dinamiche di imitazione, pressione e professionalizzazione che operano nel campo della PA.
-
-L'isomorfismo \textbf{coercitivo} è il più visibile: l'AI Act, la NIS~2 e la Strategia Cloud Italia configurano un quadro che orienta non solo l'adozione dell'IA, ma le sue modalità, favorendo modelli che garantiscono tracciabilità e \textit{auditability} \parencite{AIAct2024}. L'isomorfismo \textbf{mimetico} opera nell'incertezza: le PA tendono a replicare le architetture del PSN o le esperienze degli enti pionieri. Come documentato da \textcite{PatalonIsomorphism2024}, il mimetismo può accelerare la diffusione delle innovazioni ma tende a produrre omologazione anche quando le condizioni contestuali sarebbero diverse. L'isomorfismo \textbf{normativo} è prodotto dalla professionalizzazione: AgID Academy, i programmi CRUI e le certificazioni ISO/IEC 42001 definiscono un insieme di pratiche professionali legittime che orientano le scelte tecnologiche.
-
-La tensione tra questi tre meccanismi spiega la coesistenza, all'interno del medesimo quadro normativo nazionale, di enti altamente innovativi e enti ancora fermi alle fasi sperimentali: le differenze riflettono diverse esposizioni ai tre meccanismi e diverse capacità di elaborarne le pressioni.
-
-In sintesi, l'IA si configura come un \textbf{fattore di trasformazione organizzativa} che investe simultaneamente i processi operativi, le capacità decisionali e le relazioni con i cittadini. La sua efficacia nella PA è tuttavia condizionata dalla capacità di governare i rischi specifici del settore pubblico e dal quadro regolatorio che ne disciplina l'adozione. Proprio a quest'ultimo aspetto è dedicata la sezione successiva, che analizza i tre pilastri normativi europei: l'AI Act, il Data Governance Act e il Data Act.
-
+Il concetto di \textit{ambidexterity organizzativa} di \textcite{OReillyTushman2013}
+--- la capacità di essere simultaneamente efficienti nell'operatività corrente
+(\textit{exploitation}) e innovativi nell'esplorazione di nuove soluzioni
+(\textit{exploration}) --- si rivela particolarmente pertinente per la PA che adotta
+l'IA. L'IA \textit{on-premise} serve entrambe le dimensioni: \textit{automatizza} i
+processi esistenti liberando risorse umane (\textit{exploitation}) e \textit{abilita}
+nuove forme di analisi predittiva e supporto decisionale che prima non erano possibili
+(\textit{exploration}). Questa doppia valenza strategica confuta l'obiezione secondo
+cui la scelta \textit{on-premise} sarebbe conservativa: al contrario, è la scelta che
+massimizza l'\textit{ambidexterity} organizzativa della PA, mantenendo la sovranità sul
+dato e aprendo spazi di innovazione sicura \parencite{OReillyTushman2013}.
 
 % ============================================================
-\section{AI Act, Data Governance Act, Data Act}
+\section{Il quadro normativo europeo: AI Act, DGA, Data Act}
 \label{sec:ai-act}
 
-\subsection{Il Regolamento europeo sull'Intelligenza Artificiale (AI Act)}
+Il 2024--2026 ha segnato una svolta epocale nella regolazione dell'IA in Europa: per
+la prima volta nella storia, un ordinamento giuridico ha adottato una disciplina organica
+dell'intelligenza artificiale come \textit{framework} trasversale che si sovrappone a
+tutte le attività regolate dall'IA \parencite{HohmannKollar2025}. L'AI Act si inserisce
+in un ecosistema normativo più ampio che comprende il Data Governance Act e il Data Act,
+formando la cosiddetta \textit{European Data Strategy} della Commissione.
 
-Il Regolamento (UE) 2024/1689, noto come \textbf{AI Act}, rappresenta il primo quadro normativo organico al mondo dedicato alla regolamentazione dell'intelligenza artificiale \parencite{AIAct2024}. Entrato in vigore il 1° agosto 2024, con un'applicazione graduale delle diverse disposizioni tra il 2025 e il 2027, esso adotta un \textbf{approccio basato sul rischio} che classifica i sistemi di IA in quattro categorie: rischio \textbf{inaccettabile}, \textbf{alto}, \textbf{limitato} e \textbf{minimo}.
+\subsection{Il Regolamento Europeo sull'Intelligenza Artificiale (AI Act)}
+\label{subsec:ai-act-regolamento}
 
-I sistemi a rischio inaccettabile --- fra cui il \textit{social scoring} generalizzato, la manipolazione subliminale e, con specifiche eccezioni, l'identificazione biometrica remota in tempo reale in spazi pubblici --- sono vietati. I sistemi ad \textbf{alto rischio}, elencati nell'Allegato III del Regolamento, comprendono categorie di diretto interesse per la PA: sistemi biometrici, gestione di infrastrutture critiche, accesso all'istruzione e alla formazione professionale, impiego e gestione del personale, accesso a servizi pubblici essenziali, attività di \textit{law enforcement}, gestione della migrazione, amministrazione della giustizia e processi democratici \parencite{AIAct2024}. L'art.~6, paragrafo 3, stabilisce che tutti i sistemi riconducibili all'Allegato III «sono considerati ad alto rischio», salvo le eccezioni tassativamente previste dal Regolamento \parencite{DPOConsultingHighRisk}.
+Il Regolamento (UE) 2024/1689 --- l'\textit{AI Act} --- adotta un approccio
+\textit{risk-based}: classifica i sistemi di IA in quattro categorie di rischio
+(inaccettabile, alto, limitato, minimo) e calibra gli obblighi normativi in funzione
+della categoria \parencite{HohmannKollar2025,Haynes2026}.
 
-Per le amministrazioni pubbliche, la categoria ad alto rischio riveste un'importanza centrale: un sistema di IA utilizzato da un ente pubblico per determinare l'accesso a prestazioni assistenziali, per gestire la priorità nei servizi di emergenza o per supportare l'attività investigativa rientra automaticamente negli obblighi più stringenti del Regolamento.
+Per la Pubblica Amministrazione, la classificazione più rilevante è quella dei
+\textbf{sistemi ad alto rischio} (Allegato~III), che include espressamente: sistemi di
+profiling nella previdenza sociale, sistemi di \textit{law enforcement}, sistemi di
+valutazione del rischio fiscale, sistemi per la gestione delle infrastrutture critiche.
+Gli obblighi principali per i \textit{deployer} pubblici di sistemi ad alto rischio
+includono: (i)~la \textit{Fundamental Rights Impact Assessment} (FRIA), obbligatoria
+per le autorità pubbliche (art.~27 AI Act); (ii)~la registrazione nel database UE dei
+sistemi ad alto rischio (art.~71); (iii)~la supervisione umana adeguata e documentata
+(artt.~14--16); (iv)~la trasparenza verso gli utenti finali (art.~13); (v)~la
+conservazione dei \textit{log} e la tracciabilità delle decisioni (art.~12).
 
-\subsection{Gli obblighi per i deployer pubblici}
+\textcite{EnqvistLena2024} analizza la distinzione tra sistemi \textit{rule-based} e
+sistemi AI-driven nel contesto della previdenza sociale, dimostrando che i due archetipi
+ricadono in categorie normative diverse sia sotto il GDPR (art.~22, decisioni
+automatizzate) sia sotto l'AI Act (artt.~14--16 per la supervisione umana). Per la
+progettazione di JANUS-OP, questa distinzione è cruciale: il sistema è configurato per
+operare come \textit{strumento di supporto alla decisione} ({\textit{human-in-the-loop}})
+piuttosto che come motore decisionale autonomo. \textcite{HaitsmaLucas2025} documentano,
+attraverso due casi studio olandesi, come la violazione di questo principio abbia
+prodotto discriminazioni sistemiche nell'allocazione dei benefici previdenziali.
 
-L'art.~26 dell'AI Act disciplina in modo specifico gli obblighi dei \textbf{\textit{deployer}} --- ossia dei soggetti che utilizzano sistemi di IA nell'ambito della propria attività professionale, una categoria nella quale rientrano pienamente le pubbliche amministrazioni \parencite{AIActArt26}. I \textit{deployer} di sistemi ad alto rischio sono tenuti a: adottare misure tecniche e organizzative adeguate per garantire l'utilizzo del sistema conformemente alle istruzioni d'uso fornite dal \textit{provider}; assicurare la \textbf{\textit{human oversight}} da parte di personale dotato di competenze, formazione e autorità sufficienti; garantire la pertinenza, la rappresentatività e la qualità dei dati di \textit{input}; conservare i \textit{log} generati automaticamente dal sistema per un periodo non inferiore a sei mesi; segnalare al \textit{provider} e alle autorità competenti qualsiasi incidente grave o malfunzionamento \parencite{AOShearmanAIAct}.
+\textcite{Haynes2026} sottolinea come l'AI Act operi non solo come strumento di
+\textit{compliance} ma come \textit{catalizzatore di governance} etica e sostenibile,
+operazionalizzando principi come trasparenza, \textit{accountability} e supervisione
+umana attraverso un approccio basato sul rischio che si allinea con gli Obiettivi di
+Sviluppo Sostenibile dell'ONU (SDG 8, 9, 10, 12 e 16).
 
-Un obbligo peculiare grava sui \textit{deployer} del settore pubblico: l'art.~26, paragrafo 10, prescrive che le amministrazioni che utilizzano sistemi di IA ad alto rischio conducano una \textbf{\textit{Fundamental Rights Impact Assessment}} (FRIA), ossia una valutazione preventiva dell'impatto sui diritti fondamentali dei cittadini \parencite{AIActArt26}. La FRIA deve essere effettuata prima della messa in servizio del sistema e include, tra l'altro, la descrizione dei processi decisionali supportati dall'IA, l'identificazione delle categorie di persone potenzialmente interessate, i rischi specifici per i diritti fondamentali e le misure di mitigazione previste. Le PA sono inoltre tenute a registrare i sistemi ad alto rischio nella banca dati europea di cui all'art.~49 e a informare i cittadini dell'utilizzo di tali sistemi, ai sensi dell'art.~50 \parencite{AIAct2024}.
+\subsection{Data Governance Act e Data Act}
+\label{subsec:dga-data-act}
 
-Per la presente tesi, queste disposizioni assumono un rilievo specifico: un'architettura di \textit{deployment} \textit{on-premise} consente alla PA di mantenere il pieno controllo sui \textit{log}, sui dati di \textit{input} e sull'intero ciclo di vita del sistema, facilitando l'adempimento degli obblighi di tracciabilità, \textit{auditability} e \textit{incident reporting} previsti dall'AI Act.
+Il \textbf{Data Governance Act} (Regolamento UE 2022/868), in vigore dal settembre
+2023, disciplina il riutilizzo dei dati del settore pubblico e istituisce un quadro di
+fiducia per la condivisione volontaria dei dati tra soggetti privati. Per la PA, i
+profili rilevanti riguardano le condizioni per il riutilizzo di categorie speciali di
+dati (sanitari, giudiziari, fiscali) e i requisiti tecnici per l'interoperabilità degli
+spazi dati europei --- temi in diretta continuità con il Perimetro di Sicurezza
+Cibernetica Nazionale analizzato nel Capitolo~1.
 
-\subsection{Il Data Governance Act: ri-uso dei dati pubblici e intermediazione}
+Il \textbf{Data Act} (Regolamento UE 2023/2854), in vigore dal settembre 2025,
+introduce il diritto di accesso ai dati generati dall'uso di prodotti connessi e prevede
+obblighi di \textit{data portability} per i fornitori di servizi \textit{cloud}. Per i
+sistemi di IA della PA, il Data Act ha implicazioni dirette: impone che i dati elaborati
+su \textit{cloud} commerciale siano portabili verso infrastrutture alternative ---
+argomento normativo a favore della scelta \textit{on-premise}, che elimina alla radice
+il problema del \textit{vendor lock-in}. Questo aspetto si ricollega direttamente alla
+questione della \textit{tecnological sovereignty} dell'Unione Europea tematizzata nel
+Capitolo~1 \parencite{EUParl_TechSovereignty2025}.
 
-Il Regolamento (UE) 2022/868, noto come \textbf{Data Governance Act} (DGA), istituisce un quadro normativo per il ri-uso di categorie protette di dati detenuti da enti pubblici, l'intermediazione dei dati e il cosiddetto «altruismo dei dati» \parencite{DataGovernanceAct}. Il DGA si propone di superare le barriere che hanno storicamente limitato la condivisione dei dati nel settore pubblico europeo, creando meccanismi di fiducia che bilancino l'apertura dei dati con la tutela dei diritti degli interessati.
+\subsection{Interazione tra i tre regolamenti e lettura istituzionale}
+\label{subsec:interazione-trittico}
 
-Il Capo II del Regolamento disciplina le condizioni per il \textbf{ri-uso di dati protetti} detenuti dalla PA --- dati personali, dati coperti da segreto commerciale, dati protetti da proprietà intellettuale --- stabilendo che gli enti pubblici possano autorizzare il ri-uso a condizioni trasparenti, non discriminatorie e proporzionate \parencite{DGAPublicSector}. Si tratta di una disposizione particolarmente rilevante per l'addestramento di modelli di IA: la PA detiene dataset di enorme valore --- registri catastali, dati sanitari aggregati, flussi di mobilità, dati tributari --- il cui ri-uso per finalità di IA potrebbe generare un significativo beneficio pubblico, ma che deve essere governato nel rispetto della protezione dei dati personali.
+AI Act, DGA e Data Act formano un \textit{ecosistema normativo integrato} che opera su
+tre livelli distinti ma complementari \parencite{RohatgiPark2025}. L'AI Act regola i
+\textit{sistemi} di IA; il DGA regola la \textit{governance} dei dati; il Data Act
+regola i \textit{dati} stessi (diritto di accesso e portabilità).
 
-Il Capo III introduce la figura degli \textbf{intermediari dei dati} (\textit{data intermediation services}), soggetti terzi che facilitano la condivisione dei dati tra detentori e utilizzatori in un ambiente neutro e regolamentato. Il Capo IV disciplina l'\textbf{altruismo dei dati}, consentendo ai cittadini e alle imprese di mettere volontariamente a disposizione i propri dati per finalità di interesse generale --- ricerca scientifica, miglioramento dei servizi pubblici, contrasto alle emergenze --- attraverso organizzazioni riconosciute. L'art.~18 prevede espressamente che le PA possano assumere il ruolo di \textit{data altruism organisations} \parencite{DataGovernanceAct}. Secondo le stime della Commissione Europea, l'economia dei dati nel settore pubblico potrebbe generare un valore di \textbf{194 miliardi di euro} entro il 2030, a condizione che i meccanismi di governance siano adeguatamente sviluppati \parencite{DGAPublicSector}.
+Riletto attraverso le lenti dell'isomorfismo istituzionale, il trittico regolatorio
+rivela la sua natura di campo istituzionale che orienta le scelte delle PA attraverso
+tutti e tre i meccanismi: (i)~\textbf{isomorfismo coercitivo}: gli obblighi di FRIA,
+registrazione e supervisione umana generano pressione uniforme verso architetture ad alto
+controllo --- condizione che il modello \textit{on-premise} soddisfa per costruzione
+\parencite{EnqvistLena2024}; (ii)~\textbf{isomorfismo mimetico}: le PA osservano le
+scelte architetturali delle PA pionieristiche europee, replicando i modelli di successo
+\parencite{SvardGuerrero2024}; (iii)~\textbf{isomorfismo normativo}: la
+professionalizzazione del campo (AgID Academy, certificazioni ISO\,42001, figura dell'AI
+Officer ex art.~26 AI Act) crea standard \textit{de facto} \parencite{Haynes2026}. Il
+risultato è una convergenza nelle pratiche di governance dell'IA nella PA europea verso
+soluzioni caratterizzate da alta tracciabilità, supervisione umana documentata e
+controllo interno dei dati \parencite{RohatgiPark2025}.
 
-\subsection{Il Data Act: accesso, condivisione e sovranità dei dati}
-
-Il Regolamento (UE) 2023/2854, noto come \textbf{Data Act}, è applicabile dal 12 settembre 2025 e completa il trittico normativo europeo sulla governance dei dati \parencite{DataAct2023}. Mentre il DGA crea le condizioni istituzionali per la condivisione, il Data Act disciplina i diritti sostanziali di accesso e utilizzo dei dati generati dai prodotti connessi (\textit{IoT}) e dai servizi correlati \parencite{DataActCE}.
-
-Il Capo II del Regolamento stabilisce il diritto degli utenti --- incluse le PA che utilizzano dispositivi connessi --- di accedere ai dati generati dall'uso di tali dispositivi e di trasferirli a terzi. Il Capo V introduce una disposizione di particolare interesse per il settore pubblico: il \textbf{\textit{business-to-government data sharing}}, ossia la possibilità per le PA di richiedere ai detentori privati l'accesso a dati non personali in caso di «necessità eccezionale» (\textit{exceptional need}), compresi scenari di emergenza pubblica, calamità naturali o pandemie \parencite{DataActGoodwin}. Il Regolamento recepisce inoltre il principio \textit{once only}, già cardine del \textit{Digital Government}: le PA non possono richiedere gli stessi dati più volte al medesimo soggetto.
-
-Un aspetto cruciale del Data Act riguarda la \textbf{sovranità dei dati}: il Regolamento introduce garanzie contro il trasferimento di dati non personali a governi di paesi terzi in assenza di un accordo internazionale o di una base giuridica equivalente \parencite{DataActCE}. Tale disposizione si collega direttamente alla questione del \textit{deployment} \textit{on-premise}: l'utilizzo di infrastrutture cloud gestite da operatori extra-UE espone i dati della PA a potenziali richieste di accesso da parte di autorità straniere --- si pensi al \textit{CLOUD Act} statunitense --- mentre un'architettura \textit{on-premise} garantisce per definizione la permanenza dei dati all'interno del perimetro fisico dell'ente.
-
-\subsection{Interazione tra i tre regolamenti}
-
-I tre regolamenti configurano un \textbf{ecosistema normativo integrato} per la governance dei dati e dell'IA nel settore pubblico europeo. Il DGA predispone le condizioni istituzionali per la condivisione dei dati; il Data Act ne disciplina i diritti di accesso e utilizzo; l'AI Act regolamenta i sistemi che, di quei dati, si alimentano per produrre decisioni e previsioni. La PA si trova al crocevia di tutti e tre i regolamenti: è al contempo detentrice di dati, potenziale beneficiaria del \textit{data sharing} e \textit{deployer} di sistemi di IA.
-
-Questa convergenza normativa impone alle amministrazioni un approccio integrato alla governance: non è possibile adottare un sistema di IA senza aver preventivamente assicurato la conformità al GDPR, al DGA e al Data Act nella gestione dei dati che lo alimentano, né senza aver condotto la FRIA richiesta dall'AI Act per i sistemi ad alto rischio \parencite{AIAct2024,GDPR}. Il quadro regolatorio, pur nella sua complessità, offre tuttavia un vantaggio: fornisce alle PA un insieme di criteri oggettivi per orientare le scelte architetturali, inclusa quella --- centrale per questa tesi --- tra \textit{deployment} in cloud e \textit{deployment} \textit{on-premise}. Le linee guida nazionali emanate da AgID, oggetto della prossima sezione, traducono questo quadro europeo in indicazioni operative per le amministrazioni italiane.
-
+\textcite{HohmannKollar2025} evidenziano che la stratificazione normativa crea zone di
+incertezza interpretativa --- in particolare sulla questione se un sistema IA della PA
+debba condurre una DPIA (GDPR), una FRIA (AI Act) o entrambe. La risposta corretta,
+confermata dalle linee guida EDPB, è che i due strumenti sono complementari e devono
+essere condotti separatamente ma in modo coordinato.
 
 % ============================================================
-\section{Linee guida AgID per IA}
+\section{Le linee guida AgID per l'Intelligenza Artificiale}
 \label{sec:linee-guida-agid}
 
-\subsection{Dal Libro Bianco alla Strategia nazionale: genesi delle linee guida}
+L'Agenzia per l'Italia Digitale (AgID) costituisce il principale vettore di isomorfismo
+normativo per l'IA nella PA italiana \parencite{AgIDPianoTriennale2024}. La sua funzione
+non è solo regolatoria ma anche \textit{abilitante}: attraverso linee guida, standard
+tecnici, programmi di formazione e strumenti di valutazione, AgID costruisce il campo
+professionale all'interno del quale le PA italiane prendono decisioni sull'IA.
 
-Il percorso italiano verso una governance strutturata dell'IA nella PA ha avuto inizio con il \textbf{Libro Bianco sull'Intelligenza Artificiale al servizio del cittadino}, pubblicato nel 2018 dalla \textit{Task Force} IA istituita presso l'Agenzia per l'Italia Digitale \parencite{AgIDLibroBiancoIA}. Il documento, pur avendo carattere programmatico e non prescrittivo, ha introdotto nel dibattito italiano i principi fondamentali dell'IA etica --- trasparenza, equità, \textit{accountability}, non discriminazione, \textit{privacy by design} --- e ha mappato le sfide specifiche dell'adozione dell'IA nel settore pubblico, dalla carenza di competenze alla frammentazione delle basi dati.
+\subsection{Il framework nazionale AgID per l'IA}
+\label{subsec:agid-framework}
 
-Il Libro Bianco ha costituito la base concettuale del \textbf{Programma Strategico per l'Intelligenza Artificiale}, aggiornato nel ciclo 2024--2026, che declina gli obiettivi in quattro assi: ricerca e innovazione, sviluppo delle competenze, adozione nel settore pubblico e privato, e governance etica \parencite{ProgrammaStrategicoIA}. Parallelamente, la \textbf{Strategia Italiana per l'Intelligenza Artificiale 2024--2026} ha posto l'accento sulla necessità di garantire la sovranità tecnologica, promuovere l'ecosistema nazionale dell'IA e assicurare la conformità al quadro regolatorio europeo \parencite{StrategiaIA2024}.
+Le linee guida AgID sull'IA nella PA --- strutturate intorno ai principi di
+\textit{affidabilità}, \textit{trasparenza}, \textit{sicurezza},
+\textit{privacy by design} e \textit{non discriminazione} --- traducono a livello
+operativo i principi dell'AI Act per il contesto nazionale. AgID ha adottato un approccio
+\textit{risk-based} coerente con l'AI Act, prevedendo percorsi di conformità differenziati
+in funzione del livello di rischio del sistema. Il \textit{Piano Triennale per l'Informatica
+nella PA} include specifici obiettivi di adozione dell'IA: sviluppo di servizi predittivi
+per la gestione delle risorse, automazione della conformità documentale, supporto alle
+decisioni di allocazione delle risorse pubbliche \parencite{AgIDPianoTriennale2024}.
 
-Il Piano Triennale ICT 2024--2026 ha tradotto queste strategie in obiettivi operativi, articolati nei risultati attesi RA5.4.1 (adozione dell'IA nella PA), RA5.4.2 (\textit{procurement} di soluzioni IA), RA5.4.3 (sviluppo di competenze interne) e RA5.4.4 (soluzioni nazionali condivise) \parencite{AgIDPianoTriennale2024}. È in questo contesto che si collocano le prime linee guida operative emanate da AgID.
+Riletta attraverso il TOE framework, l'azione di AgID opera su tutte e tre le
+dimensioni: sul piano \textbf{tecnologico}, fornisce il catalogo delle API e gli
+standard di interoperabilità; sul piano \textbf{organizzativo}, produce linee guida,
+\textit{toolkit} di valutazione e programmi di formazione (AgID Academy); sul piano
+\textbf{ambientale}, raccorda le norme europee con quelle nazionali, riducendo
+l'incertezza regolatoria per gli enti locali. Il raccordo con il Piano Triennale
+rappresenta inoltre un punto di connessione diretto con la Strategia Cloud Italia
+analizzata nel Capitolo~1: il modello \textit{on-premise} proposto da JANUS-OP è
+pienamente compatibile con le previsioni di AgID per i dati strategici e ad alto rischio.
 
-\subsection{La Determinazione n.~17/2025: contenuto e struttura}
+\subsection{Applicazioni concrete: conformità GDPR e process mining}
+\label{subsec:agid-applicazioni}
 
-Nel febbraio 2025, AgID ha pubblicato le \textbf{prime Linee guida per l'adozione dell'Intelligenza Artificiale nella Pubblica Amministrazione} con la Determinazione n.~17/2025, sottoposte a consultazione pubblica fino al 20 marzo 2025 \parencite{AgIDLineeGuidaIA2025}. Il documento rappresenta il primo atto di \textit{soft law} nazionale specificamente dedicato all'IA nel settore pubblico e si propone di fornire alle amministrazioni un \textit{framework} operativo per orientare l'intero ciclo di vita di un progetto IA: dalla fase di valutazione preliminare al \textit{procurement}, dall'implementazione al monitoraggio continuo.
+Due casi empirici illustrano l'applicazione concreta delle linee guida AgID in ambito IA.
 
-Le Linee guida si articolano in diverse aree tematiche. La prima riguarda la \textbf{valutazione di opportunità e fattibilità}: le PA sono invitate a condurre un'analisi preliminare che identifichi il problema da risolvere, valuti se l'IA sia effettivamente la soluzione più appropriata e stimi l'impatto organizzativo dell'adozione. La seconda area disciplina il \textbf{\textit{procurement} di soluzioni IA}, introducendo requisiti specifici per i capitolati tecnici: definizione chiara delle metriche di prestazione, obblighi di trasparenza algoritmica, garanzie di portabilità e non \textit{lock-in}, requisiti di conformità al GDPR e all'AI Act \parencite{AgIDLineeGuidaIA2025}.
+Il primo è il framework \textbf{INTREPID} (\textit{artIficialiNTelligenceforgdpRcompliancEofPublicadmInistrationDocuments})
+sviluppato da \textcite{LoreBasile2023} per la PA italiana. INTREPID è un sistema di IA
+basato sull'elaborazione del linguaggio naturale (NLP) che verifica automaticamente se i
+documenti pubblici in lingua italiana rispettano i requisiti del GDPR. Utilizzando SpaCy
+e Tint per il processamento linguistico e un modello di classificazione testuale per
+l'identificazione delle violazioni, il framework mostra un'accuratezza comparabile a
+quella degli esperti di dominio con tempi di analisi radicalmente inferiori. Crucialmente,
+INTREPID opera su infrastruttura interna della PA (\textit{on-premise}), garantendo che
+i documenti non vengano trasmessi a server esterni --- requisito implicito del GDPR per
+i documenti contenenti dati personali sensibili.
 
-La terza area riguarda la \textbf{conformità normativa integrata}, con particolare attenzione all'interazione tra AI Act e GDPR. Le Linee guida prescrivono l'esecuzione di un \textbf{AI Impact Assessment} --- distinto dalla DPIA prevista dal GDPR, ma ad essa complementare --- che valuti i rischi specifici del sistema di IA sotto il profilo dei diritti fondamentali, della sicurezza, dell'equità e della trasparenza \parencite{MaggioliAgIDIA2026}. La quarta area disciplina il \textbf{monitoraggio continuo}: le PA sono tenute a verificare periodicamente le prestazioni del sistema, l'assenza di \textit{drift} nei modelli e la persistente conformità ai requisiti iniziali.
-
-\subsection{L'analisi operativa: implicazioni per le amministrazioni}
-
-Un'analisi dettagliata pubblicata da Maggioli nel marzo 2026 ha evidenziato come le Linee guida AgID configurino un \textbf{\textit{framework} operativo completo} che copre l'intero ciclo di vita dell'IA nella PA \parencite{MaggioliAgIDIA2026}. L'analisi sottolinea alcuni elementi di particolare rilievo. In primo luogo, l'enfasi sulla \textbf{formazione del personale}: le Linee guida richiedono che il personale coinvolto nell'utilizzo di sistemi di IA ad alto rischio possieda un livello di alfabetizzazione IA adeguato, in coerenza con l'art.~4 dell'AI Act. In secondo luogo, l'obbligo di \textbf{documentazione} delle scelte architetturali: le PA devono giustificare la scelta del modello di \textit{deployment}, la selezione del fornitore, i criteri di valutazione delle prestazioni e le misure di mitigazione del rischio.
-
-Questo requisito di documentazione è particolarmente rilevante per la presente tesi: la scelta tra \textit{deployment} in cloud e \textit{deployment} \textit{on-premise} non può essere dettata da considerazioni puramente tecniche o economiche, ma deve risultare da una valutazione integrata che comprenda la classificazione dei dati trattati, il livello di rischio del sistema, i requisiti di sovranità e gli obblighi di \textit{logging} e \textit{auditability} previsti dall'AI Act.
-
-\subsection{Il raccordo con il Piano Triennale e la Strategia IA}
-
-Le Linee guida si inseriscono in un ecosistema programmatico coerente. Il Piano Triennale 2024--2026 fissa i \textit{target} quantitativi --- 150 progetti IA nel 2025, 400 nel 2026 --- mentre le Linee guida definiscono il «come»: le modalità operative, i requisiti di \textit{compliance} e le procedure di \textit{procurement} \parencite{PianoTriennaleIA}. La Strategia IA 2024--2026 fornisce la visione d'insieme, collocando l'adozione dell'IA nella PA nel più ampio contesto della competitività del sistema Paese e della sovranità tecnologica europea \parencite{StrategiaIA2024}.
-
-L'aggiornamento 2026 del Piano Triennale rafforza ulteriormente questo raccordo, aggiornando il capitolo sull'IA alla luce dell'entrata in vigore dell'AI Act e introducendo indicazioni specifiche sull'uso di \textit{Large Language Model} nella PA, sulla trasparenza algoritmica e sulla valutazione del rischio \parencite{PianoTriennaleAgg2026}. L'obiettivo dichiarato è quello di creare un «mercato dell'IA per la PA» in cui le amministrazioni possano acquisire soluzioni conformi, sicure e interoperabili, evitando la frammentazione e il \textit{vendor lock-in} che hanno caratterizzato precedenti cicli di digitalizzazione.
-
-In definitiva, il quadro italiano --- Libro Bianco, Strategia IA, Piano Triennale, Linee guida operative --- configura un percorso di adozione governata dell'IA nella PA che, pur nella sua complessità, offre alle amministrazioni riferimenti chiari. La scelta del modello di \textit{deployment}, tuttavia, resta una questione aperta, che le Linee guida affrontano in termini di principi generali ma non di indicazioni architetturali puntuali. La sezione successiva si propone di colmare questa lacuna, analizzando in dettaglio i modelli di \textit{deployment} disponibili e le loro implicazioni per la PA.
-
+Il secondo caso è lo studio di \textcite{NaiSulis2025} sul \textit{process mining}
+applicato agli appalti pubblici europei (dataset TED) e italiani (dati ANAC). Gli autori
+dimostrano come le tecniche di \textit{knowledge management} basate su IA consentano di:
+(i)~ricostruire automaticamente i processi reali di gara pubblica dai \textit{log} eventi;
+(ii)~identificare colli di bottiglia procedurali e deviazioni dai processi normativi
+attesi; (iii)~produrre \textit{insight} azionabili per il miglioramento della qualità
+procedurale. Entrambi i casi rappresentano l'IA come strumento di supervisione interna
+dei processi amministrativi --- precisamente la funzione promossa da AgID.
 
 % ============================================================
 \section{Modelli di deployment: on-premise vs cloud vs hybrid}
 \label{sec:modelli-deployment}
 
+La scelta del modello di \textit{deployment} per un sistema di IA non è una decisione
+tecnica: è una \textit{decisione strategica} che riflette le priorità organizzative, i
+vincoli normativi e le \textit{dynamic capabilities} dell'ente
+\parencite{HendersonVenkatraman1993}. Tre modelli principali sono disponibili per la PA.
+
 \subsection{Definizioni e tassonomia}
+\label{subsec:definizioni-deployment}
 
-La scelta del modello di \textit{deployment} per i sistemi di IA nella PA rappresenta una decisione architetturale di rilevanza strategica, con implicazioni che si estendono ben oltre la dimensione puramente tecnologica. Per impostare l'analisi su basi rigorose, è necessario adottare una tassonomia consolidata. La pubblicazione speciale NIST SP~800-145 definisce il \textit{cloud computing} come un modello che consente l'accesso ubiquo, conveniente e \textit{on-demand} a un insieme condiviso di risorse computazionali configurabili --- reti, server, \textit{storage}, applicazioni, servizi --- che possono essere rapidamente approvvigionate e rilasciate con un minimo sforzo gestionale o interazione con il fornitore \parencite{NIST_SP800_145}. Lo stesso standard distingue quattro modelli di \textit{deployment}:
+Il modello \textbf{\textit{on-premise}} prevede che l'infrastruttura hardware e software
+sia interamente sotto il controllo dell'ente. I dati, i modelli IA e i risultati delle
+elaborazioni non lasciano mai il perimetro fisico e logico dell'amministrazione. I costi
+di implementazione e gestione sono interamente a carico dell'ente, ma il controllo è
+massimo e la conformità normativa è garantita per \textit{design}.
 
-\begin{itemize}[noitemsep]
-  \item \textbf{\textit{Public cloud}}: l'infrastruttura è fornita da un operatore terzo e condivisa tra molteplici \textit{tenant}; le risorse sono accessibili via Internet e fatturate secondo modelli \textit{pay-as-you-go}.
-  \item \textbf{\textit{Private cloud}}: l'infrastruttura è dedicata a una singola organizzazione, gestita internamente o da un terzo, e può risiedere \textit{on-premise} o presso un \textit{data center} esterno.
-  \item \textbf{\textit{Community cloud}}: l'infrastruttura è condivisa tra organizzazioni con esigenze comuni --- ad esempio, enti della stessa PA o dello stesso settore regolamentato.
-  \item \textbf{\textit{Hybrid cloud}}: composizione di due o più modelli (pubblico, privato, \textit{community}) che, pur restando entità distinte, sono collegati da tecnologie che consentono la portabilità dei dati e delle applicazioni.
-\end{itemize}
+Il modello \textbf{\textit{cloud} pubblico} prevede l'utilizzo di risorse computazionali
+e servizi IA offerti da \textit{provider} terzi (AWS, Google Cloud, Microsoft Azure,
+OVHcloud). Il modello garantisce scalabilità, aggiornamento continuo e riduzione del
+\textit{capex}, ma implica la trasmissione di dati a infrastrutture esterne, con
+implicazioni rilevanti per la sovranità del dato e la conformità normativa
+\parencite{ArunKumar2025}. La questione della sovranità tecnologica, già affrontata nel
+Capitolo~1 con riferimento al \textit{CLOUD Act} americano \parencite{CLOUDAct_Wire2025}
+e all'iniziativa GAIA-X \parencite{GaiaX2025}, torna qui in tutta la sua rilevanza
+operativa per la scelta architetturale.
 
-Il termine \textbf{\textit{on-premise}} --- letteralmente «in sede» --- designa il modello in cui l'intera infrastruttura computazionale risiede fisicamente all'interno dei locali dell'organizzazione, è di proprietà dell'ente e viene gestita dal personale interno o da un fornitore in modalità di \textit{managed service}. Nel contesto dell'IA, un \textit{deployment} \textit{on-premise} implica che i modelli di \textit{machine learning}, i dati di addestramento e di \textit{inference}, i \textit{log} e l'intero \textit{stack} software risiedano su hardware controllato dall'organizzazione, senza che alcun dato attraversi reti esterne \parencite{AnchoreoOnPrem2025}.
+Il modello \textbf{ibrido} combina elementi dei due precedenti: i dati sensibili e i
+sistemi ad alto rischio vengono gestiti \textit{on-premise}, mentre le elaborazioni meno
+critiche sono delegate al \textit{cloud}. Questo modello richiede le più alte
+\textit{dynamic capabilities}: il \textit{sensing} per identificare quale dato può
+transitare sul \textit{cloud}, il \textit{seizing} per configurare le \textit{policy}
+di \textit{data governance} dell'architettura ibrida, il \textit{transforming} per
+adattarla al mutare del quadro normativo \parencite{Teece2007}.
 
-\subsection{Analisi comparativa per la Pubblica Amministrazione}
+\subsection{Analisi comparativa per la PA: una lettura TOE}
+\label{subsec:analisi-comparativa-deployment}
 
-La scelta tra i diversi modelli non è neutra: ciascuno presenta un profilo specifico di vantaggi e vincoli che deve essere valutato alla luce delle esigenze peculiari della PA. La Tabella~\ref{tab:confronto-deployment} sintetizza le principali dimensioni di confronto.
-
-\begin{table}[H]
+\begin{table}[h!]
 \centering
-\caption{Confronto tra modelli di \textit{deployment} per l'IA nella Pubblica Amministrazione.}
+\caption{Analisi comparativa dei modelli di \textit{deployment} per la PA attraverso il TOE framework}
 \label{tab:confronto-deployment}
-\small
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\textwidth}{@{}l X X X@{}}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\textwidth}{lXXX}
 \toprule
-\textbf{Dimensione} & \textbf{Cloud pubblico} & \textbf{On-premise} & \textbf{Hybrid} \\
+\textbf{Dimensione} & \textbf{\textit{On-premise}} & \textbf{\textit{Cloud} pubblico} & \textbf{Ibrido} \\
 \midrule
-Modello di costo & OPEX, \textit{pay-as-you-go}; costi variabili e potenzialmente crescenti & CAPEX elevato; ROI su 3--5 anni; OPEX ridotto a regime & Combinazione CAPEX + OPEX; ottimizzazione selettiva \\
-\addlinespace
-Latenza & 50--100\,ms tipici; dipendente dalla rete & Minima; elaborazione locale in tempo reale & Variabile per componente \\
-\addlinespace
-Sicurezza e controllo & \textit{Shared responsibility}; dati in transito e a riposo presso terzi & Pieno controllo fisico e logico; \textit{air-gap} possibile & Segmentazione per livello di criticità \\
-\addlinespace
-Sovranità dei dati & Rischio giurisdizionale (es. \textit{CLOUD Act}); dipendenza dal fornitore & Piena conformità; dati nel perimetro dell'ente & Dati critici \textit{on-premise}; carichi non sensibili in cloud \\
-\addlinespace
-Scalabilità & Elastica e pressoché istantanea & Limitata dall'hardware; richiede pianificazione & Flessibile; \textit{burst} in cloud per picchi \\
-\addlinespace
-Modelli IA disponibili & Proprietari (GPT, Claude, Gemini) e \textit{open-source} & \textit{Open-source} (Llama, Mistral, DeepSeek) & Entrambi, a seconda del livello \\
-\addlinespace
-Conformità AI Act & Richiede verifica del fornitore; \textit{logging} delegato & Tracciabilità completa; \textit{audit} diretto & Governance differenziata \\
+Sovranità del dato & Massima & Limitata & Alta (per dati sens.) \\
+Conformità GDPR/AI Act & Piena per \textit{design} & Richiede DPA e FRIA & Alta se configurata \\
+Costo iniziale (CAPEX) & Elevato & Basso & Medio \\
+Scalabilità & Limitata & Massima & Alta \\
+\textit{Vendor lock-in} & Nullo & Alto & Medio \\
+\textit{Dynamic capabilities} richieste & Medie & Basse & Alte \\
+Allineamento NIS\,2/Perimetro & Ottimale & Vincolato & Buono \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\subsection{Il Total Cost of Ownership: evidenze quantitative}
+Riletta attraverso il TOE framework (Tab.~\ref{tab:confronto-deployment}):
 
-Una delle obiezioni più frequenti al \textit{deployment} \textit{on-premise} riguarda i costi elevati dell'investimento iniziale. Le evidenze più recenti suggeriscono tuttavia che, su un orizzonte temporale coerente con i cicli di pianificazione della PA, il modello \textit{on-premise} può rivelarsi significativamente più conveniente. Uno studio comparativo pubblicato da Anchoreo nel 2025 ha rilevato che le soluzioni di IA \textit{on-premise} risultano \textbf{mediamente il 62\% più \textit{cost-effective}} rispetto al \textit{cloud} pubblico e il \textbf{75\% più economiche} rispetto alle soluzioni basate su API di fornitori terzi; su un orizzonte quinquennale, il \textbf{\textit{Total Cost of Ownership} (TCO)} di un'infrastruttura \textit{on-premise} risulta inferiore del 35\% rispetto a una soluzione cloud equivalente, con un risparmio sulle spese operative (OPEX) che raggiunge il 70\% \parencite{AnchoreoOnPrem2025}.
-
-Questi dati si spiegano con la struttura dei costi dei due modelli. Il \textit{cloud} pubblico presenta costi variabili che tendono a crescere con l'intensificarsi dell'utilizzo: le tariffe per GPU (\textit{Graphics Processing Unit}) in cloud, necessarie per l'addestramento e l'\textit{inference} di modelli di IA, risultano particolarmente elevate per carichi di lavoro continuativi. Il modello \textit{on-premise} richiede un investimento iniziale più consistente --- per l'acquisto di server, GPU dedicate, \textit{storage} ad alte prestazioni e infrastruttura di rete --- ma genera costi operativi marginali limitati al consumo energetico, alla manutenzione e alla eventuale sostituzione dei componenti \parencite{WebbyLabCloudOnPrem2025}.
-
-\subsection{Requisiti hardware per l'IA on-premise}
-
-L'implementazione di un'infrastruttura di IA \textit{on-premise} richiede una dotazione hardware specifica, la cui configurazione dipende dalla complessità dei modelli da eseguire e dal volume dei dati da elaborare. I componenti fondamentali includono:
-
-\begin{itemize}[noitemsep]
-  \item \textbf{GPU dedicate}: le unità di elaborazione grafica costituiscono il cuore computazionale dell'IA \textit{on-premise}. Le GPU della serie NVIDIA A100 e H100 (e le più recenti H200 e B200) offrono le prestazioni necessarie per l'addestramento e l'\textit{inference} di \textit{Large Language Model} e modelli di \textit{deep learning}.
-  \item \textbf{\textit{Storage} ad alte prestazioni}: l'accesso rapido ai dati è un fattore critico; sono necessari sistemi di \textit{storage} NVMe con capacità di throughput elevato e bassa latenza.
-  \item \textbf{Rete ad alta velocità}: interconnessioni a 100--400~Gbps tra i nodi GPU per consentire il \textit{distributed training} e la comunicazione tra i componenti del sistema.
-  \item \textbf{Sistemi di raffreddamento}: i carichi di lavoro IA generano un consumo energetico significativo; soluzioni di raffreddamento a liquido sono sempre più comuni nei \textit{data center} dedicati all'IA.
+\begin{itemize}
+  \item Il \textbf{\textit{cloud} pubblico} subisce alta pressione ambientale dalla
+    politica \textit{cloud first} del Piano Triennale AgID, ma questa pressione è
+    temperata dai vincoli normativi (NIS\,2, Perimetro Cibernetico, GDPR) per i dati
+    strategici. Il rischio di disallineamento tecnologico è elevato per i sistemi ad
+    alto rischio.
+  \item Il modello \textbf{\textit{on-premise}} implica alta complessità organizzativa
+    e tecnologica, ma produce il più forte allineamento con il contesto ambientale
+    normativo: è la scelta che massimizza la \textit{conformità per design} richiesta
+    dall'AI Act \parencite{HohmannKollar2025}.
+  \item Il modello \textbf{ibrido} richiede le più alte \textit{dynamic capabilities}
+    dell'ente. La gestione della frontiera tra dato \textit{on-premise} e dato in
+    \textit{cloud} richiede \textit{sensing} continuo, \textit{seizing} rapido in caso
+    di mutamento normativo e \textit{transforming} dell'architettura nel tempo.
 \end{itemize}
 
-Per la PA, la scelta dell'hardware deve tener conto non soltanto delle prestazioni, ma anche dei vincoli di \textit{procurement} pubblico, dei tempi di approvvigionamento e della necessità di garantire la manutenzione nel medio-lungo periodo \parencite{WebbyLabCloudOnPrem2025}.
+\subsection{Federated learning come paradigma privacy-preserving}
+\label{subsec:federated-learning}
 
-\subsection{Scenari specifici per la Pubblica Amministrazione}
+Una soluzione intermedia di crescente rilevanza è il \textit{federated learning} (FL):
+un paradigma di apprendimento distribuito in cui i modelli IA vengono addestrati
+localmente su ciascun nodo (ente) senza che i dati grezzi vengano mai centralizzati
+\parencite{LiLaiWang2023}. Solo i parametri del modello vengono condivisi con un server
+di aggregazione, che produce un modello globale migliorato mantenendo la sovranità del
+dato in ciascun nodo.
 
-La scelta del modello di \textit{deployment} deve essere contestualizzata in funzione della tipologia di dati trattati e del livello di criticità del servizio. È possibile identificare almeno tre scenari in cui il \textit{deployment} \textit{on-premise} presenta vantaggi determinanti per la PA.
+\textcite{LiLaiWang2023} propongono il framework UIFLPP (\textit{Ubiquitous Intelligent
+Federated Learning Privacy Protection}) che combina FL con \textit{differential privacy}
+e maschere matriciali, raggiungendo un'accuratezza dell'86\% su CIFAR10 con una riduzione
+del 5\% dei tempi di addestramento. Per la PA, il FL rappresenta un paradigma
+particolarmente interessante per i sistemi inter-amministrativi (es.\ INPS--MEF--Agenzia
+delle Entrate): consente di addestrare un modello condiviso su dati fiscali e
+previdenziali senza violare il principio di finalità del GDPR. \textcite{ArunKumar2025}
+rafforzano ulteriormente questo modello con contratti intelligenti \textit{blockchain}
+che garantiscono l'immutabilità dei \textit{log} di trasferimento e la verificabilità
+della conformità normativa in ambienti multicloud.
 
-Il primo scenario riguarda i \textbf{dati strategici e classificati}. Le amministrazioni che trattano informazioni relative alla sicurezza nazionale, alla difesa, alle infrastrutture critiche o alla politica estera operano in un contesto in cui la fuoriuscita dei dati dal perimetro fisico dell'ente è incompatibile con i requisiti di sicurezza. La Strategia Cloud Italia, analizzata nel capitolo precedente, classifica questi dati come «strategici» e ne prescrive il trattamento esclusivo in infrastrutture qualificate, preferibilmente \textit{on-premise} o in \textit{private cloud} certificato \parencite{StrategiaCloudItalia}.
+\subsection{Sicurezza informatica e postura digitale dei servizi pubblici}
+\label{subsec:sicurezza-deployment}
 
-Il secondo scenario concerne i \textbf{dati sanitari}. Il Fascicolo Sanitario Elettronico, le cartelle cliniche informatizzate e i sistemi di supporto alla diagnosi trattano dati particolari ai sensi dell'art.~9 del GDPR, per i quali il Regolamento prevede garanzie rafforzate \parencite{GDPR}. Un sistema di IA che analizza dati sanitari --- ad esempio per la stratificazione del rischio clinico o la previsione della domanda di servizi ospedalieri --- deve garantire che nessun dato personale sanitario sia trasmesso a infrastrutture esterne non controllate dall'ente.
+La scelta del modello di \textit{deployment} non può essere separata dall'analisi della
+postura di sicurezza informatica dell'ente --- tema che raccorda direttamente con la
+Direttiva NIS\,2 e il Perimetro Cibernetico analizzati nel Capitolo~1.
+\textcite{RibeiroFonte2025} hanno valutato la sicurezza di 3.068 piattaforme di servizi
+pubblici online in tutti i 193 stati ONU, rilevando che molte continuano a utilizzare
+protocolli crittografici obsoleti, certificati mal configurati e \textit{server} non
+aggiornati. I paesi con più alta maturità normativa (UE) presentano mediamente una
+postura di sicurezza migliore, ma con significativa varianza interna --- a conferma che
+la norma non basta: occorre la capacità organizzativa di implementarla
+(\textit{dynamic capabilities}).
 
-Il terzo scenario riguarda le \textbf{infrastrutture critiche e i servizi essenziali}. I sistemi di IA che supportano la gestione di reti energetiche, idriche, di trasporto o di telecomunicazioni devono operare con latenze minime e con la massima resilienza: un'interruzione della connettività verso il cloud potrebbe compromettere la continuità del servizio. In questi casi, il \textit{deployment} \textit{on-premise} garantisce l'indipendenza dalla rete esterna e la possibilità di operare anche in condizioni di isolamento (\textit{air-gap}) \parencite{AnchoreoOnPrem2025}.
+\textcite{MagnussonIqbal2025}, nella loro revisione sistematica sulla \textit{information
+security governance} nel settore pubblico (41 articoli su 1.496 iniziali), identificano
+cinque aree critiche: gestione del rischio, \textit{framework} di \textit{accountability},
+sicurezza delle reti e-government, piani di mitigazione e allineamento con la strategia
+organizzativa. Lo studio rileva che l'aderenza ai framework riconosciuti (ISO/IEC\,27001,
+GDPR, NIS\,2) fornisce guida efficace ma che molti enti pubblici difettano
+nell'implementazione sostanziale, con scarso utilizzo di KPI di sicurezza e modelli di
+maturità. Questa lacuna è esattamente ciò che un sistema \textit{on-premise} come
+JANUS-OP può contribuire a colmare, integrando la governance della sicurezza
+nell'architettura del sistema fin dalla fase progettuale (\textit{security by design}).
 
-\subsection{Paradigmi complementari: edge computing e federated learning}
-
-L'analisi dei modelli di \textit{deployment} non sarebbe completa senza considerare due paradigmi emergenti che si collocano in posizione complementare rispetto alle architetture tradizionali: l'\textbf{\textit{edge computing}} e il \textbf{\textit{federated learning}}.
-
-L'\textit{edge computing} consiste nello spostare l'elaborazione dei dati il più possibile vicino alla fonte di generazione --- sensori IoT, dispositivi mobili, nodi periferici --- riducendo la latenza, il consumo di banda e l'esposizione dei dati a trasferimenti non necessari. Per la PA, l'\textit{edge computing} è particolarmente rilevante in contesti come la videosorveglianza intelligente, il monitoraggio ambientale in tempo reale e la gestione del traffico urbano, dove la necessità di risposte immediate rende impraticabile l'invio dei dati a un \textit{data center} centralizzato.
-
-Il \textit{federated learning} rappresenta un approccio all'addestramento distribuito dei modelli di IA in cui i dati non lasciano mai il dispositivo o il nodo locale: il modello viene addestrato localmente su ciascun nodo, e solo i parametri aggiornati --- non i dati grezzi --- vengono aggregati a livello centrale. Questo paradigma è particolarmente promettente per scenari in cui più enti della PA detengono dataset complementari --- ad esempio, diverse ASL che dispongono di dati epidemiologici --- ma non possono condividerli direttamente per vincoli normativi o di privacy. Il \textit{federated learning} consente di addestrare modelli più accurati senza violare i vincoli di protezione dei dati, coniugando i vantaggi della scala con quelli della sovranità locale.
-
-\subsection{Il modello ibrido a tre livelli}
-
-La letteratura tecnica più recente converge verso un \textbf{modello ibrido a tre livelli} --- cloud, \textit{on-premise}, \textit{edge} --- come architettura di riferimento per le organizzazioni complesse \parencite{SoftwareSeniHybrid2025}. In questo modello:
-
-\begin{enumerate}[noitemsep]
-  \item Il \textbf{livello cloud} ospita i carichi di lavoro non sensibili, i servizi di sviluppo e test, le applicazioni con esigenze di scalabilità elastica e gli ambienti di sperimentazione con modelli proprietari.
-  \item Il \textbf{livello \textit{on-premise}} concentra l'elaborazione dei dati critici, l'addestramento dei modelli su dataset riservati, l'\textit{inference} in produzione per i sistemi ad alto rischio e l'archiviazione dei \textit{log} per finalità di \textit{audit} e conformità.
-  \item Il \textbf{livello \textit{edge}} gestisce l'elaborazione in tempo reale presso i punti di generazione dei dati, minimizzando la latenza e garantendo la continuità operativa anche in assenza di connettività.
-\end{enumerate}
-
-Per la PA, questo modello presenta il vantaggio di consentire una \textbf{segmentazione architetturale allineata alla classificazione dei dati} prevista dalla Strategia Cloud Italia: i dati strategici restano \textit{on-premise}, i dati critici possono risiedere in \textit{private cloud} o \textit{on-premise}, i dati ordinari possono essere trattati in cloud qualificato \parencite{SoftwareSeniHybrid2025}. L'architettura ibrida consente inoltre di ottimizzare il TCO, concentrando gli investimenti CAPEX sui carichi di lavoro continuativi e ad alta intensità computazionale --- dove l'\textit{on-premise} risulta più conveniente --- e ricorrendo al cloud per i picchi temporanei e per le fasi di sperimentazione.
-
-\subsection{Allineamento strategico e scelta del modello di deployment}
+\subsection{Allineamento strategico (SAM) e scelta del modello}
 \label{subsec:allineamento-strategico}
 
-L'analisi dei modelli di \textit{deployment} condotta nei paragrafi precedenti rischia di essere interpretata in modo riduttivo se non viene inquadrata in una prospettiva di \textbf{allineamento strategico}. La scelta tra \textit{on-premise}, \textit{cloud} e \textit{hybrid} non è una decisione tecnica delegabile al reparto IT: è una \textbf{decisione strategica} che richiede un esplicito allineamento tra la strategia istituzionale della PA e la sua strategia tecnologica.
+Lo Strategic Alignment Model \parencite{HendersonVenkatraman1993,CordeiroSAM2019}
+suggerisce che la strategia IT debba essere allineata con la strategia organizzativa
+lungo due assi: interno/esterno e strategia/operatività. Applicato alla scelta del
+modello di \textit{deployment}:
 
-Il \textbf{\textit{Strategic Alignment Model}} di \textcite{HendersonVenkatraman1993}, introdotto nel paragrafo~\ref{subsec:framework-interpretativi}, fornisce il quadro analitico per comprendere questa esigenza. Il modello distingue tra \textit{business strategy} e \textit{organizational infrastructure} sul versante dell'organizzazione, e tra \textit{IT strategy} e \textit{IT infrastructure} sul versante tecnologico. Il SAM postula che la performance sia massimizzata quando i quattro domini sono mutuamente allineati, tanto in senso verticale quanto orizzontale. Come dimostra \textcite{CordeiroSAM2019}, le PA che hanno prodotto i risultati più significativi nella transizione digitale sono quelle che hanno trattato le scelte infrastrutturali come estensioni della propria strategia istituzionale.
+\begin{enumerate}
+  \item Un ente con alta priorità strategica sulla \textit{sovranità del dato} (ministeri,
+    agenzie fiscali, forze dell'ordine) dovrebbe scegliere \textit{on-premise} o ibrido
+    con forte componente \textit{on-premise} --- posizione di JANUS-OP.
+  \item Un ente con alta priorità su scalabilità e \textit{time-to-market} (sportelli
+    digitali per il cittadino, servizi informativi) può beneficiare di soluzioni
+    \textit{cloud-first}, purché i dati non rientrino nelle categorie sensibili di GDPR
+    e AI Act.
+  \item Un ente con \textit{portfolio} misto deve adottare un modello ibrido con
+    governance chiara delle frontiere tra i due ambienti.
+\end{enumerate}
 
-Applicato alla scelta del \textit{deployment} dell'IA, il SAM produce un'indicazione precisa: una PA che ha definito obiettivi di \textbf{sovranità sui dati}, \textbf{autonomia operativa} e \textbf{conformità NIS~2} deve riflettere questi obiettivi nella propria \textit{IT strategy}. Un \textit{deployment cloud} presso un operatore extra-UE genererebbe un disallineamento strutturale; un'architettura \textit{on-premise} o ibrida produce invece un allineamento coerente tra strategia istituzionale e strategia tecnologica. Sul piano orizzontale, l'allineamento funzionale richiede che l'infrastruttura sia coerente con i processi organizzativi: un sistema IA \textit{on-premise} di alto profilo computazionale risulta disallineato se l'organizzazione non dispone delle competenze interne per gestirlo.
+Il progetto JANUS-OP si colloca nel primo scenario: la natura delle decisioni strategiche
+supportate (allocazione di risorse, analisi di rischio istituzionale, valutazione di
+impatto normativo) richiede il massimo livello di sovranità sul dato. La scelta
+\textit{on-premise} non è, in questa prospettiva, conservativa: è la scelta che
+massimizza l'allineamento strategico tra architettura IT e missione istituzionale
+\parencite{HendersonVenkatraman1993}.
 
-La prospettiva del SAM consente di superare la dicotomia tecnica tra \textit{on-premise} e \textit{cloud} e di ricondurla a una questione di \textbf{coerenza strategica}: il modello ottimale non è quello che massimizza una singola dimensione, ma quello che produce il maggiore allineamento tra la strategia istituzionale dell'ente, la sua strategia IT e le sue capacità organizzative effettive. Il modello ibrido a tre livelli può essere letto come la configurazione che offre il maggiore spazio per un allineamento adattivo.
+\subsection{Valutazione di opportunità e conformità normativa integrata}
+\label{subsec:valutazione-procurement}
 
-In conclusione, la scelta del modello di \textit{deployment} per l'IA nella PA non è una decisione binaria tra cloud e \textit{on-premise}, ma una progettazione architetturale che deve tenere conto della natura dei dati, dei requisiti normativi, del profilo di costo e della criticità dei servizi. La sezione conclusiva del capitolo analizza i rischi trasversali e i \textit{framework} di \textit{compliance} che completano il quadro.
-
+La valutazione di un sistema IA per la PA deve integrare tre dimensioni:
+opportunità/fattibilità, conformità normativa e piano di monitoraggio continuo. Sul
+piano della \textbf{valutazione di opportunità}, gli enti devono considerare il
+\textit{Total Cost of Ownership} (TCO) dell'\textit{on-premise} rispetto al modello
+\textit{as-a-service}, tenendo conto dei rischi di \textit{lock-in} e della reversibilità
+della scelta garantita dal Data Act \parencite{ArunKumar2025}. Sul piano della
+\textbf{conformità normativa integrata}, la valutazione deve includere l'\textit{AI
+Impact Assessment} previsto dall'AI Act per i sistemi ad alto rischio, la DPIA del GDPR
+e la verifica di compatibilità con le linee guida AgID. Sul piano del
+\textbf{monitoraggio continuo}, i sistemi IA devono essere soggetti a \textit{audit}
+periodici per verificare l'assenza di \textit{model drift} e discriminazione algoritmica
+\parencite{HaitsmaLucas2025}.
 
 % ============================================================
 \section{Rischi, compliance e accountability algoritmica}
 \label{sec:rischi-compliance}
 
-\subsection{Rischi specifici dell'IA nel settore pubblico}
+L'adozione dell'IA nella PA introduce rischi di natura tecnica, organizzativa e giuridica
+che richiedono un approccio integrato alla \textit{governance} algoritmica. Questa
+sezione analizza il quadro normativo applicabile, i rischi specifici della profilazione
+algoritmica, gli standard tecnici di riferimento e propone un modello integrato di
+\textit{accountability} per la PA.
 
-L'adozione di sistemi di intelligenza artificiale nella PA introduce una categoria di rischi qualitativamente diversa rispetto alla digitalizzazione tradizionale. Mentre un sistema informativo convenzionale esegue procedure deterministiche definite ex ante, un sistema di IA opera sulla base di modelli probabilistici il cui comportamento non è interamente prevedibile e le cui decisioni possono essere difficili da spiegare e da contestare. Nel settore pubblico, questa caratteristica assume un rilievo critico: le decisioni della PA producono effetti giuridici sui cittadini e devono soddisfare requisiti di legalità, motivazione e impugnabilità che non trovano equivalenti nel settore privato.
+\subsection{Automazione decisionale: GDPR art.~22 e AI Act}
+\label{subsec:automazione-gdpr-aiaact}
 
-I rischi possono essere classificati in tre macro-categorie. La prima riguarda il \textbf{\textit{bias} algoritmico}: i modelli di IA possono riprodurre, amplificare o introdurre discriminazioni presenti --- o latenti --- nei dati di addestramento. Un sistema che supporta l'assegnazione di sussidi, la determinazione di priorità sanitarie o la valutazione del rischio criminologico può generare risultati sistematicamente sfavorevoli per determinati gruppi demografici, etnici o sociali, in violazione dei principi di uguaglianza e non discriminazione. La seconda categoria concerne l'\textbf{opacità decisionale}: i modelli complessi --- reti neurali profonde, \textit{Large Language Model} --- operano come «scatole nere» (\textit{black box}) la cui logica interna è difficile da ricostruire e da comunicare al cittadino destinatario della decisione. La terza categoria riguarda gli \textbf{errori operativi}: allucinazioni nei modelli generativi, \textit{drift} nelle prestazioni nel tempo, vulnerabilità a \textit{prompt injection} e ad attacchi avversari.
+Il rapporto tra GDPR e AI Act nella regolazione dell'automazione decisionale nella PA
+è uno dei nodi interpretativi più complessi del quadro normativo europeo
+\parencite{HohmannKollar2025,EnqvistLena2024}. L'art.~22 GDPR stabilisce il diritto
+di ogni interessato a non essere sottoposto a una decisione basata unicamente su
+trattamento automatizzato che produca effetti giuridici significativi. Per la PA, questa
+disposizione è dirompente: la grande maggioranza delle decisioni amministrative produce
+effetti giuridici significativi.
 
-\subsection{Il GDPR e le decisioni automatizzate: l'art.~22}
+\textcite{EnqvistLena2024} dimostrano che l'art.~22 GDPR e gli artt.~14--16 AI Act
+operano in modo diverso per sistemi \textit{rule-based} (trasparenza intrinseca
+all'algoritmo) e sistemi ML (la cui trasparenza richiede strumenti di
+\textit{explainability} dedicati come SHAP o LIME). Questa distinzione è
+cruciale per JANUS-OP: il sistema deve essere configurato per operare come
+\textit{human-in-the-loop}, non come motore decisionale autonomo, anche quando la
+norma tecnica lo consentirebbe.
 
-Il Regolamento Generale sulla Protezione dei Dati (GDPR) costituisce il primo presidio normativo a tutela dei cittadini rispetto alle decisioni automatizzate. L'art.~22 stabilisce il diritto dell'interessato di \textbf{non essere sottoposto a una decisione basata unicamente sul trattamento automatizzato} --- inclusa la profilazione --- che produca effetti giuridici o che incida in modo significativo sulla sua persona \parencite{GDPRArt22}. Le eccezioni a questo principio sono tassative: la decisione automatizzata è ammessa se necessaria per la conclusione o l'esecuzione di un contratto, se autorizzata dal diritto dell'Unione o di uno Stato membro, o se basata sul consenso esplicito dell'interessato.
+\subsection{Discriminazione algoritmica e governance del rischio}
+\label{subsec:discriminazione-algoritmica}
 
-Il Comitato Europeo per la Protezione dei Dati (EDPB) ha precisato che la \textbf{\textit{human oversight}} richiesta dall'art.~22 non si esaurisce in una supervisione formale: il controllo umano deve essere \textbf{sostanziale}, il che implica che il soggetto preposto abbia l'autorità effettiva di modificare la decisione, l'accesso a tutti i dati rilevanti e la comprensione della logica sottostante al sistema \parencite{GDPRArt22}. Questo requisito ha implicazioni dirette sulla scelta architetturale: un sistema di IA \textit{on-premise} consente all'ente di garantire l'accesso completo ai dati, ai \textit{log} e ai parametri del modello, facilitando una \textit{human oversight} effettiva e non meramente formale.
+La profilazione algoritmica nella PA è uno dei rischi più documentati dell'automazione
+decisionale. \textcite{HaitsmaLucas2025} analizzano due agenzie olandesi di previdenza
+sociale che hanno adottato sistemi di profilazione algoritmica per contrastare
+l'allocazione impropria dei benefici. Lo studio rileva che i sistemi algoritmici hanno
+contribuito a istanze di discriminazione sistemica, nonostante la presenza di un quadro
+giuridico che richiede espressamente la mitigazione di tali rischi.
 
-L'art.~35 del GDPR prescrive inoltre l'obbligo di condurre una \textbf{Valutazione d'Impatto sulla Protezione dei Dati} (DPIA) quando un trattamento --- e in particolare un trattamento automatizzato che produce decisioni con effetti giuridici --- presenta un rischio elevato per i diritti e le libertà delle persone fisiche \parencite{GDPR}. La DPIA deve descrivere i trattamenti previsti, valutarne la necessità e la proporzionalità, identificare i rischi e definire le misure di mitigazione. Come evidenziato da \textcite{KaminskiMalgieri2019}, la DPIA può fungere da «nesso» tra la tutela dei diritti individuali e la governance sistemica dell'IA, costituendo uno strumento di \textit{accountability} che trascende la mera conformità normativa.
+Utilizzando i principi di \textit{systemic risk governance} come \textit{framework}
+interpretativo, \citeauthor{HaitsmaLucas2025} evidenziano che le agenzie frustrate dalla
+complessità sociotecnica tendono a concentrarsi sulla conformità formale (documentazione,
+\textit{audit}) senza affrontare la sostanza del rischio discriminatorio. Per la PA
+italiana, questo studio costituisce un \textit{warning} specifico: la conformità formale
+all'AI Act (FRIA compilata, \textit{log} conservati, supervisore nominato) non è
+sufficiente se non è accompagnata da una cultura organizzativa orientata all'equità
+algoritmica e da meccanismi di \textit{auditing} sostanziali.
 
-\subsection{L'AI Act e la Fundamental Rights Impact Assessment}
+\subsection{Standard tecnici: ISO 42001 e NIST AI RMF}
+\label{subsec:standard-tecnici}
 
-L'AI Act introduce un ulteriore strumento di valutazione preventiva specifico per i \textit{deployer} pubblici di sistemi di IA ad alto rischio: la \textbf{\textit{Fundamental Rights Impact Assessment}} (FRIA), già menzionata nel paragrafo~\ref{sec:ai-act}. La FRIA non sostituisce la DPIA prevista dal GDPR, ma la integra con una valutazione specificamente orientata ai rischi per i diritti fondamentali --- non soltanto la protezione dei dati, ma anche la dignità umana, la non discriminazione, la libertà di espressione, il diritto a un ricorso effettivo \parencite{AIAct2024}. La PA è dunque tenuta a condurre \textbf{due valutazioni d'impatto complementari}: la DPIA ai sensi del GDPR e la FRIA ai sensi dell'AI Act, prima di mettere in servizio qualsiasi sistema di IA ad alto rischio.
+I \textit{framework} tecnici per la gestione del rischio dell'IA forniscono alle PA gli
+strumenti operativi per tradurre gli obblighi normativi in pratiche di \textit{governance}
+concrete. L'\textbf{ISO/IEC\,42001:2023} è il primo standard internazionale per i sistemi
+di gestione dell'IA, e definisce i requisiti per l'istituzione, implementazione e
+miglioramento continuo di un sistema di gestione dell'IA. Il \textbf{NIST AI Risk
+Management Framework} (AI RMF 1.0, 2023) è organizzato in quattro funzioni:
+\textit{Govern}, \textit{Map}, \textit{Measure}, \textit{Manage}. I due \textit{framework}
+sono complementari e sempre più usati in combinazione anche nel contesto europeo.
 
-Questo doppio regime di valutazione preventiva rafforza ulteriormente l'argomento a favore del \textit{deployment} \textit{on-premise}: la possibilità di accedere integralmente ai dati, ai modelli e ai \textit{log} del sistema --- senza dipendere dalla collaborazione di un fornitore cloud esterno --- facilita l'esecuzione sia della DPIA sia della FRIA e garantisce la disponibilità delle evidenze documentali necessarie in caso di \textit{audit} o di contestazione da parte di un cittadino.
+\subsection{Information security governance nel settore pubblico}
+\label{subsec:security-governance}
 
-\subsection{Framework internazionali: ISO/IEC 42001 e NIST AI RMF}
+\textcite{MagnussonIqbal2025} evidenziano che la conformità ai \textit{framework}
+riconosciuti (ISO/IEC\,27001, GDPR, NIS\,2) fornisce orientamento efficace ma che molti
+enti pubblici difettano nell'implementazione sostanziale. Questo \textit{gap} tra
+conformità formale e sostanziale è particolarmente preoccupante per i sistemi IA, dove
+sicurezza informatica e \textit{governance} algoritmica si sovrappongono: una violazione
+della sicurezza del sistema IA è contemporaneamente un incidente informatico, una
+violazione dei dati personali e un fallimento della \textit{governance} dell'IA.
+\textcite{RibeiroFonte2025} confermano questa lettura a scala globale.
 
-Accanto agli obblighi normativi cogenti (GDPR, AI Act), le amministrazioni possono avvalersi di \textit{framework} internazionali di gestione del rischio che forniscono metodologie strutturate per la governance dell'IA. I due riferimenti principali sono lo standard \textbf{ISO/IEC 42001:2023} e il \textbf{NIST AI Risk Management Framework} (AI RMF) 1.0.
+\subsection{Un modello integrato di accountability algoritmica per la PA}
+\label{subsec:modello-accountability}
 
-Lo standard ISO/IEC 42001 definisce i requisiti per un \textbf{sistema di gestione dell'IA} (\textit{AI Management System} -- AIMS), con un approccio sistematico al ciclo di vita dell'IA che comprende governance, pianificazione, risorse, operazioni, valutazione delle prestazioni e miglioramento continuo \parencite{ISO42001}. Il suo principale vantaggio è la \textbf{certificabilità}: un'organizzazione può ottenere una certificazione di conformità da un ente accreditato, dimostrando in modo oggettivo la propria maturità nella gestione dell'IA. Lo standard è allineato alla struttura armonizzata (\textit{Annex SL}) degli altri sistemi di gestione ISO (ISO~9001, ISO~27001), facilitando l'integrazione con i sistemi già adottati dalla PA.
+Le analisi condotte nelle sezioni precedenti consentono di proporre un modello integrato
+di \textit{accountability} algoritmica per la PA che adotta sistemi di IA ad alto rischio.
+Il modello si struttura su quattro livelli, derivati dalla sintesi dei \textit{framework}
+normativi (AI Act, GDPR) e del modello di IT \textit{Governance} di \textcite{WeillRoss2004},
+che distingue le decisioni IT in: principi, architettura, infrastruttura, bisogni
+applicativi e investimenti:
 
-Il \textbf{NIST AI RMF 1.0}, pubblicato nel 2023, adotta un approccio complementare articolato in quattro funzioni: \textbf{Govern} (definire la governance e la strategia di gestione del rischio IA), \textbf{Map} (identificare il contesto, gli attori e i rischi), \textbf{Measure} (valutare quantitativamente i rischi identificati) e \textbf{Manage} (implementare le misure di mitigazione e monitoraggio) \parencite{NIST_AI_RMF}. A differenza della ISO~42001, il NIST AI RMF è un \textit{framework} \textbf{volontario} e non certificabile, ma offre un livello di dettaglio operativo superiore, con profili e linee guida specifiche per diversi contesti applicativi.
+\begin{enumerate}
+  \item \textbf{Livello~1 --- Governance dei principi}: definizione da parte della
+    dirigenza dei valori e criteri che guidano l'uso dell'IA (\textit{AI principles}).
+    Corrisponde alla funzione \textit{Govern} del NIST AI RMF e all'art.~26 AI Act.
 
-\subsection{Confronto e complementarità dei framework}
+  \item \textbf{Livello~2 --- Governance dell'architettura}: definizione
+    dell'architettura tecnica ammissibile in funzione del rischio del sistema.
+    \textcite{WeillRoss2004} identificano questo come il livello più critico nelle
+    decisioni di IT \textit{governance}: le scelte architetturali vincolano tutte le
+    decisioni successive. Corrisponde alla FRIA dell'art.~27 AI Act.
 
-Un'analisi comparativa dei due \textit{framework} evidenzia profili di complementarità piuttosto che di sovrapposizione \parencite{HicomplyISO_NIST2024}. La ISO~42001 è uno \textbf{standard internazionale certificabile}, con un orientamento prevalentemente europeo e un forte allineamento ai requisiti dell'AI Act; il NIST AI RMF è un \textbf{\textit{framework} operativo volontario}, di origine statunitense, con un'enfasi maggiore sulla valutazione quantitativa del rischio e sulla flessibilità implementativa. La Cloud Security Alliance (CSA) ha evidenziato come l'adozione congiunta dei due \textit{framework}, integrata con i requisiti dell'AI Act, consenta alle organizzazioni di costruire un sistema di governance dell'IA robusto e riconosciuto a livello internazionale \parencite{CSA_AI_Frameworks2025}.
+  \item \textbf{Livello~3 --- Governance dell'infrastruttura}: gestione operativa
+    dell'infrastruttura IT (sicurezza, disponibilità, manutenzione). Corrisponde
+    alla funzione \textit{Measure} del NIST AI RMF e all'art.~12 AI Act.
 
-La Tabella~\ref{tab:confronto-framework} sintetizza le principali differenze.
+  \item \textbf{Livello~4 --- Governance dell'utilizzo}: regolazione dell'uso quotidiano
+    del sistema da parte del personale (supervisione, contestazione degli \textit{output},
+    formazione continua). \textcite{HaitsmaLucas2025} dimostrano che è proprio questo
+    livello il più vulnerabile alle derive discriminatorie. Corrisponde agli artt.~14--16
+    AI Act e alla funzione \textit{Manage} del NIST AI RMF.
+\end{enumerate}
 
-\begin{table}[H]
-\centering
-\caption{Confronto tra ISO/IEC 42001 e NIST AI RMF 1.0.}
-\label{tab:confronto-framework}
-\small
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\textwidth}{@{}l X X@{}}
-\toprule
-\textbf{Caratteristica} & \textbf{ISO/IEC 42001} & \textbf{NIST AI RMF 1.0} \\
-\midrule
-Natura & Standard internazionale & \textit{Framework} volontario \\
-Certificabilità & Sì (ente accreditato) & No \\
-Origine & ISO/IEC (internazionale) & NIST (USA) \\
-Struttura & \textit{Annex SL} (Plan-Do-Check-Act) & 4 funzioni: Govern, Map, Measure, Manage \\
-Allineamento AI Act & Elevato & Parziale \\
-Orientamento & Governance e conformità & Gestione operativa del rischio \\
-Integrazione & ISO~27001, ISO~9001 & \textit{Framework} NIST CSF \\
-\bottomrule
-\end{tabularx}
-\end{table}
+Il progetto JANUS-OP soddisfa simultaneamente tutti e quattro i livelli: il modello
+\textit{on-premise} garantisce la \textit{governance} dell'architettura e
+dell'infrastruttura; il \textit{design human-in-the-loop} garantisce la \textit{governance}
+dell'utilizzo; l'adozione degli standard ISO\,42001 e NIST AI RMF garantisce la
+\textit{governance} dei principi.
 
-\subsection{Accountability algoritmica: un modello integrato per la PA}
+% ============================================================
+\section*{Sintesi del capitolo}
+\addcontentsline{toc}{section}{Sintesi del capitolo}
 
-La nozione di \textbf{\textit{accountability} algoritmica} rappresenta il principio unificante dell'intero quadro di \textit{compliance} analizzato in questo capitolo. Non si tratta soltanto di un obbligo giuridico --- benché il GDPR e l'AI Act lo prescrivano esplicitamente --- ma di un principio di buon governo che richiede alla PA di essere in grado di \textbf{rendere conto} delle decisioni adottate con il supporto dell'IA: motivandole, documentandole e consentendone la contestazione.
+Il capitolo ha analizzato l'adozione dell'IA nella PA attraverso la duplice prospettiva
+normativa e manageriale. I risultati principali possono essere sintetizzati in sei
+proposizioni operative, in continuità con le analisi del Capitolo~1:
 
-Un modello integrato di \textit{accountability} algoritmica per la PA dovrebbe comprendere almeno cinque elementi: la \textbf{trasparenza} (il cittadino ha il diritto di sapere se una decisione è stata supportata dall'IA e di comprenderne la logica); la \textbf{tracciabilità} (ogni decisione deve essere ricostruibile a partire dai dati di \textit{input}, dai parametri del modello e dai \textit{log} di esecuzione); l'\textbf{auditabilità} (il sistema deve poter essere sottoposto a verifiche indipendenti); l'\textbf{impugnabilità} (il cittadino deve disporre di un rimedio effettivo contro decisioni algoritmiche errate o discriminatorie); il \textbf{miglioramento continuo} (il monitoraggio delle prestazioni deve alimentare un ciclo virtuoso di correzione e perfezionamento).
+\begin{enumerate}
+  \item L'adozione dell'IA nella PA è un fenomeno istituzionalmente determinato: le
+    scelte tecnologiche sono orientate da pressioni coercitive (normativa), mimetiche
+    (osservazione dei \textit{best performer}) e normative (professionalizzazione).
 
-Su ciascuno di questi elementi, il \textit{deployment} \textit{on-premise} offre garanzie strutturali: il pieno controllo sull'infrastruttura consente all'ente di conservare i \textit{log} senza dipendere da un fornitore esterno; l'accesso diretto ai modelli facilita l'\textit{audit}; la gestione locale dei dati elimina il rischio che le evidenze documentali siano soggette a politiche di \textit{retention} definite da terzi. Non si tratta di un vantaggio meramente tecnico, ma di una condizione organizzativa che rafforza la capacità della PA di adempiere ai propri obblighi di \textit{accountability} nei confronti dei cittadini e delle autorità di controllo.
+  \item Il trittico normativo europeo (AI Act, DGA, Data Act) tende, attraverso
+    l'isomorfismo coercitivo, verso architetture caratterizzate da alta sovranità del
+    dato e supervisione umana documentata \parencite{HohmannKollar2025,EnqvistLena2024}.
 
-\subsection{Verso il capitolo successivo}
+  \item La scelta \textit{on-premise} è strategicamente coerente con la missione
+    istituzionale degli enti che trattano dati sensibili ad alto rischio, come
+    documentato dall'applicazione del SAM e del TOE framework.
 
-Il quadro delineato in questo capitolo --- trasformazione organizzativa, normativa europea, linee guida nazionali, modelli di \textit{deployment}, \textit{compliance} e \textit{accountability} --- configura lo spazio decisionale all'interno del quale le amministrazioni sono chiamate a operare le proprie scelte in materia di IA. Il capitolo successivo sposterà l'analisi dalla dimensione normativa e architetturale a quella della \textit{data governance}, esaminando come la qualità, la classificazione e la protezione dei dati costituiscano il presupposto indispensabile per un'adozione efficace e responsabile dell'intelligenza artificiale nella PA.
+  \item L'IA \textit{on-premise} può aumentare l'\textit{absorptive capacity} della PA,
+    trasformando dati grezzi in conoscenza decisionale senza intermediazione esterna
+    \parencite{CohenLevinthal1990,LoreBasile2023}.
+
+  \item La conformità formale non è sufficiente: la \textit{governance} algoritmica
+    richiede capacità organizzative (\textit{dynamic capabilities}, IT \textit{governance},
+    cultura dell'equità) che devono essere sviluppate intenzionalmente
+    \parencite{HaitsmaLucas2025,MagnussonIqbal2025}.
+
+  \item L'\textit{ambidexterity} organizzativa \parencite{OReillyTushman2013} è il
+    traguardo strategico: l'IA \textit{on-premise} serve simultaneamente
+    l'\textit{exploitation} (efficienza operativa) e l'\textit{exploration} (innovazione
+    sicura), a condizione che l'ente investa nelle \textit{dynamic capabilities} necessarie.
+\end{enumerate}
+
+Queste proposizioni costituiscono il fondamento teorico sul quale il Capitolo~3
+costruirà l'analisi della \textit{data governance} e della maturità digitale negli
+Atenei, e il Capitolo~4 svilupperà i casi europei e istituzionali di IA \textit{on-premise}
+nella PA.
+
