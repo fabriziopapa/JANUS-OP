@@ -29,7 +29,7 @@ Università Telematica Pegaso
 | Capitolo 1 | Digital Government, innovazione e cybersecurity nella PA | ✅ Completato | — |
 | Capitolo 2 | L'IA nella PA: framework teorici, dimensione strategica e governance | ✅ Completato | — |
 | Capitolo 3 | Data Governance e maturità digitale negli Atenei | ✅ Completato | `4cdea41` |
-| Capitolo 4 | Proposta di architettura IA on-premise per l'Università Parthenope | 🏗️ Struttura pronta | `4d7f568` |
+| Capitolo 4 | Analisi comparativa dei modelli europei di adozione IA on-premise nella PA | ✅ Completato | — |
 | Conclusioni | — | ⏳ Da scrivere | — |
 
 ## Struttura repository
@@ -42,13 +42,13 @@ JANUS-OP/
 │   ├── acronimi.tex              # Acronimi (aggiungere qui i nuovi)
 │   ├── frontespizio.tex          # Frontespizio conforme Pegaso
 │   ├── ringraziamenti.tex        # Ringraziamenti
-│   ├── introduzione.tex          # ✅ Revisionata (allineata ai 3 cap. definitivi)
-│   └── conclusioni.tex           # Conclusioni (placeholder)
+│   ├── introduzione.tex          # ✅ Revisionata (allineata a tutti e 4 i capitoli)
+│   └── conclusioni.tex           # Conclusioni (placeholder — da completare)
 ├── chapters/
 │   ├── capitolo1.tex             # ✅ Digital Government, cybersecurity, DESI
 │   ├── capitolo2.tex             # ✅ IA nella PA: UTAUT, RBV, TOE, DEG, TCE
 │   ├── capitolo3.tex             # ✅ Data Governance, benchmark europei, gap analysis
-│   └── capitolo4.tex             # 🏗️ Struttura con indice definitivo del prof.
+│   └── capitolo4.tex             # ✅ Analisi comparativa casi europei (7 casi, tassonomia 7 modelli)
 ├── images/
 │   ├── pegaso-logo.svg           # Logo ufficiale Pegaso (SVG originale)
 │   └── pegaso-logo.png           # Logo Pegaso 300dpi (generato da SVG)
@@ -102,16 +102,13 @@ Frontespizio → Ringraziamenti → Indice → Introduzione
 </details>
 
 <details>
-<summary><strong>Capitolo 4</strong> — Proposta di architettura IA on-premise per l'Università Parthenope 🏗️</summary>
+<summary><strong>Capitolo 4</strong> — Analisi comparativa dei modelli europei di adozione IA on-premise nella PA ✅</summary>
 
-- §4.1 Requisiti funzionali e normativi
-- §4.2 Architettura tecnica proposta
-- §4.3 Modello di governance e ruoli
-- §4.4 Analisi economico-finanziaria (NPV, ROI, TCO)
-- §4.5 Analisi dei rischi (cyber, legali, organizzativi)
-- §4.6 Valutazione comparativa on-premise vs cloud
-
-> 📄 Vedi `docs/prompt_capitolo4.md` per le istruzioni operative complete di stesura.
+- §4.1 Framework metodologico (comparative case study, macro-meso-micro, TOE, SAM, UTAUT, DeLone & McLean)
+- §4.2 Casi nazionali europei (Estonia, Francia, Germania, Paesi Bassi, Finlandia)
+- §4.3 Casi istituzionali (Aristote/Francia universitaria, Helmholtz/Germania, DIGG Svezia + Scozia, CINECA/EuroHPC)
+- §4.4 Analisi comparativa trasversale (4 pattern, driver TOE, barriere strutturali, tassonomia 7 modelli)
+- §4.5 Implicazioni per la PA italiana e per gli atenei (modello consortile, 4 raccomandazioni manageriali, contributo al paradigma JANUS-OP)
 
 </details>
 

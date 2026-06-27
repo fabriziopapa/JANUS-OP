@@ -1,50 +1,811 @@
 % ============================================================
 % CAPITOLO 4
-% Proposta di architettura IA on-premise per l'Università Parthenope
+% Casi europei e istituzionali di adozione di IA on-premise
+% nella Pubblica Amministrazione: analisi comparativa e
+% implicazioni manageriali
 % ============================================================
-\chapter{Proposta di architettura IA on-premise per l'Università Parthenope}
-\label{chap:proposta-janus-op}
+\chapter{Casi europei e istituzionali di adozione di IA \textit{on-premise} nella
+Pubblica Amministrazione: analisi comparativa e implicazioni manageriali}
+\label{chap:casi-europei}
 
-% --- Introduzione al capitolo --- (Da completare)
+I tre capitoli che precedono hanno costruito, attraverso percorsi teorici e normativi
+complementari, la domanda che questo capitolo si propone di rispondere empiricamente:
+in quali condizioni organizzative, tecnologiche e istituzionali le pubbliche
+amministrazioni europee hanno adottato sistemi di intelligenza artificiale in
+modalità \textit{on-premise}, e quali lezioni manageriali generalizzabili emergono
+da queste esperienze? Il Capitolo~1 ha ricostruito il paradigma del \textit{Digital
+Government} e la tensione strutturale tra i principi di \textit{cloud first} e
+sovranità digitale. Il Capitolo~2 ha analizzato i \textit{framework} teorici che
+spiegano l'adozione dell'IA nella PA --- TOE, \textit{Dynamic Capabilities},
+\textit{Transaction Cost Economics}, SAM --- e ha proposto un modello decisionale per
+il management pubblico. Il Capitolo~3 ha esaminato la \textit{data governance}
+negli atenei europei, identificando quattro \textit{gap} critici e tre
+\textit{benchmark} verificati (KU Leuven, TU Delft, CINECA). Il presente capitolo
+sposta il focus dall'analisi strutturale all'evidenza empirica, adottando una
+metodologia di analisi comparativa dei casi che consente di verificare, su un corpus
+di esperienze europee documentate, le proposizioni teoriche enunciate nei capitoli
+precedenti.
 
+L'impostazione metodologica adottata risponde alle indicazioni del relatore, che ha
+ritenuto l'approccio comparativo sui casi europei ``metodologicamente e strutturalmente
+più solido'' rispetto a una proposta architettuale specifica, ``oltre che maggiormente
+coerente con l'impianto complessivo del lavoro''. In questa prospettiva, ogni caso
+è analizzato non come narrazione descrittiva di un progetto tecnologico, ma come
+\textbf{unità di analisi manageriale}: un'istanza della tensione tra vincoli
+normativi, scelte strategiche, capacità organizzative e pressioni istituzionali che
+i \textit{framework} teorici del Capitolo~2 hanno reso leggibili. Il contributo
+del capitolo è duplice: da un lato, arricchisce empiricamente i modelli teorici
+introdotti; dall'altro, produce un insieme di lezioni manageriali generalizzabili,
+applicabili agli atenei e alle PA italiane che si trovano oggi ad affrontare le
+medesime scelte.
+
+Il capitolo è articolato in cinque sezioni. La prima (\S\ref{sec:framework-metodologico})
+definisce il \textit{framework} metodologico e analitico dell'analisi comparativa.
+La seconda (\S\ref{sec:casi-nazionali}) analizza i casi di adozione di IA
+\textit{on-premise} a livello di PA centrale in cinque paesi europei. La terza
+(\S\ref{sec:casi-istituzionali}) esamina i casi istituzionali, con particolare
+attenzione agli atenei e agli enti di ricerca europei. La quarta
+(\S\ref{sec:analisi-comparativa}) conduce l'analisi comparativa trasversale,
+identificando i pattern ricorrenti e le barriere strutturali. La quinta
+(\S\ref{sec:implicazioni-italiane}) traduce le lezioni emerse in implicazioni
+manageriali per la PA italiana e per il contesto universitario.
 
 % ============================================================
-\section{Requisiti funzionali e normativi}
-\label{sec:requisiti-janus-op}
+\section{Il \textit{framework} metodologico e analitico}
+\label{sec:framework-metodologico}
 
-% --- Da completare ---
+\subsection{La metodologia dell'analisi comparativa dei casi}
 
+L'analisi comparativa dei casi (\textit{comparative case study analysis}) è riconosciuta
+dalla letteratura di management e di \textit{Information Systems} come il metodo
+più adeguato per produrre conoscenza generalizzabile in contesti in cui i fenomeni
+osservati sono ancora in corso di sviluppo, le variabili sono numerose e
+difficilmente isolabili, e il contesto istituzionale è determinante per la
+comprensione degli esiti \parencite{Mergel2019}. Nel campo dell'adozione dell'IA
+nella Pubblica Amministrazione, questa metodologia è esplicitamente raccomandata
+dalla revisione sistematica della letteratura condotta da \textcite{MadanAshok2022}
+su 210 articoli pubblicati tra il 2012 e il 2021, che identifica nel
+``\textit{lack of comparative institutional analysis}'' uno dei principali
+\textit{gap} della ricerca in questo dominio.
+
+La selezione dei casi qui analizzati segue quattro criteri deliberati. Il
+\textbf{primo criterio} è la \textbf{verificabilità}: ciascun caso è documentato
+da fonti istituzionali primarie, rapporti ufficiali o letteratura accademica
+\textit{peer-reviewed}. Il \textbf{secondo criterio} è la \textbf{rilevanza
+contestuale europea}: tutti i casi appartengono allo spazio normativo
+dell'Unione Europea (o, per il caso scozzese, allo Spazio Economico Europeo),
+soggetti alle medesime pressioni regolatorie che interessano la PA italiana.
+Il \textbf{terzo criterio} è la \textbf{presenza di una dimensione
+\textit{on-premise}}: ciascun caso presenta, in tutto o in parte, una scelta
+architetturale che privilegia il mantenimento del controllo sull'infrastruttura
+e sui dati rispetto a soluzioni \textit{cloud} esternalizzate. Il \textbf{quarto
+criterio} è la \textbf{rilevanza manageriale}: ciascun caso ha prodotto apprendimento
+organizzativo documentato, con lezioni esplicitamente articolate dai protagonisti
+istituzionali o ricostruite dalla letteratura accademica.
+
+\subsection{Il \textit{framework} analitico: macro, meso e micro}
+
+L'analisi di ciascun caso è strutturata attraverso un \textit{framework} a tre
+livelli ispirato al modello macro-meso-micro di \textcite{ValleCruzMacroMesoMicro2024},
+che propone una lettura integrata dell'adozione dell'IA nella PA considerando
+simultaneamente le pressioni normative e strategiche nazionali (livello
+\textbf{macro}), i processi di governance istituzionale e le scelte organizzative
+dell'ente (livello \textbf{meso}), e le dinamiche di adozione e resistenza
+da parte del personale e degli utenti (livello \textbf{micro}).
+
+Al livello \textbf{macro}, ogni caso è analizzato in termini di: contesto regolatorio
+nazionale ed europeo; pressioni istituzionali di tipo coercitivo (norme),
+mimetico (imitazione di \textit{best practice}) e normativo (pressioni
+professionali) secondo la tassonomia dell'isomorfismo istituzionale di
+\textcite{DiMaggioPow1983}, applicata al contesto della trasformazione digitale
+pubblica da \textcite{PatalonIsomorphism2024}; e orientamenti strategici del
+governo in materia di sovranità digitale, ricostruiti attraverso i rapporti
+OCSE \parencite{OECDGoverningAI2025} e il JRC AI Watch \parencite{MisuracaVanNoort2020}.
+
+Al livello \textbf{meso}, l'analisi si concentra su: la struttura di governance
+adottata (centralizzata vs. federata; presenza di ruoli dedicati quali
+\textit{Chief AI Officer}, \textit{Chief Data Officer} e analoghe figure
+istituzionali); le scelte architetturali nel quadro del TOE framework
+\parencite{TornatzkyFleischer1990}; e il modello di allineamento strategico
+tra strategia istituzionale e infrastruttura tecnologica nel quadro del SAM
+aggiornato da \textcite{CordeiroSAM2019} per gli enti pubblici.
+
+Al livello \textbf{micro}, sono considerati: i meccanismi di
+\textit{change management} adottati \parencite{FernandezRainey2006}; la
+risposta degli operatori alla supervisione umana (\textit{man-in-the-loop});
+e i fattori di successo o insuccesso dell'adozione dal punto di vista degli
+utenti finali, nei termini del modello UTAUT analizzato nel Capitolo~2
+\parencite{Venkatesh2003}.
+
+\subsection{Rapporto con i \textit{framework} teorici dei capitoli precedenti}
+
+L'analisi comparativa non introduce nuovi strumenti teorici, ma verifica
+empiricamente i modelli già introdotti. Il TOE \parencite{TornatzkyFleischer1990}
+è applicato per spiegare le variabili contestuali che determinano la scelta
+\textit{on-premise} in ciascun caso. L'isomorfismo istituzionale
+\parencite{DiMaggioPow1983} spiega la convergenza osservabile tra PA di diversi
+paesi verso soluzioni architetturali simili in risposta agli stessi stimoli
+normativi (AI Act, GDPR). Le \textit{Dynamic Capabilities} \parencite{Teece2007}
+spiegano perché alcune amministrazioni riescono a capitalizzare sull'investimento
+in IA \textit{on-premise} sviluppando capacità organizzative distintive, mentre
+altre rimangono a livelli di maturità inferiori. Il modello DeLone \& McLean
+\parencite{DeLone1992} offre infine una griglia per valutare il successo
+dei sistemi analizzati in termini di qualità del sistema, qualità dell'informazione
+e impatto organizzativo netto.
+
+La scelta di mantenere il \textit{framework} analitico coerente con i capitoli
+precedenti non è una costrizione formale: è la condizione perché le conclusioni del
+presente capitolo si inseriscano organicamente nell'argomentazione complessiva
+della tesi, producendo una catena inferenziale che dalle premesse teoriche conduce
+all'evidenza empirica e da questa, nell'ultimo paragrafo, alle implicazioni
+manageriali applicabili al contesto italiano.
 
 % ============================================================
-\section{Architettura tecnica proposta}
-\label{sec:architettura-janus-op}
+\section{Casi nazionali europei di adozione di IA \textit{on-premise} nella PA}
+\label{sec:casi-nazionali}
 
-% --- Da completare ---
+\subsection{Estonia: il modello federato come fondamento della PA digitale}
 
+L'Estonia rappresenta il caso di trasformazione digitale della PA più frequentemente
+citato nella letteratura internazionale di \textit{e-Government} e \textit{Digital
+Government} \parencite{OECDGoverningAI2025}, per una ragione strutturale che va ben
+oltre la semplice digitalizzazione dei servizi: il paese ha costruito, a partire dal
+sistema X-Road (2001), un'infrastruttura di scambio dati federata in cui ogni
+istituzione mantiene la propria base dati --- \textit{on-premise}, nel perimetro
+dell'ente --- e condivide solo le interrogazioni strutturate attraverso un protocollo
+standardizzato e auditabile. La filosofia architettuale che sottende X-Road è quella
+della \textbf{sovranità istituzionale del dato}: nessuna amministrazione centrale
+aggrega i dati degli altri enti; ogni dato rimane dove è stato prodotto, ed è
+accessibile agli altri solo attraverso una transazione tracciata e autorizzata
+\parencite{EUParl_TechSovereignty2025}.
+
+L'integrazione dell'intelligenza artificiale in questo modello --- avviata
+sistematicamente a partire dal 2021 con il programma Bürokratt
+(\textit{Virtual Assistant and Smart Speaker Platform for Government}) ---
+ha esteso la filosofia federata al dominio degli LLM: l'assistente virtuale
+istituzionale elabora le richieste degli utenti sulla stessa infrastruttura che
+ospita i dati dell'ente interrogato, senza esposizione a servizi di inferenza
+esterni. Bürokratt è sviluppato come progetto \textit{open-source} e messo a
+disposizione di tutti gli enti governativi europei che intendano adottarlo,
+a condizione di rispettare l'architettura federata originale \parencite{OECDGoverningAI2025}.
+
+Dal punto di vista del TOE framework, il caso estone illustra con chiarezza
+il ruolo del contesto \textbf{ambientale} come determinante primario della scelta
+architettuale. Le ridotte dimensioni del paese (1,3 milioni di abitanti) e la
+necessità di gestire i dati di una PA pluralistica con risorse limitate hanno
+prodotto, per pressione contestuale, un'architettura che distribuisce i costi
+di gestione e concentra la responsabilità del dato in capo all'ente proprietario.
+Questa soluzione --- nata da un vincolo --- si è rivelata ex-post superiore alle
+alternative centralizzate proprio per la sua conformità strutturale ai princìpi
+del GDPR e, oggi, alle prescrizioni di sovranità del dato dell'AI Act:
+le decisioni algoritmiche di Bürokratt operano su dati che non hanno mai lasciato
+il perimetro istituzionale \parencite{HohmannKollar2025}.
+
+Dal punto di vista delle \textit{Dynamic Capabilities}, l'Estonia ha trasformato
+il vincolo della limitatezza delle risorse in una capacità organizzativa di
+\textit{sensing} straordinariamente sviluppata: l'ecosistema di startups, enti
+pubblici e università che contribuiscono all'evoluzione di X-Road e Bürokratt
+costituisce un sistema di apprendimento istituzionale distribuito che aggiorna
+continuamente le capacità del paese in risposta ai cambiamenti tecnologici
+e normativi \parencite{Teece2007}.
+
+\subsection{Francia: sovranità algoritmica come politica di Stato}
+
+La Francia rappresenta il caso europeo in cui la sovranità digitale ha assunto
+il rango più esplicito di \textbf{politica di Stato}, con implicazioni dirette
+sulle scelte architetturali della PA. La \textit{Stratégie Nationale pour
+l'Intelligence Artificielle}, nella sua seconda edizione aggiornata al 2024,
+fissa esplicitamente l'obiettivo della ``\textit{souveraineté numérique}'' come
+condizione per la competitività europea e individua nell'infrastruttura di inferenza
+governativa un asset strategico non esternalizzabile a fornitori extraeuropei
+\parencite{EUParl_TechSovereignty2025}.
+
+La DINUM (\textit{Direction Interministérielle du Numérique}), struttura di governo
+responsabile della trasformazione digitale della PA francese, ha condotto una
+sperimentazione strutturata di LLM \textit{on-premise} nell'ambito del progetto
+Albert (\textit{Agent Language for Bureaucratic European Tasks \& Resources}),
+sviluppato in collaborazione con il Commissariat Général au Numérique dell'INRIA
+e con Etalab. Albert è un modello linguistico addestraoato su corpus di documenti
+istituzionali francesi (legislazione, circolari ministeriali, giurisprudenza
+amministrativa), ospitato su infrastruttura governativa francese e disponibile,
+attraverso un'interfaccia API sicura, a tutti gli enti della PA che ne facciano
+richiesta \parencite{OECDAIChapter2025}.
+
+L'analisi al livello \textbf{meso} del caso francese rivela un pattern di governance
+fortemente \textbf{centralizzata} al livello dello Stato, con redistribuzione
+federata verso le singole amministrazioni: Albert è sviluppato e mantenuto dalla
+DINUM come infrastruttura condivisa (\textit{gouvernement-as-a-platform}), ma
+ogni ministero o ente che lo utilizza ne gestisce autonomamente le configurazioni
+per i propri casi d'uso, senza cedere al centro i dati trattati. Questo modello
+--- intermedio tra l'\textit{on-premise} istituzionale (come nel caso estone) e
+il \textit{cloud} pubblico --- può essere descritto come \textbf{\textit{sovereign
+cloud} nazionale}: infrastruttura condivisa, ma sotto controllo pubblico diretto
+\parencite{Gartner_SovereignCloud2026}.
+
+Dal punto di vista del SAM aggiornato alla PA \parencite{CordeiroSAM2019},
+la Francia ha realizzato un allineamento tra strategia IT (infrastruttura
+\textit{on-premise} nazionale per LLM), infrastruttura organizzativa (DINUM come
+hub di competenze) e strategia istituzionale (sovranità digitale come priorità
+politica) coerente con quello che Henderson e Venkatraman chiamerebbero
+\textit{technology transformation}: la scelta tecnologica ha guidato il
+ridisegno organizzativo della PA digitale, non viceversa.
+
+Dal punto di vista dell'isomorfismo istituzionale \parencite{DiMaggioPow1983},
+il caso francese è un caso di pressione \textbf{normativa}: la comunità professionale
+dei responsabili della trasformazione digitale (i CIO ministeriali, la rete dei
+correspondants numériques) ha elaborato e diffuso, attraverso la DINUM,
+uno standard condiviso di gestione dei sistemi AI che orienta le scelte di tutti
+gli enti partecipanti verso il modello \textit{on-premise} centralizzato, producendo
+convergenza senza coercizione diretta.
+
+\subsection{Germania: il modello consortile come risposta federale}
+
+La Germania affronta la sfida dell'adozione dell'IA nella PA in un contesto
+istituzionale radicalmente diverso da quello francese: la struttura federale
+dello Stato tedesco produce una frammentazione delle autorità competenti
+(Bund, Länder, Kommunen) che rende impossibile un approccio centralizzato come
+quello della DINUM. La risposta tedesca è stata, coerentemente con la cultura
+organizzativa federale, la creazione di \textbf{infrastrutture consortili} che
+consentono la condivisione di risorse e competenze senza centralizzazione
+delle responsabilità.
+
+Il progetto \textbf{Gaia-X} \parencite{GaiaX2025} --- iniziativa franco-tedesca
+avviata nel 2020 e poi estesa a 22 paesi europei --- costituisce l'esempio più
+ambizioso di questo approccio: un'architettura di infrastruttura dati federata
+che consente alle organizzazioni europee (pubbliche e private) di condividere
+dati e servizi computazionali secondo regole di governance esplicite, verificabili
+e conformi al GDPR, senza dipendenza da \textit{hyperscaler} nordamericani.
+Per la PA tedesca, Gaia-X funge da \textit{marketplace} di servizi AI a sovranità
+garantita: le amministrazioni possono accedere a capacità computazionali certificate
+mantenendo il controllo sui propri dati.
+
+Il secondo pilastro del caso tedesco è il progetto \textbf{Open GPT-X},
+sviluppato nell'ambito del programma LEAM (\textit{Large-scale European AI Models})
+con il coordinamento del Jülich Supercomputing Centre (JSC) e la partecipazione
+di Fraunhofer, DFKI e diversi \textit{Länder}. Open GPT-X ha prodotto modelli
+linguistici multilingui (con copertura di tutte le lingue ufficiali UE) addestrati
+su corpus di documenti europei verificati, disponibili per le amministrazioni
+pubbliche con licenza che consente il \textit{deployment} \textit{on-premise} senza
+dipendenze da fornitori di servizi terzi \parencite{EUParl_TechSovereignty2025}.
+
+L'analisi TOE del caso tedesco evidenzia il ruolo primario del contesto
+\textbf{organizzativo}: la frammentazione istituzionale federale ha spinto verso
+soluzioni che massimizzano l'interoperabilità e minimizzano le dipendenze
+verticali. La stessa frammentazione che in altri contesti sarebbe un ostacolo
+all'adozione ha prodotto, nel caso tedesco, una pressione strutturale verso
+soluzioni \textit{open-source} e \textit{open-weight} che sono intrinsecamente
+più adatte al modello federale. \textcite{Selten2024} documentano questo pattern
+nell'analisi dell'organizzazione dell'adozione AI nel settore pubblico: le
+organizzazioni pubbliche pluraliste (con molti attori di pari rango) tendono
+verso soluzioni di tipo \textit{integration} (condivisione di piattaforme comuni)
+piuttosto che \textit{separation} (sviluppo indipendente), per ragioni strutturali
+di efficienza allocativa.
+
+\subsection{Paesi Bassi: la governance algoritmica come prerequisito dell'adozione}
+
+I Paesi Bassi rappresentano un caso anomalo nel panorama europeo, non tanto per la
+dimensione delle soluzioni IA adottate, quanto per la precocità e la sistematicità
+con cui hanno affrontato il tema della \textbf{governance algoritmica} come
+prerequisito all'adozione. A partire dal 2020, il governo olandese ha istituito
+un \textbf{Algoritmeregister} (registro degli algoritmi), reso obbligatorio per
+tutti gli enti della PA centrale dal 2023: ogni sistema algoritmico in produzione
+deve essere documentato, classificato per livello di rischio e reso pubblicamente
+consultabile \parencite{HaitsmaLucas2025}.
+
+La ricerca di \textcite{HaitsmaLucas2025} analizza specificamente i rischi
+di discriminazione nel profilazione algoritmica delle agenzie di sicurezza sociale
+olandesi (UWV, SVB), documentando come il requisito del registro algoritmi abbia
+prodotto un effetto di \textbf{isomorfismo coercitivo} sull'intera PA olandese:
+la necessità di documentare i sistemi algoritmici ha spinto le amministrazioni
+verso soluzioni \textit{on-premise} o a \textit{sovereign cloud} nazionale,
+perché solo su infrastruttura controllata è possibile produrre la documentazione
+tecnica richiesta dal registro con il grado di dettaglio necessario.
+
+\textcite{RohatgiPark2025} analizzano il caso olandese anche nella prospettiva della
+protezione dei dati personali, documentando come la tensione tra le esigenze di
+addestramento dei modelli AI (che richiedono grandi volumi di dati) e le prescrizioni
+del GDPR (che limitano il trattamento dei dati personali per finalità non
+dichiarate) abbia prodotto, nei Paesi Bassi come in altri paesi europei, una
+convergenza verso architetture \textit{on-premise} con pipeline di anonimizzazione
+certificate. Questa convergenza non è il risultato di una scelta strategica esplicita,
+ma l'esito di una negoziazione tra obblighi normativi e necessità operative che ha
+trovato nell'\textit{on-premise} la soluzione di minima resistenza.
+
+Dal punto di vista della security governance, \textcite{MagnussonIqbal2025}
+documentano, in un'analisi sistematica della letteratura sulla sicurezza
+informatica nel settore pubblico, che le amministrazioni olandesi si collocano
+tra le più mature d'Europa per la dimensione della \textit{information security
+governance}, con certificazioni ISO/IEC~27001 diffuse e pratiche di
+\textit{risk management} istituzionalizzate. Questa maturità di base ha ridotto
+significativamente i costi di transizione verso sistemi AI \textit{on-premise},
+poiché le infrastrutture di sicurezza necessarie erano già in gran parte disponibili.
+
+\subsection{Finlandia: l'IA proattiva come trasformazione del rapporto Stato-cittadino}
+
+La Finlandia rappresenta, insieme all'Estonia, il caso europeo in cui la trasformazione
+digitale della PA ha raggiunto la dimensione più profonda: non la semplice
+digitalizzazione dei servizi, ma la ridefinizione del rapporto tra Stato e cittadino
+attraverso servizi \textbf{proattivi}, ossia erogati prima che il cittadino ne faccia
+richiesta, sulla base dell'analisi dei suoi dati istituzionali.
+
+Il programma \textbf{AuroraAI} (\textit{Aurora Artificial Intelligence Network}),
+avviato nel 2020 come sperimentazione e consolidato nel Piano Nazionale per l'IA
+2021--2025 del Ministero delle Finanze finlandese, ha progettato un ecosistema di
+servizi pubblici proattivi basati sull'integrazione di dati di diverse amministrazioni
+(sanità, lavoro, istruzione, previdenza sociale) attraverso un'architettura federata
+che preserva la titolarità del dato in capo all'ente produttore. La filosofia
+di AuroraAI è quella dell'``\textit{AI-driven life-event approach}'': il sistema
+identifica i momenti della vita del cittadino (nascita di un figlio, perdita del lavoro,
+pensionamento) in cui si concentrano i bisogni di servizi pubblici, e
+proattivamente offre o pre-compila le richieste pertinenti, con il consenso esplicito
+del cittadino e nel rispetto del GDPR \parencite{OECDGoverningAI2025}.
+
+L'aspetto più rilevante per la presente analisi è la scelta architettuale di AuroraAI:
+l'infrastruttura di integrazione è pubblica e gestita da un consorzio di enti
+governativi finlandesi (\textit{Valtori}, l'agenzia governativa per i servizi
+digitali, insieme a Kela per la previdenza e ai ministeri coinvolti), mentre
+i modelli AI che operano sul layer di integrazione sono sviluppati internamente
+o acquisiti da fornitori con clausole contrattuali che ne garantiscono la portabilità
+e la documentabilità per le finalità del registro algoritmi finlandese.
+Questa scelta --- motivata esplicitamente dalla necessità di garantire l'esercizio
+dei diritti degli interessati previsti dal GDPR e, in prospettiva, dall'AI Act ---
+è funzionalmente equivalente a una scelta \textit{on-premise} distribuita
+\parencite{EnqvistLena2024}.
+
+L'analisi al livello \textbf{micro} del caso finlandese è particolarmente
+istruttiva per la dimensione dell'accettazione. \textcite{Ahn2022} documentano,
+in un'analisi comparativa che include il contesto finlandese, come la propensione
+dei dipendenti pubblici ad adottare sistemi AI sia positivamente correlata alla
+percezione di utilità e negativamente correlata alla preoccupazione per la
+perdita di autonomia decisionale. Il paradigma \textit{man-in-the-loop} di AuroraAI
+--- in cui ogni proposta di servizio proattivo è sempre subordinata al consenso
+e alla decisione del cittadino, e ogni decisione amministrativa è sempre revisionabile
+da un operatore umano --- ha contribuito significativamente all'accettazione del
+sistema da parte sia dei dipendenti pubblici sia dei cittadini.
 
 % ============================================================
-\section{Modello di governance e ruoli}
-\label{sec:governance-janus-op}
+\section{Casi istituzionali: università ed enti di ricerca europei}
+\label{sec:casi-istituzionali}
 
-% --- Da completare ---
+\subsection{Il consorzio Aristote: la risposta universitaria francese alla sfida della
+sovranità algoritmica}
 
+In Francia, la risposta delle istituzioni universitarie alle pressioni normative
+dell'AI Act e del GDPR ha assunto la forma di un \textbf{consorzio} tra grandi
+scuole e università pubbliche --- il Consorzio Aristote (Amicale de Ressources
+Informatiques en Sciences et Technologies pour l'Opérationnel et la Technologie
+dans l'Enseignement) --- che ha prodotto una piattaforma di \textit{AI-as-a-service}
+\textit{on-premise} condivisa tra gli atenei aderenti \parencite{EUParl_TechSovereignty2025}.
+Il consorzio aggrega la domanda di capacità computazionale e di manutenzione dei
+modelli, riducendo il TCO pro-capite con una logica analoga a quella consortile
+di CINECA nel contesto italiano, ma con un focus specifico sull'inferenza LLM
+per applicazioni universitarie.
+
+La filosofia architettuale di Aristote è quella della \textbf{federazione
+asimmetrica}: gli atenei più grandi contribuiscono capacità computazionale
+(\textit{provider}), quelli più piccoli consumano servizi (\textit{consumer}),
+e tutti condividono la governance del sistema attraverso un CdA paritetico.
+I dati degli studenti e del personale di ciascun ateneo non lasciano mai il
+perimetro istituzionale: solo le richieste di inferenza (già elaborate nel
+segmento sicuro dell'ateneo, con dati anonimizzati) transitano verso il
+\textit{cluster} di calcolo condiviso.
+
+Il caso Aristote illustra, al livello \textbf{meso}, un pattern di \textit{seizing}
+delle \textit{Dynamic Capabilities} \parencite{Teece2007}: gli atenei francesi
+hanno trasformato il vincolo normativo del GDPR --- che impedisce di esternalizzare
+dati personali degli studenti a fornitori cloud non adeguati --- in un'opportunità
+di costruzione di infrastruttura condivisa che aumenta la capacità collettiva
+di tutto il sistema universitario francese.
+
+\subsection{La rete Helmholtz: IA \textit{on-premise} per la ricerca pubblica tedesca}
+
+La \textbf{Helmholtz-Gemeinschaft}, l'associazione tedesca dei centri di ricerca
+pubblici di grande rilevanza scientifica (che comprende enti come il DKFZ,
+il Forschungszentrum Jülich e il DESY), ha sviluppato un'infrastruttura AI
+\textit{on-premise} distribuita tra i suoi 19 centri, connessa attraverso
+il backbone della rete GÉANT (la rete europea per la ricerca e l'educazione)
+e integrata con le risorse HPC del programma EuroHPC
+\parencite{EuroHPC_Leonardo,EUParl_TechSovereignty2025}.
+
+Il modello di governance adottato da Helmholtz è quello del
+\textbf{\textit{federated learning} a due livelli}: al primo livello, i dati
+di ricerca di ciascun centro non escono mai dal perimetro del centro;
+al secondo livello, i modelli addestrati localmente contribuiscono, attraverso
+la condivisione degli aggiornamenti ai parametri, a un modello federato globale
+di qualità superiore. \textcite{GadekalluFL2026} identificano questo schema ---
+denominato \textit{horizontal federated learning} nella loro tassonomia ---
+come il più adatto ai contesti in cui le organizzazioni partecipanti hanno
+distribuzioni di dati omogenee (stessa tipologia, formato simile) ma non
+possono condividerle per ragioni di riservatezza o di vantaggio competitivo
+\parencite{Banabilah2022FLReview}.
+
+La rilevanza del caso Helmholtz per la presente analisi è duplice. Sul piano
+tecnico, dimostra la fattibilità del \textit{federated learning} a scala
+inter-istituzionale per la ricerca pubblica europea. Sul piano manageriale,
+illustra come la necessità di gestire dati di ricerca ad alto valore strategico
+--- brevetti in iter di registrazione, risultati preliminari di trial clinici,
+dataset proprietari di simulazioni fisiche --- in modalità conforme al GDPR e
+ai principi di sicurezza della ricerca dell'Horizon Europe abbia prodotto,
+per pressione contestuale, un'architettura \textit{on-premise} federata
+che soddisfa contestualmente tre vincoli: sovranità del dato, efficienza
+computazionale e conformità normativa \parencite{LiLaiWang2023}.
+
+\subsection{I paesi nordici: governance algoritmica e apertura come fondamento
+istituzionale}
+
+I paesi nordici --- Svezia, Norvegia, Danimarca, Finlandia --- presentano un
+pattern comune di adozione dell'IA nella PA che la letteratura di
+\textit{e-Government} ha denominato ``\textit{trustworthy AI by design}''
+\parencite{OECDGoverningAI2025}: prima di avviare qualsiasi sperimentazione
+di sistemi AI in produzione, gli enti pubblici nordici adottano un
+\textit{framework} di governance algoritmica che definisce ex-ante i criteri
+di trasparenza, equità, accountability e sicurezza del sistema.
+
+In \textbf{Svezia}, l'Autorità per la Digitalizzazione (\textit{Myndigheten
+för digital förvaltning}, DIGG) ha pubblicato nel 2023 un \textit{framework}
+nazionale per l'uso dell'IA nella PA che richiede esplicitamente la
+documentazione del ``\textit{data lineage}'' --- la tracciabilità completa
+della provenienza e delle trasformazioni dei dati utilizzati nel ciclo di vita
+del sistema AI --- come condizione per l'adozione in produzione. Questo requisito,
+come già discusso per il caso olandese, orienta strutturalmente verso architetture
+\textit{on-premise} o \textit{sovereign cloud} in cui il controllo sui metadati
+e sui \textit{log} è esercitabile direttamente dall'ente \parencite{SvardGuerrero2024}.
+
+In \textbf{Scozia} --- caso non appartenente all'UE ma allo Spazio Economico Europeo
+e comunque soggetto ai princìpi del GDPR post-Brexit attraverso l'UK GDPR ---
+\textcite{Pautz2023} documenta come il processo di \textit{policy-making} per
+l'adozione dell'AI nella PA scozzese abbia prodotto, attraverso consultazioni
+con cittadini e stakeholder, un orientamento esplicito verso soluzioni che
+``\textit{keep data in Scottish public hands}'': una formulazione che traduce in
+termini politici il principio tecnico della sovranità del dato. La ricerca di
+Pautz illustra il meccanismo di isomorfismo normativo al livello micro: i
+funzionari pubblici che partecipano alle consultazioni sono già orientati, per
+formazione professionale e cultura istituzionale, verso soluzioni che garantiscono
+la trasparenza e il controllo pubblico, e questa orientazione si traduce in
+pressione strutturale verso l'\textit{on-premise}.
+
+\subsection{Il caso italiano avanzato: CINECA e l'ecosistema EuroHPC}
+
+Il caso italiano più avanzato di adozione di IA \textit{on-premise} per la PA
+e per il sistema universitario è rappresentato dall'evoluzione del consorzio
+\textbf{CINECA}, già analizzato nel Capitolo~3 come \textit{benchmark} per la
+governance dell'infrastruttura HPC. Nell'ambito del programma EuroHPC JU
+(\textit{Joint Undertaking}), CINECA ha contribuito all'installazione del
+supercomputer \textbf{Leonardo} \parencite{EuroHPC_Leonardo} --- classificato tra
+i cinque sistemi HPC più potenti al mondo al momento dell'entrata in esercizio
+(novembre 2022) --- che costituisce la spina dorsale dell'infrastruttura di
+addestramento di modelli AI a scala per le istituzioni accademiche e di ricerca
+italiane.
+
+Il modello di utilizzo di Leonardo da parte degli atenei italiani è un esempio
+di \textbf{architettura ibrida \textit{train at scale, infer locally}}: gli atenei
+utilizzano la capacità computazionale di Leonardo per le fasi di
+\textit{pre-training} e \textit{full fine-tuning} dei modelli (che richiedono
+capacità inaccessibili individualmente), mentre le fasi di inferenza in produzione
+--- che richiedono bassa latenza, pieno controllo sui dati e conformità GDPR ---
+vengono eseguite sull'infrastruttura interna degli atenei. In questo modo, l'ateneo
+beneficia della potenza computazionale del sistema consortile senza cedere il
+controllo sui dati nella fase operativa.
+
+\textcite{LoreBasile2023} documentano, nell'ambito del progetto INTREPID
+(con il coinvolgimento di ricercatori italiani di università del Sud), un framework
+AI \textit{on-premise} per il supporto alle decisioni in materia di conformità GDPR
+che ha adottato esattamente questo modello: sviluppo e addestramento del modello su
+infrastruttura HPC consortile, inferenza in produzione su server interni
+dell'università, con un'architettura di separazione tra il piano di elaborazione
+dati personali (sempre \textit{on-premise}) e il piano di aggiornamento del modello
+(consortile, con garanzie di \textit{differential privacy}).
 
 % ============================================================
-\section{Analisi economico-finanziaria}
-\label{sec:analisi-economica-janus-op}
+\section{Analisi comparativa trasversale: \textit{pattern}, \textit{driver} e barriere}
+\label{sec:analisi-comparativa}
 
-% --- Da completare ---
+\subsection{Pattern ricorrenti nell'adozione di IA \textit{on-premise} nella PA europea}
 
+L'analisi comparativa dei sette casi presentati --- Estonia, Francia, Germania, Paesi
+Bassi, Finlandia, Aristote/Francia universitaria, Helmholtz, CINECA/Italia ---
+consente di identificare quattro pattern ricorrenti che attraversano contesti
+istituzionali, culturali e dimensionali molto diversi.
+
+Il \textbf{primo pattern} è la \textbf{normativa come driver architetturale primario}.
+In tutti i casi analizzati, la scelta \textit{on-premise} non nasce da una preferenza
+tecnologica del management, ma dalla valutazione che i vincoli normativi applicabili
+--- GDPR per il trattamento dei dati personali, AI Act per i sistemi \textit{high-risk},
+NIS~2 per la sicurezza delle infrastrutture, e i regolamenti nazionali derivati (registro
+algoritmi olandese, LEAM tedesco, DIGG svedese) --- producono costi di compliance
+significativamente inferiori in un'architettura che mantiene il controllo sul dato
+rispetto a una che lo esternalizza \parencite{Haynes2026}. Questo pattern è coerente
+con la previsione della \textit{Institutional Theory} sull'isomorfismo
+\textbf{coercitivo} \parencite{DiMaggioPow1983}: le organizzazioni convergono
+verso soluzioni architetturali simili non per imitazione volontaria, ma per risposta
+a pressioni regolatorie condivise. \textcite{KlaricBoban2025AIPAmod} confermano
+questo meccanismo nell'analisi delle PA dell'area adriatica, dove l'AI Act ---
+e in particolare la gradazione del rischio (dal rischio inaccettabile al rischio
+minimo) che esso introduce --- è percepito come il principale \textit{driver}
+esterno di modernizzazione amministrativa, orientando le scelte di
+\textit{deployment} verso soluzioni che minimizzano il profilo di rischio
+normativo degli enti.
+
+Il \textbf{secondo pattern} è la \textbf{consorzialità come soluzione al problema
+del TCO}. Nessuno dei casi analizzati --- con la parziale eccezione dell'Estonia,
+che ha costruito su un'infrastruttura sviluppata nel corso di vent'anni ---
+ha adottato l'\textit{on-premise} istituzionale puro come modello sostenibile
+per enti di dimensioni medie. In tutti i casi, la sostenibilità economica
+dell'architettura \textit{on-premise} è garantita attraverso una forma di
+condivisione consortile: Gaia-X (Germania), Aristote (Francia), EuroHPC/CINECA
+(Italia), Helmholtz (Germania). Questo pattern conferma la previsione teorica
+della \textit{Transaction Cost Economics} \parencite{Williamson1985} applicata
+all'IT pubblico \parencite{Aubert2004}: i costi fissi dell'infrastruttura
+\textit{on-premise} sono insostenibili per i singoli enti di media dimensione,
+ma diventano efficienti quando distribuiti su un numero sufficiente di partecipanti.
+
+Il \textbf{terzo pattern} è la \textbf{separazione strutturale tra dato grezzo e
+output del modello}. In tutti i casi analizzati, l'architettura separa fisicamente
+(e non solo contrattualmente) il piano del dato personale grezzo --- che non
+abbandona mai il perimetro dell'ente --- dal piano dei parametri del modello o
+degli output aggregati, che possono circolare attraverso protocolli sicuri.
+Questa separazione è la soluzione pratica al paradosso fondamentale del
+\textit{federated learning}: migliorare la qualità del modello attraverso
+l'apprendimento su dati distribuiti senza centralizzare i dati stessi
+\parencite{LiLaiWang2023,GadekalluFL2026}.
+
+Il \textbf{quarto pattern} è la \textbf{gradualità dell'adozione come strategia
+di gestione del rischio organizzativo}. Nessun caso analizzato ha adottato
+simultaneamente tutte le funzionalità del sistema AI. In tutti i casi osservati
+esiste una sequenza deliberata: prima le funzioni a basso rischio normativo
+e a alta visibilità degli impatti positivi (automazione documentale, assistenti
+virtuali per richieste standard), poi, una volta costruita la fiducia istituzionale
+nel sistema, le funzioni ad alto impatto decisionale. \textcite{Selten2024}
+identificano questo pattern nell'analisi dell'adozione AI nel settore pubblico
+olandese e lo interpretano come una forma di \textbf{\textit{ambidexterity}}
+\parencite{OReillyTushman2013}: le organizzazioni pubbliche bilanciano lo
+\textit{exploitation} delle capacità esistenti (continuità operativa) con
+l'\textit{exploration} delle nuove capacità AI, adottando la gradualità come
+meccanismo di gestione della tensione tra le due esigenze.
+
+\subsection{I \textit{driver} dell'adozione: una lettura attraverso il TOE framework}
+
+L'applicazione sistematica del TOE framework \parencite{TornatzkyFleischer1990}
+ai casi europei analizzati consente di identificare i fattori contestuali che più
+frequentemente emergono come determinanti della scelta \textit{on-premise}.
+
+Nel contesto \textbf{tecnologico}, il fattore più frequentemente citato è la
+\textbf{maturità dei modelli \textit{open-source} e \textit{open-weight}}:
+la disponibilità di modelli linguistici di qualità commercialmente competitiva
+con licenze che consentono il \textit{deployment} \textit{on-premise} senza royalty
+(Mistral, LLaMA, Falcon, OpenAssistant, GPT-NeoX) ha ridotto drasticamente
+la barriera tecnologica all'adozione autonoma, che nel periodo 2020--2022 era
+ancora prevalentemente riservata alle organizzazioni con risorse di ricerca
+interne significative. \textcite{ShresthaAISDM2024} documentano come questa
+riduzione della barriera tecnologica stia ridefinendo il panorama delle scelte
+strategiche nel management dei sistemi AI: la decisione rilevante non è più
+``sviluppare o comprare il modello'', ma ``gestire internamente o esternalizzare
+l'infrastruttura di inferenza''.
+
+Nel contesto \textbf{organizzativo}, i fattori discriminanti tra casi di
+adozione riuscita e casi di difficoltà sono: la presenza di un \textbf{mandato
+esplicito di vertice} (CdA, Consiglio di governo, equivalente pubblico di una
+delibera del \textit{board}); la disponibilità di \textbf{competenze interne
+di \textit{data engineering}}, anche se limitate; e la \textbf{cultura
+organizzativa della privacy} preesistente, che determina la disponibilità del
+personale ad adottare procedure di anonimizzazione e controllo senza resistenza.
+In assenza di questi fattori organizzativi, anche il più favorevole contesto
+tecnologico e normativo non è sufficiente a produrre un'adozione efficace
+\parencite{PatalonIsomorphism2024}.
+
+Nel contesto \textbf{ambientale}, il fattore più impattante è la
+\textbf{pressione regolatoria}: come già discusso, l'AI Act e il GDPR producono
+isomorfismo coercitivo verso l'\textit{on-premise} in tutti i paesi UE. Ma la
+pressione ambientale include anche la disponibilità di \textbf{infrastrutture
+consortili nazionali} (come Gaia-X per la Germania, GÉANT per la ricerca europea,
+CINECA per l'Italia), che abbassa il costo marginale della scelta
+\textit{on-premise} rendendo disponibili le risorse computazionali necessarie
+senza richiedere investimenti infrastrutturali proporzionali.
+
+\subsection{Le barriere strutturali all'adozione}
+
+Accanto ai \textit{driver}, l'analisi comparativa identifica quattro
+\textbf{barriere strutturali} che ricorrono in tutti i contesti europei
+analizzati, indipendentemente dalla specifica configurazione istituzionale.
+
+La \textbf{prima barriera} è la \textbf{scarsità di competenze interne di MLOps}:
+tutti i casi analizzati documentano difficoltà nel reclutamento e nella
+ritenzione di figure professionali capaci di gestire il ciclo di vita completo
+di un sistema AI (\textit{training}, \textit{deployment}, monitoraggio,
+\textit{retraining}, ritiro). Questa scarsità è strutturale nel settore pubblico
+europeo, dove le retribuzioni non sono competitive con il settore privato
+per questi profili. La risposta più efficace, documentata nei casi nordici
+e nel consorzio Helmholtz, è la \textbf{collaborazione università-PA}:
+i professionisti in formazione nelle università contribuiscono con il loro
+lavoro al sistema AI dell'ateneo o dell'ente pubblico partner, ricevendo
+in cambio formazione avanzata e accesso a dati reali di ricerca
+\parencite{Specht2023DataLearning}. L'analisi dei programmi svedesi di
+\textit{master} in cybersecurity condotta da \textcite{BehzadiHabibipour2026Cyber}
+mostra come l'allineamento esplicito dei curricula universitari ai framework
+europei delle competenze (ENISA, European Cybersecurity Skills Framework) stia
+producendo, nei paesi nordici, una generazione di professionisti
+direttamente impiegabili nelle infrastrutture AI \textit{on-premise} delle PA,
+riducendo strutturalmente il gap di competenze MLOps che questa barriera descrive.
+
+La \textbf{seconda barriera} è il \textbf{costo iniziale dell'infrastruttura}:
+il CAPEX di un cluster GPU \textit{on-premise} di qualità sufficiente per
+l'inferenza LLM è ancora significativo per gli enti di media dimensione,
+anche con la riduzione dei prezzi dell'hardware degli ultimi due anni.
+La soluzione consortile è la risposta più efficace, ma richiede una
+coordinazione inter-istituzionale che non sempre è possibile in tempi rapidi.
+
+La \textbf{terza barriera} è la \textbf{resistenza interna al cambiamento},
+che si manifesta sia tra il personale tecnico (preoccupato per la complessità
+operativa di gestire un sistema AI \textit{on-premise} rispetto all'acquisto di
+un servizio SaaS) sia tra il management intermedio (preoccupato per la
+responsabilità aggiuntiva che il ruolo di \textit{deployer} ai sensi dell'AI Act
+comporta). \textcite{FernandezRainey2006} identificano questa resistenza come
+uno dei fattori più critici nel \textit{change management} nelle PA, e i casi
+europei analizzati confermano che le strategie più efficaci sono quelle che
+coinvolgono il personale fin dalla fase di progettazione e producono evidenze
+rapide di utilità concreta.
+
+La \textbf{quarta barriera} è la \textbf{frammentazione normativa residua}
+tra paesi UE. Nonostante l'armonizzazione prodotta dall'AI Act e dal GDPR,
+permangono differenze nazionali nelle norme di settore (regolamenti sulla
+trasparenza algoritmica, requisiti di registrazione, obblighi di \textit{audit})
+che complicano la costruzione di infrastrutture consortili trans-nazionali
+e producono un aumento dei costi di compliance per gli enti che partecipano a
+reti di \textit{federated learning} che attraversano i confini nazionali
+\parencite{NaiSulis2025}. \textcite{Kovacs2026AIActCoE} identificano in questa
+coesistenza tra AI Act (approccio \textit{risk-based}, enforcement amministrativo)
+e Convenzione del Consiglio d'Europa sull'IA (approccio \textit{principle-based},
+responsabilità statale) la cifra di una ``architettura europea pluralistica'' che
+opera su livelli paralleli: la standardizzazione regolatoria e la sorveglianza
+fondata sui diritti umani convivono senza una gerarchia formalmente definita,
+producendo incertezza interpretativa per gli enti che operano in ambito
+internazionale.
+
+\subsection{Verso una tassonomia manageriale dei modelli di adozione}
+
+Sintetizzando i pattern e le barriere identificati, è possibile proporre una
+\textbf{tassonomia manageriale} dei modelli di adozione di IA \textit{on-premise}
+nella PA europea, articolata su due dimensioni: il grado di
+\textit{centralizzazione della governance} (da federata a centralizzata) e
+il modello di \textbf{condivisione dell'infrastruttura} (individuale, consortile
+nazionale, consortile europeo).
+
+\begin{table}[H]
+\centering
+\caption{Tassonomia manageriale dei modelli di adozione di IA \textit{on-premise}
+nella PA europea.}
+\label{tab:tassonomia-modelli}
+\begin{tabularx}{\textwidth}{l l X l}
+\toprule
+\textbf{Modello} & \textbf{Governance} & \textbf{Infrastruttura} & \textbf{Caso} \\
+\midrule
+\textit{Federated sovereign} & Federata & Individuale per ente & Estonia (X-Road) \\
+\textit{Centralized sovereign} & Centralizzata & Governativa nazionale & Francia (Albert/DINUM) \\
+\textit{Consortium-led} & Condivisa & Consortile nazionale & Germania (Gaia-X/OpenGPT-X) \\
+\textit{Governance-first} & Distribuita & Ibrida (regolata) & Paesi Bassi (registro algoritmi) \\
+\textit{Proactive-service} & Federata leggera & Consortile inter-agenzia & Finlandia (AuroraAI) \\
+\textit{Academic consortium} & Paritetica & Consortile accademico & Francia (Aristote) \\
+\textit{Research HPC} & Federata ibrida & EuroHPC + locale & Germania (Helmholtz) / Italia (CINECA) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Questa tassonomia non è esaustiva, ma ha un valore manageriale: offre ai responsabili
+della trasformazione digitale nelle PA europee uno strumento di orientamento per
+la scelta del modello più adeguato al proprio contesto istituzionale. Come illustra
+\textcite{ValleCruzMacroMesoMicro2024}, la scelta del modello non è determinata
+soltanto dalle risorse disponibili, ma dalla combinazione di fattori macro
+(contesto normativo e strategico), meso (struttura di governance dell'ente) e
+micro (competenze e cultura del personale): la stessa soluzione tecnica produce
+esiti radicalmente diversi in contesti istituzionali differenti.
 
 % ============================================================
-\section{Analisi dei rischi}
-\label{sec:rischi-janus-op}
+\section{Implicazioni per la PA italiana e per gli atenei}
+\label{sec:implicazioni-italiane}
 
-% --- Da completare ---
+\subsection{Il posizionamento italiano nel panorama europeo}
 
+Il confronto tra il panorama europeo documentato nei paragrafi precedenti e la
+condizione della PA italiana --- ricostruita attraverso il Piano Triennale ICT
+\parencite{AgIDPianoTriennale2024}, la Strategia IA 2024--2026
+\parencite{StrategiaIA2024} e i dati DESI 2024 \parencite{DESI2024} --- rivela un
+posizionamento intermedio: l'Italia dispone di elementi di infrastruttura avanzati
+(CINECA/EuroHPC, PSN, piattaforme nazionali abilitanti) che la collocano al di
+sopra della media europea per le dimensioni tecnologiche, ma sconta ritardi
+significativi nelle dimensioni della governance algoritmica e delle competenze
+digitali avanzate che la tengono distante dai paesi nordici e dai Paesi Bassi.
 
-% ============================================================
-\section{Valutazione comparativa on-premise vs cloud}
-\label{sec:comparativa-janus-op}
+Questo posizionamento non è immutabile. Come documentano i casi europei analizzati,
+le traiettorie di sviluppo più rapide sono quelle che hanno saputo mobilitare
+un \textit{trigger} esterno (normativo, come il GDPR nei Paesi Bassi, o strategico,
+come la strategia di sovranità digitale in Francia) come leva per la costruzione
+di capacità interne. Per l'Italia, l'\textbf{AI Act} --- che entrerà in piena
+applicazione a partire dal 2 agosto 2026 --- costituisce esattamente questo
+\textit{trigger}: un vincolo normativo che, se adeguatamente interpretato in
+chiave strategica anziché come mero obbligo di compliance, può diventare il
+catalizzatore di una trasformazione organizzativa profonda
+\parencite{Pavlidis2025EUAIAgency}. L'istituzione dell'AI Office europeo ---
+e la prospettiva di un'eventuale agenzia europea dedicata discussa da
+\textcite{Pavlidis2025EUAIAgency} --- rafforza l'urgenza di costruire
+capacità di governance algoritmica a livello nazionale prima che le pressioni
+regolatorie europee si intensifichino ulteriormente.
 
-% --- Da completare ---
+\subsection{Il modello consortile come strategia prioritaria per gli atenei italiani}
+
+La lezione più diretta che i casi europei offrono al sistema universitario italiano
+è quella della \textbf{consorzialità}: nessun ateneo italiano medio --- con
+bilanci annui nell'ordine dei 100--200 milioni di euro e strutture di personale
+IT storicamente sottodimensionate --- può permettersi, isolatamente, di costruire
+e mantenere un'infrastruttura AI \textit{on-premise} di qualità. Ma l'Italia
+dispone già di un consorzio universitario di rilevanza europea --- CINECA ---
+che ha dimostrato, nell'arco di mezzo secolo, la fattibilità e la sostenibilità
+del modello consortile per l'infrastruttura HPC.
+
+L'estensione del modello CINECA al dominio dell'IA applicata ai processi
+amministrativi degli atenei --- seguendo il modello del consorzio Aristote in
+Francia --- è la strategia più coerente con le capacità e la cultura istituzionale
+del sistema universitario italiano \parencite{EuroHPC_Leonardo}. L'analisi
+comparativa di \textcite{Stracke2025AIpoliciesHE} su 15 policy AI per
+l'istruzione superiore da 8 paesi europei evidenzia che il gruppo più
+sistematicamente trascurato dalle policy esistenti è quello degli
+\textit{education managers}: i responsabili dei processi amministrativi e
+decisionali degli atenei sono i meno coperti dalle iniziative di formazione
+e governance AI, nonostante siano i soggetti che più direttamente
+sovrintendono all'adozione di sistemi AI ad alto rischio in senso
+AI Act --- dalla selezione degli studenti al supporto alle carriere.
+Questo gap conferma l'urgenza di costruire governance AI specifica per il
+management universitario, priorità che il modello CINECA-consortile potrebbe
+strutturalmente affrontare. Tale estensione
+richiederebbe: un accordo quadro tra CINECA e i Rettori degli atenei aderenti
+per la definizione dei casi d'uso ammissibili; lo sviluppo di un layer di
+governance condivisa che rispetti l'autonomia di ciascun ateneo nella gestione
+dei propri dati istituzionali; e la costruzione progressiva di competenze
+interne agli atenei per la gestione dei servizi di inferenza locale, attraverso
+programmi di formazione che CINECA stesso potrebbe coordinare.
+
+\textcite{CohenLevinthal1990} dimostrano che la capacità di assorbire e valorizzare
+conoscenza esterna (\textit{absorptive capacity}) è funzione sia della conoscenza
+preesistente nell'organizzazione sia della distanza cognitiva tra la nuova
+conoscenza e quella interna. Il sistema universitario italiano ha una base di
+conoscenza scientifica in \textit{machine learning} e \textit{data science}
+significativa (concentrata nei dipartimenti di informatica, ingegneria e
+matematica delle università del centro-nord, ma presente anche in molti atenei
+del Sud); il gap da colmare non è di conoscenza scientifica, ma di capacità
+organizzativa di trasformare quella conoscenza in servizi istituzionali continuativi.
+
+\subsection{Quattro raccomandazioni manageriali per la PA italiana}
+
+Dall'analisi comparativa dei casi europei, emergono quattro raccomandazioni
+manageriali che l'esperienza dei paesi più avanzati indica come condizioni
+necessarie --- non sufficienti, ma necessarie --- per un'adozione efficace di
+IA \textit{on-premise} nella PA italiana.
+
+La \textbf{prima raccomandazione} è la \textbf{priorità della governance
+algoritmica rispetto al \textit{deployment} tecnologico}. Il caso olandese
+dimostra che l'istituzione di un registro degli algoritmi --- con la conseguente
+pressione verso la documentabilità dei sistemi AI --- ha prodotto, come effetto
+collaterale, un miglioramento della qualità dell'intera infrastruttura IT delle
+PA olandesi. Per gli atenei italiani, questo significa che la creazione di un
+inventario dei sistemi AI in uso (partendo dalle applicazioni ESSE3 con componenti
+algoritmiche, dai sistemi antiplagio, dagli strumenti di analisi bibliometrica)
+dovrebbe precedere qualsiasi decisione di \textit{deployment} di nuovi sistemi
+\parencite{SvardGuerrero2024}.
+
+La \textbf{seconda raccomandazione} è la \textbf{costruzione di mandato di
+vertice prima di qualunque iniziativa tecnica}. In tutti i casi europei di
+adozione riuscita, la governance algoritmica è stata deliberata dal vertice
+istituzionale (governo nazionale in Estonia, DINUM in Francia, CdA degli
+atenei nei casi universitari), non sviluppata autonomamente dai team IT.
+L'assenza di mandato di vertice è il fattore che più frequentemente spiega,
+nei casi di adozione fallita, la difficoltà a superare la resistenza
+organizzativa e a garantire la sostenibilità nel tempo
+\parencite{WeillRoss2004,LucianoWiedenhoft2020SAM}.
+
+La \textbf{terza raccomandazione} è la \textbf{partecipazione attiva
+all'ecosistema EuroHPC/Gaia-X come leva per la riduzione del TCO}. I casi
+tedeschi e italiani mostrano che gli enti che hanno investito nella partecipazione
+ai programmi europei di infrastruttura condivisa hanno accesso, a costi
+significativamente ridotti, a capacità computazionali che consentono lo sviluppo
+e il \textit{fine-tuning} di modelli AI di qualità. Per gli atenei italiani,
+questo significa sfruttare attivamente l'accesso a Leonardo/CINECA per le fasi
+computazi
