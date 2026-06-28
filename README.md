@@ -52,8 +52,6 @@ JANUS-OP/
 ├── images/
 │   ├── pegaso-logo.svg           # Logo ufficiale Pegaso (SVG originale)
 │   └── pegaso-logo.png           # Logo Pegaso 300dpi (generato da SVG)
-├── docs/
-│   └── prompt_capitolo4.md       # Prompt operativo per la stesura del Cap. 4
 ├── .gitignore
 └── README.md
 ```
@@ -102,13 +100,13 @@ Frontespizio → Ringraziamenti → Indice → Introduzione
 </details>
 
 <details>
-<summary><strong>Capitolo 4</strong> — Analisi comparativa dei modelli europei di adozione IA on-premise nella PA ✅</summary>
+<summary><strong>Capitolo 4</strong> — Casi europei e istituzionali di adozione di IA on-premise nella PA ✅</summary>
 
 - §4.1 Framework metodologico (comparative case study, macro-meso-micro, TOE, SAM, UTAUT, DeLone & McLean)
 - §4.2 Casi nazionali europei (Estonia, Francia, Germania, Paesi Bassi, Finlandia)
-- §4.3 Casi istituzionali (Aristote/Francia universitaria, Helmholtz/Germania, DIGG Svezia + Scozia, CINECA/EuroHPC)
-- §4.4 Analisi comparativa trasversale (4 pattern, driver TOE, barriere strutturali, tassonomia 7 modelli)
-- §4.5 Implicazioni per la PA italiana e per gli atenei (modello consortile, 4 raccomandazioni manageriali, contributo al paradigma JANUS-OP)
+- §4.3 Casi istituzionali (consorzio Aristote, rete Helmholtz, paesi nordici/DIGG, CINECA/EuroHPC)
+- §4.4 Analisi comparativa trasversale (4 pattern ricorrenti, driver TOE, barriere strutturali, tassonomia 7 modelli di adozione)
+- §4.5 Implicazioni per la PA italiana e per gli atenei (modello consortile, 4 raccomandazioni manageriali, paradigma JANUS-OP)
 
 </details>
 
