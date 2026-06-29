@@ -5,25 +5,162 @@
 \addcontentsline{toc}{chapter}{Conclusioni}
 \markboth{Conclusioni}{}
 
-% --- Sintesi dei risultati ---
-% [Da completare dopo la stesura dei capitoli]
-% Suggerimento di struttura:
+Il punto di partenza di questo lavoro era una domanda che la letteratura di
+\textit{management} e di \textit{information systems} aveva formulato senza risolverla
+compiutamente: in quali condizioni organizzative, tecnologiche e istituzionali le
+pubbliche amministrazioni europee hanno adottato sistemi di intelligenza artificiale
+in modalità \textit{on-premise}, e quali lezioni manageriali generalizzabili emergono
+da queste esperienze? L'analisi condotta nei quattro capitoli consente di offrire una
+risposta articolata, fondata sull'integrazione di \textit{framework} teorici consolidati,
+di evidenze empiriche europee e di un'analisi sistematica del contesto italiano.
 
-% 1. Riepilogo delle principali evidenze emerse da ciascun capitolo
-% Il presente lavoro ha analizzato l'utilizzo di sistemi di IA on-premise
-% nella PA, mettendo in luce come ...
+\medskip
 
-% 2. Risposta alla domanda di ricerca
-% L'analisi condotta consente di affermare che ...
+\textbf{Sintesi del percorso argomentativo.}
+Il Capitolo~1 ha mostrato che la tensione strutturale tra il principio \textit{cloud
+first} e i vincoli di sovranità digitale non è risolvibile per via regolatoria: il
+quadro normativo europeo --- dall'AI Act al GDPR, dalla Direttiva NIS~2 al CLOUD Act
+--- definisce i perimetri entro cui le amministrazioni devono operare, ma non
+determina le scelte architetturali. Queste rimangono una responsabilità strategica del
+management pubblico. Il Piano Triennale ICT, la classificazione tripartita dei dati e
+il Polo Strategico Nazionale configurano un ecosistema in cui l'\textit{on-premise}
+non è più una scelta residuale ma una risposta strutturalmente adeguata per le
+categorie di dati strategici e per i sistemi classificati ad alto rischio ai sensi
+dell'AI Act.
 
-% 3. Implicazioni per la PA
-% I risultati suggeriscono che le amministrazioni pubbliche ...
+Il Capitolo~2 ha dimostrato, attraverso il TOE \parencite{TornatzkyFleischer1990},
+la \textit{Transaction Cost Economics} \parencite{Williamson1985} e il modello delle
+\textit{Dynamic Capabilities} \parencite{Teece2007}, che la scelta
+\textit{on-premise} è razionalmente giustificata quando la specificità degli asset è
+elevata, l'incertezza comportamentale del fornitore è alta e i costi di lock-in
+superano i risparmi dell'esternalizzazione. Questa conclusione non è teorica: è
+operativa. Il modello decisionale a quattro dimensioni --- sensibilità dei dati,
+specificità dei processi, maturità organizzativa, orizzonte temporale --- fornisce ai
+dirigenti pubblici uno strumento per valutare razionalmente la scelta di
+\textit{deployment} senza affidarsi né all'ideologia della nuvola né alla resistenza
+inerziale all'innovazione.
 
-% 4. Limiti della ricerca
-% Il presente studio presenta alcuni limiti, tra cui ...
+Il Capitolo~3 ha applicato questo quadro agli atenei europei, identificando quattro
+criticità strutturali negli atenei italiani medi: la governance del dato, la
+certificazione di sicurezza, la governance del rischio algoritmico e le competenze
+MLOps. I benchmark di KU Leuven, TU Delft e CINECA hanno dimostrato che queste
+criticità sono superabili --- non facilmente, ma sistematicamente --- attraverso
+percorsi di maturità basati sull'adozione progressiva dei \textit{framework}
+DAMA-DMBOK, ISO/IEC~27001 e NIST AI Risk Management Framework. Il caso CINECA,
+in particolare, ha mostrato che l'Italia dispone già di un'infrastruttura consortile
+di rilevanza europea che potrebbe essere estesa al dominio dell'IA applicata ai
+processi amministrativi degli atenei, seguendo il modello del consorzio Aristote
+in Francia.
 
-% 5. Sviluppi futuri
-% Tra le prospettive di sviluppo futuro si segnalano ...
+Il Capitolo~4 ha completato il percorso con l'evidenza empirica più ampia: otto
+esperienze europee --- cinque nazionali e tre istituzionali --- analizzate secondo
+il \textit{framework} comparativo macro-meso-micro di
+\textcite{ValleCruzMacroMesoMicro2024}. I quattro \textit{pattern} ricorrenti
+identificati (sovranità-prima, consortile, \textit{governance-first} e proattivo)
+convergono verso una conclusione comune: le amministrazioni che hanno adottato
+con successo sistemi AI \textit{on-premise} non hanno aspettato condizioni ideali,
+ma hanno costruito progressivamente le capacità organizzative necessarie ---
+il che è esattamente ciò che le \textit{Dynamic Capabilities} predicono.
 
-% --- Placeholder ---
-\textit{[Sezione da completare dopo la stesura dei capitoli 1--4.]}
+\medskip
+
+\textbf{Il paradigma JANUS-OP come risposta alla domanda di ricerca.}
+Il contributo concettuale centrale di questo lavoro è il paradigma JANUS-OP:
+un'architettura manageriale --- non solo tecnologica --- fondata su tre valori
+fondativi che i casi europei hanno dimostrato internamente coerenti e operativamente
+praticabili: la \textbf{sovranità del dato}, la \textbf{verificabilità delle
+decisioni algoritmiche} e la \textbf{centralità del giudizio umano} (\textit{man-in-the-loop}).
+Come Giano, che presiedeva i passaggi soglia guardando simultaneamente al passato e al
+futuro, il paradigma richiede che il sistema AI sappia leggere la memoria
+documentale istituzionale e orientare le scelte verso scenari futuri, senza mai
+cedere il controllo decisionale alla macchina. Questa scelta non è solo etica: è
+normativamente necessaria, come l'AI Act impone ai \textit{deployer} di sistemi
+ad alto rischio, ed è economicamente razionale, come la TCE dimostra nei contesti
+ad alta specificità degli asset.
+
+Le quattro raccomandazioni per la PA italiana --- priorità della governance sul
+\textit{deployment}, mandato di vertice prima di qualsiasi iniziativa tecnica,
+partecipazione attiva all'ecosistema EuroHPC/Gaia-X, progettazione del
+\textit{man-in-the-loop} come principio architetturale e non come vincolo
+normativo --- traducono operativamente il paradigma in un piano d'azione che le
+mappe tracciate dai casi europei rendono non solo auspicabile ma replicabile.
+
+\medskip
+
+\textbf{Implicazioni per la PA italiana e per gli atenei.}
+L'Italia si colloca in una posizione intermedia nel panorama europeo: dispone di
+elementi di eccellenza infrastrutturale --- CINECA, il Polo Strategico Nazionale,
+le piattaforme nazionali abilitanti --- ma sconta ritardi nelle dimensioni della
+governance algoritmica e delle competenze digitali avanzate che la distanziano dai
+paesi nordici e dai Paesi Bassi. Il \textbf{2 agosto 2026}, data di piena
+applicazione dell'AI Act, rappresenta per la PA italiana lo stesso tipo di
+\textit{trigger} esterno che il GDPR ha rappresentato nel 2018 per le PA olandesi:
+un vincolo normativo che, se interpretato in chiave strategica, può diventare il
+catalizzatore di una trasformazione organizzativa profonda \parencite{Pavlidis2025EUAIAgency}.
+
+Per il sistema universitario italiano, la finestra di opportunità è concreta:
+l'estensione del modello CINECA al dominio dell'IA applicata alla gestione
+amministrativa degli atenei --- sulla falsariga del consorzio Aristote --- consentirebbe
+di colmare simultaneamente tre dei quattro gap critici identificati nel Capitolo~3,
+con costi infrastrutturali distribuiti e competenze condivise. L'analisi di
+\textcite{Stracke2025AIpoliciesHE} ha mostrato che i responsabili amministrativi
+degli atenei sono il gruppo più sistematicamente trascurato dalle policy AI esistenti:
+colmare questa lacuna è una priorità che il sistema universitario italiano può
+affrontare con le risorse già disponibili.
+
+\medskip
+
+\textbf{Limiti della ricerca.}
+Il presente lavoro presenta limiti che è necessario riconoscere esplicitamente.
+In primo luogo, l'analisi si basa su fonti documentali secondarie --- normative,
+istituzionali, accademiche --- senza la conduzione di ricerche empiriche primarie
+(interviste, survey, osservazioni dirette): una scelta metodologica deliberata,
+coerente con l'impostazione comparativa adottata su indicazione del relatore,
+ma che limita la profondità della conoscenza contestuale sui singoli casi. In secondo
+luogo, la selezione dei casi europei privilegia le esperienze di successo documentate,
+introducendo un potenziale \textit{confirmation bias}: le amministrazioni che hanno
+tentato l'adozione \textit{on-premise} e hanno fallito sono sottorappresentate nella
+letteratura accademica e istituzionale, e dunque nell'analisi. In terzo luogo,
+il contesto normativo è in rapida evoluzione: alcune delle conclusioni qui tratte
+potrebbero essere modificate dall'applicazione progressiva dell'AI Act, dalla
+definizione dei \textit{standard} tecnici armonizzati e dagli orientamenti
+dell'AI Office europeo. In quarto luogo, il focus prevalente sul contesto italiano
+e universitario limita la generalizzabilità delle raccomandazioni manageriali a
+contesti istituzionali significativamente diversi.
+
+\medskip
+
+\textbf{Prospettive di ricerca futura.}
+Le conclusioni di questo lavoro aprono almeno quattro filoni di ricerca che potrebbero
+arricchire e verificare empiricamente le proposizioni qui avanzate. Il primo è la
+\textbf{validazione primaria del modello decisionale}: una ricerca survey o
+multi-caso che intervisti i responsabili IT e i dirigenti di un campione di atenei
+italiani per verificare se le variabili del modello a quattro dimensioni spiegano
+effettivamente le scelte di \textit{deployment} osservate. Il secondo è l'\textbf{analisi
+costi-benefici del modello consortile CINECA}: uno studio di fattibilità che quantifichi
+il TCO di un'estensione del modello Aristote al contesto degli atenei aderenti a
+CINECA, distinguendo i costi di infrastruttura, di governance, di formazione e di
+compliance. Il terzo è il \textbf{monitoraggio longitudinale dell'impatto dell'AI Act}
+sulle scelte architetturali delle PA italiane: una ricerca che, a partire dal 2026,
+documenti se e come la piena applicazione del Regolamento orienta le amministrazioni
+verso architetture \textit{on-premise} o \textit{sovereign cloud}. Il quarto è la
+\textbf{sperimentazione pilota del paradigma JANUS-OP} presso uno o più atenei
+italiani, che consenta di validare operativamente le quattro raccomandazioni
+manageriali in un contesto istituzionale reale e di raccogliere dati primari sul
+processo di adozione.
+
+\medskip
+
+L'intelligenza artificiale nella Pubblica Amministrazione non è un fenomeno che si
+può governare aspettando che altri lo facciano prima. Le mappe tracciate dai casi
+europei analizzati in questo lavoro mostrano che la strada è praticabile: le
+condizioni di partenza dell'Italia --- normative, infrastrutturali, accademiche ---
+non sono peggiori di quelle in cui si trovavano, pochi anni fa, le amministrazioni
+oggi più avanzate. Ciò che le distingue non è la tecnologia: è la capacità di
+trasformare i vincoli normativi in leve strategiche e di costruire, con pazienza
+istituzionale, le competenze organizzative necessarie per governare --- e non subire
+--- la transizione verso l'intelligenza artificiale. Questa è, in ultima istanza,
+la lezione più generale che il paradigma JANUS-OP distilla dall'esperienza europea:
+guardare al passato per comprendere le condizioni del presente, guardare al futuro
+per costruire le capacità necessarie ad affrontarlo. Come Giano insegna da due
+millenni e mezzo.
