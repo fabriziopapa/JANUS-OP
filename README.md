@@ -3,6 +3,17 @@
 **Tesi di Laurea Magistrale LM-56**  
 Università Telematica Pegaso
 
+![Stato](https://img.shields.io/badge/Stato-Completata-2ea44f?style=for-the-badge)
+![Corso](https://img.shields.io/badge/Corso-LM--56-1f6feb?style=for-the-badge)
+![A.A.](https://img.shields.io/badge/A.A.-2025%2F2026-8957e5?style=for-the-badge)
+![Pagine](https://img.shields.io/badge/Pagine-116-555555?style=for-the-badge)
+![Licenza](https://img.shields.io/badge/Licenza-Proprietaria-d73a49?style=for-the-badge)
+
+![LaTeX](https://img.shields.io/badge/LaTeX-pdfLaTeX-008080?style=for-the-badge&logo=latex&logoColor=white)
+![Bibliografia](https://img.shields.io/badge/Bibliografia-BibLaTeX%20%2B%20Biber-orange?style=for-the-badge)
+![Voci bibliografia](https://img.shields.io/badge/Voci%20bib-165-informational?style=for-the-badge)
+![Acronimi](https://img.shields.io/badge/Acronimi-glossaries-9acd32?style=for-the-badge)
+
 > *JANUS-OP prende ispirazione dalla divinità romana Giano, simbolo della capacità di osservare simultaneamente passato e futuro per supportare decisioni strategiche consapevoli. OP = On-Premise + man-in-the-loop.*
 
 ## Titolo
