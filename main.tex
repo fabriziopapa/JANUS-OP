@@ -177,15 +177,12 @@
 \printbibliography[heading=bibintoc,title={Bibliografia}]
 \cleardoublepage
 
-% === ELENCO FIGURE ===
-\listoffigures
-\cleardoublepage
-
 % === ELENCO TABELLE ===
 \listoftables
 \cleardoublepage
 
 % === ELENCO ACRONIMI ===
+\glsaddall  % include tutti gli acronimi definiti, anche se non richiamati con \gls
 \printglossary[type=\acronymtype,title=Elenco degli Acronimi]
 \cleardoublepage
 

@@ -1,0 +1,535 @@
+From da9878f83451b0fd056290b1dc903dcd84e5b3e7 Mon Sep 17 00:00:00 2001
+From: audit <audit@local>
+Date: Mon, 29 Jun 2026 22:36:50 +0000
+Subject: [PATCH] Audit fix: coerenza fattuale, grammatica, citazioni,
+ acronimi, bib dedup
+
+---
+ bibliografia.bib             | 197 +----------------------------------
+ chapters/capitolo2.tex       |   8 +-
+ chapters/capitolo3.tex       |  12 +--
+ chapters/capitolo4.tex       |  18 ++--
+ frontmatter/acronimi.tex     |  10 ++
+ frontmatter/conclusioni.tex  |   5 +-
+ frontmatter/introduzione.tex |   6 +-
+ main.tex                     |   5 +-
+ 8 files changed, 36 insertions(+), 225 deletions(-)
+
+diff --git a/bibliografia.bib b/bibliografia.bib
+index 31d1599..e894127 100644
+--- a/bibliografia.bib
++++ b/bibliografia.bib
+@@ -657,20 +657,6 @@
+   langid       = {english}
+ }
+ 
+-@article{MadanAshok2022,
+-  author       = {Madan, Rohit and Ashok, M.},
+-  title        = {AI Adoption and Diffusion in Public Administration: A Systematic Literature Review and Future Research Agenda},
+-  year         = {2022},
+-  journal      = {Government Information Quarterly},
+-  volume       = {39},
+-  number       = {4},
+-  pages        = {101774},
+-  doi          = {10.1016/j.giq.2022.101774},
+-  url          = {https://linkinghub.elsevier.com/retrieve/pii/S0740624X22001101},
+-  urldate      = {2026-04-06},
+-  langid       = {english}
+-}
+-
+ @article{PulkkinenTOE2025,
+   author       = {Pulkkinen, Jarmo and Huttu, Kimmo and Suhonen, Marjo},
+   title        = {Systemic Challenges in AI Adoption in Public Social and Health Organizations in Finland: A Technology-Organisation-Environment Perspective},
+@@ -866,6 +852,7 @@
+   volume    = {40},
+   number    = {1},
+   pages     = {101774},
++  doi       = {10.1016/j.giq.2022.101774},
+   langid    = {english},
+   url       = {https://doi.org/10.1016/j.giq.2022.101774},
+   urldate   = {2026-04-06}
+@@ -1158,19 +1145,6 @@
+   urldate   = {2026-04-06}
+ }
+ 
+-@article{Criado2019,
+-  author    = {Criado, J. Ignacio and {Gil-Garcia}, J. Ram{\'o}n},
+-  title     = {Creating Public Value through Smart Technologies and Strategies: From Digital Services to Artificial Intelligence and Beyond},
+-  journal   = {International Journal of Public Sector Management},
+-  year      = {2019},
+-  volume    = {32},
+-  number    = {5},
+-  pages     = {438--450},
+-  langid    = {english},
+-  url       = {https://doi.org/10.1108/IJPSM-07-2019-0178},
+-  urldate   = {2026-04-06}
+-}
+-
+ @article{Meijer2016,
+   author    = {Meijer, Albert and {Rodr{\'i}guez Bol{\'i}var}, Manuel Pedro},
+   title     = {Governing the Smart City: A Review of the Literature on Smart Urban Governance},
+@@ -1184,45 +1158,6 @@
+   urldate   = {2026-04-06}
+ }
+ 
+-@article{Enqvist2024,
+-  author    = {Enqvist, Lena},
+-  title     = {Rule-Based versus {AI}-Driven Benefits Allocation: {GDPR} and {AIA} Legal Implications and Challenges for Automation in Public Social Security Administration},
+-  journal   = {Information \& Communications Technology Law},
+-  year      = {2024},
+-  volume    = {33},
+-  number    = {2},
+-  pages     = {222--246},
+-  langid    = {english},
+-  url       = {https://research.ebsco.com/plink/96aa91a6-ddf8-3355-88ee-9bfbffeeeb4c},
+-  urldate   = {2026-04-06}
+-}
+-
+-@article{Lore2023,
+-  author    = {Lor{\`e}, Filippo and Basile, Pierpaolo and Appice, Annalisa and {de Gemmis}, Marco and Malerba, Donato and Semeraro, Giovanni},
+-  title     = {An {AI} Framework to Support Decisions on {GDPR} Compliance},
+-  journal   = {Journal of Intelligent Information Systems},
+-  year      = {2023},
+-  volume    = {61},
+-  number    = {2},
+-  pages     = {541--568},
+-  langid    = {english},
+-  url       = {https://research.ebsco.com/plink/c4ee2b18-8688-3f3f-96e0-f2dd0f33a9ee},
+-  urldate   = {2026-04-06}
+-}
+-
+-@article{Ribeiro2025,
+-  author    = {Ribeiro, Diogo and Fonte, V{\'i}tor and Ramos, Luis Felipe and Silva, Jo{\~a}o Marco},
+-  title     = {Assessing the Information Security Posture of Online Public Services Worldwide: Technical Insights, Trends, and Policy Implications},
+-  journal   = {Government Information Quarterly},
+-  year      = {2025},
+-  volume    = {42},
+-  number    = {2},
+-  langid    = {english},
+-  url       = {https://research.ebsco.com/plink/c46e56a1-0274-3e28-a2a5-b19fba8509e9},
+-  urldate   = {2026-04-06}
+-}
+-
+-
+ % === PUBBLICAZIONI DEL RELATORE (da verificare e completare) ===
+ % Le pubblicazioni del Prof. Pasquale Sasso (ORCID: 0000-0002-7996-2602)
+ % vanno aggiunte qui sotto man mano che vengono identificate.
+@@ -1542,22 +1477,6 @@
+ 
+ 
+ % --------------- 6. Dabbous / AI Readiness / Supply Chain --
+-@article{Dabbous2026,
+-  author   = {Dabbous, Amal and {Merhej Sayegh}, May
+-              and {Aoun Barakat}, Karine and Veglianti, Eleonora},
+-  title    = {Corporate Artificial Intelligence Readiness and Its
+-              Contribution to Supply Chain Resilience: Insights from
+-              Complexity Theory},
+-  journal  = {International Journal of Production Research},
+-  year     = {2026},
+-  volume   = {64},
+-  number   = {6},
+-  pages    = {2331--2353},
+-  issn     = {0020-7543},
+-  doi      = {10.1080/00207543.2025.2578299},
+-  url      = {https://research.ebsco.com/linkprocessor/plink?id=dce43d0f-98f7-3999-8a2a-180f46569bc0},
+-}
+-
+ % --------------- 7. Aguilar / DGOBCAN-AI / PA europea ------
+ @article{Aguilar2026,
+   author   = {Aguilar, Rosa M. and Alay{\'o}n, Silvia
+@@ -1648,19 +1567,6 @@
+ }
+ 
+ % --------------- 13. Patón-Romero / ISO 15504 / Green IT ---
+-@article{PatonRomero2018,
+-  author   = {Pat{\'o}n-Romero, J. David and Baldassarre, Maria Teresa
+-              and Rodr{\'i}guez, Mois{\'e}s and Piattini, Mario},
+-  title    = {Green {IT} Governance and Management Based on {ISO/IEC 15504}},
+-  journal  = {Computer Standards \& Interfaces},
+-  year     = {2018},
+-  volume   = {60},
+-  pages    = {26--36},
+-  issn     = {0920-5489},
+-  doi      = {10.1016/j.csi.2018.04.005},
+-  url      = {https://research.ebsco.com/linkprocessor/plink?id=0a3bf921-3d67-3403-abbc-029917a1d065},
+-}
+-
+ % --------------- 14. Roussos / AML-CFT / GDPR -------------
+ @article{Roussos2026,
+   author   = {Roussos, Manos and Hajduk, Pawe{\l}},
+@@ -1695,68 +1601,9 @@
+ }
+ 
+ % --------------- 16. McNicol / Data Ethics / HEI -----------
+-@article{McNicol2024,
+-  author   = {McNicol, Trinity and Carthouser, Bailey and Bongiovanni, Ivano
+-              and Abeysooriya, Sasenka},
+-  title    = {Improving Ethical Usage of Corporate Data in Higher
+-              Education: Enhanced Enterprise Data Ethics Framework},
+-  journal  = {Information Technology \& People},
+-  year     = {2024},
+-  volume   = {37},
+-  number   = {6},
+-  pages    = {2247--2278},
+-  issn     = {0959-3845},
+-  doi      = {10.1108/ITP-12-2022-0926},
+-  url      = {https://research.ebsco.com/linkprocessor/plink?id=e7c15138-e204-3c5b-8141-c4aa4f89db68},
+-}
+-
+ % --------------- 17. Torichnyi / Strategic Management / PA --
+-@article{Torichnyi2025,
+-  author   = {Torichnyi, Vadym and Andriyash, Viktoria and Tytarenko, Oleksandr
+-              and Tkachuk, Dmytro and Tarasenko, Oleksandra},
+-  title    = {Innovative Approaches to Strategic Management in the Public
+-              Sector: Challenges of Global Transformations and Digital
+-              Technologies},
+-  journal  = {Revista de Cercetare si Interventie Sociala},
+-  year     = {2025},
+-  volume   = {90},
+-  pages    = {107--127},
+-  issn     = {1583-3410},
+-  url      = {https://research.ebsco.com/linkprocessor/plink?id=734090e8-ec2f-3815-bf66-ec0c14dcc12a},
+-}
+-
+ % --------------- 18. Pham / MACS-RG / Resilience PA -------
+-@article{Pham2025,
+-  author   = {Pham, Quang Huy and Vu, Kien Phuc},
+-  title    = {Management Accounting Control System and Risk Governance in
+-              Public Sector Organizational Resilience Enhancement},
+-  journal  = {Cogent Social Sciences},
+-  year     = {2025},
+-  volume   = {11},
+-  number   = {1},
+-  pages    = {2444473},
+-  issn     = {2331-1886},
+-  doi      = {10.1080/23311886.2024.2444473},
+-  url      = {https://research.ebsco.com/linkprocessor/plink?id=587118ce-784c-34c3-887c-1987fef3dce3},
+-}
+-
+ % --------------- 19. Abdallah / Records Governance / ARMA --
+-@article{Abdallah2026,
+-  author   = {Abdallah, Nadhir Serier},
+-  title    = {Measuring the Maturity of Records Governance in Local
+-              Administrative Systems: An {ARMA}-Based Assessment of the
+-              Municipality of {El Affroun}},
+-  journal  = {Science, Education \& Innovations in the Context of
+-              Modern Problems},
+-  year     = {2026},
+-  volume   = {9},
+-  number   = {5},
+-  pages    = {1--14},
+-  issn     = {2790-0169},
+-  doi      = {10.56334/sei/9.5.5},
+-  url      = {https://research.ebsco.com/linkprocessor/plink?id=ad6ebbb6-d863-3dd3-a5a4-71601b352855},
+-}
+-
+ % --------------- 20. Lemaréchal / PARADIM / Medical Imaging -
+ @article{Lemarechal2026,
+   author   = {Lemar{\'e}chal, Yannick and Couture, Gabriel
+@@ -1810,35 +1657,7 @@
+ }
+ 
+ % --------------- 24. Madhavan / AI Storage Strategy --------
+-@article{Madhavan2025,
+-  author   = {Madhavan, Deepa},
+-  title    = {Strategic Storage Infrastructure Decision-Making in the {AI}
+-              Era: A Framework for Balancing Financial, Technical, and
+-              Compliance Considerations},
+-  journal  = {Journal of International Crisis \& Risk Communication Research},
+-  year     = {2025},
+-  volume   = {8},
+-  pages    = {108--115},
+-  issn     = {2576-0017},
+-  url      = {https://research.ebsco.com/linkprocessor/plink?id=69d292ef-9c33-3d5d-96de-052c05ff46f2},
+-}
+-
+ % --------------- 25. Wichmann / Enterprise Architecture / GDPR
+-@article{Wichmann2020,
+-  author   = {Wichmann, Johannes and Sandkuhl, Kurt and Shilov, Nikolay
+-              and Smirnov, Alexander and Timm, Felix and Wi{\ss}otzki, Matthias},
+-  title    = {Enterprise Architecture Frameworks as Support for
+-              Implementation of Regulations: Approach and Experiences
+-              from {GDPR}},
+-  journal  = {Complex Systems Informatics \& Modeling Quarterly},
+-  year     = {2020},
+-  number   = {24},
+-  pages    = {31--48},
+-  issn     = {2255-9922},
+-  doi      = {10.7250/csimq.2020-24.03},
+-  url      = {https://research.ebsco.com/linkprocessor/plink?id=ca5df262-78c3-32f1-a770-4ab8835831f7},
+-}
+-
+ % --------------- 26. Albakri / GenAI / Decolonising HE -----
+ @article{Albakri2026,
+   author   = {Albakri, Mohammed},
+@@ -1934,20 +1753,6 @@
+ 
+ % === §3.2 — ISO/IEC 27001, framework governance ===
+ 
+-@article{Hohmann2025AIActGDPR,
+-  author       = {Hohmann, Balázs and Kollár, Gergő},
+-  title        = {Reflections on the data protection compliance of {AI} systems under the {EU AI Act}},
+-  year         = {2025},
+-  journal      = {Cogent Social Sciences},
+-  volume       = {11},
+-  number       = {1},
+-  pages        = {1--20},
+-  issn         = {2331-1886},
+-  url          = {https://research.ebsco.com/linkprocessor/plink?id=18828f1f-46ec-35cd-a841-553e70f8c084},
+-  urldate      = {2026-05-17},
+-  langid       = {english}
+-}
+-
+ @article{PatonRomero2018GreenIT,
+   author       = {Patón-Romero, J. David and Baldassarre, Maria Teresa and Rodríguez, Moisés and Piattini, Mario},
+   title        = {Green {IT} Governance and Management based on {ISO/IEC} 15504},
+diff --git a/chapters/capitolo2.tex b/chapters/capitolo2.tex
+index 148f321..b7f807b 100644
+--- a/chapters/capitolo2.tex
++++ b/chapters/capitolo2.tex
+@@ -11,7 +11,7 @@ Il primo capitolo ha tracciato il perimetro normativo e istituzionale entro cui
+ 
+ La letteratura internazionale di \textit{management} e di \textit{information systems} ha elaborato, nel corso dei decenni, un ricco apparato teorico per interpretare l'interazione tra tecnologia e organizzazione nel settore pubblico. Si tratta di framework -- dalla \textit{Resource-Based View} al modello \textit{Technology Enactment}, dalla \textit{Digital Era Governance} ai modelli di maturità digitale -- che consentono di andare oltre la semplice descrizione delle applicazioni tecnologiche e di sviluppare un'analisi critica delle condizioni di successo, dei rischi organizzativi e delle scelte strategiche che i dirigenti pubblici si trovano ad affrontare nell'era dell'intelligenza artificiale. La trasversalità di questi framework -- applicabili tanto al settore privato quanto al settore pubblico, con le necessarie contestualizzazioni -- è essa stessa un segnale dell'urgenza con cui la ricerca accademica ha risposto alle sfide dell'adozione tecnologica nella \gls{pa} \parencite{Madan2023}.
+ 
+-La tesi argomentativa che guida questo capitolo è che il paradigma \gls{onpremise} non rappresenti semplicemente una scelta tecnica di infrastruttura informatica, ma una \textbf{decisione strategica multidimensionale} con implicazioni sulla sovranità digitale, sulla governance dei dati, sull'autonomia organizzativa e sulla sostenibilità economica delle amministrazioni. Comprendere questa dimensione richiede strumenti analitici che la sola lettura giuridica non è in grado di fornire: il diritto positivo -- per quanto dettagliato e vincolante -- stabilisce \textit{cosa} è obbligatorio, ma non dice \textit{come} le organizzazioni pubbliche possano costruire le capacità necessarie per adempiervi, né \textit{perché} alcune amministrazioni riescano a farlo e altre falliscano. È precisamente questo spazio -- tra la norma e la sua attuazione organizzativa -- che i framework di \textit{management} e \textit{information systems} sono chiamati a occupare. La convergenza di pressioni normative europee sempre più stringenti, di una domanda crescente di sovranità sui dati pubblici e di un'offerta tecnologica che rende progressivamente accessibili i sistemi di \gls{ia} anche in modalità locale configura uno scenario in cui le scelte infrastrutturali delle amministrazioni si caricano di un peso strategico senza precedenti.
++La tesi argomentativa che guida questo capitolo --- già anticipata nell'Introduzione --- è che il paradigma \gls{onpremise} non rappresenti semplicemente una scelta tecnica di infrastruttura informatica, ma una \textbf{decisione strategica multidimensionale} con implicazioni sulla sovranità digitale, sulla governance dei dati, sull'autonomia organizzativa e sulla sostenibilità economica delle amministrazioni. Comprendere questa dimensione richiede strumenti analitici che la sola lettura giuridica non è in grado di fornire: il diritto positivo -- per quanto dettagliato e vincolante -- stabilisce \textit{cosa} è obbligatorio, ma non dice \textit{come} le organizzazioni pubbliche possano costruire le capacità necessarie per adempiervi, né \textit{perché} alcune amministrazioni riescano a farlo e altre falliscano. È precisamente questo spazio -- tra la norma e la sua attuazione organizzativa -- che i framework di \textit{management} e \textit{information systems} sono chiamati a occupare. La convergenza di pressioni normative europee sempre più stringenti, di una domanda crescente di sovranità sui dati pubblici e di un'offerta tecnologica che rende progressivamente accessibili i sistemi di \gls{ia} anche in modalità locale configura uno scenario in cui le scelte infrastrutturali delle amministrazioni si caricano di un peso strategico senza precedenti.
+ 
+ Il capitolo si articola in cinque sezioni. La prima esamina i principali framework teorici dell'\textit{information systems} applicati all'adozione tecnologica nella \gls{pa}. La seconda analizza il contributo della letteratura di \textit{public management} per interpretare l'\gls{ia} come leva di cambiamento strategico e organizzativo. La terza propone una lettura della governance dell'\gls{ia} attraverso i modelli di maturità digitale e le dimensioni della \textit{AI capability}. La quarta affronta la dimensione della sovranità digitale come costrutto teorico e come vincolo pratico per i decisori pubblici. La quinta, infine, applica la \textit{Transaction Cost Economics} e la letteratura sul \textit{make-or-buy} all'analisi della scelta tra deployment \gls{onpremise} e soluzioni \textit{cloud} esternalizzate.
+ 
+@@ -85,7 +85,7 @@ In questo quadro, l'\gls{ia} non è semplicemente uno strumento da aggiungere al
+ 
+ \subsection{Il modello di Leavitt e le quattro variabili del cambiamento organizzativo}
+ 
+-Il modello del diamante di Leavitt, sebbene risalente agli anni Sessanta della ricerca organizzativa, mantiene una notevole capacità esplicativa per l'analisi dell'impatto dell'\gls{ia} sulle organizzazioni pubbliche. Il modello sostiene che le organizzazioni siano sistemi complessi in cui quattro variabili -- \textbf{tecnologia}, \textbf{persone}, \textbf{struttura} e \textbf{compiti} -- siano interdipendenti e in equilibrio dinamico. L'introduzione di cambiamenti in una di esse genera pressioni di adattamento su tutte le altre: modificare la tecnologia senza adeguare la struttura organizzativa, i profili di competenza delle persone o la distribuzione dei compiti produce invariabilmente resistenze, inefficienze e, in molti casi, il fallimento dell'iniziativa \parencite{Nograšek2014}. Per i sistemi di \gls{ia} nella \gls{pa}, questo significa che l'implementazione tecnica e la trasformazione organizzativa non sono processi sequenziali -- prima si installa il sistema, poi si adatta l'organizzazione -- ma processi che devono procedere in parallelo e in modo integrato, con una leadership manageriale che sia al contempo committente tecnologico e agente di cambiamento organizzativo.
++Il modello del diamante di Leavitt, sebbene risalente agli anni Sessanta della ricerca organizzativa, mantiene una notevole capacità esplicativa per l'analisi dell'impatto dell'\gls{ia} sulle organizzazioni pubbliche. Il modello sostiene che le organizzazioni siano sistemi complessi in cui quattro variabili -- \textbf{tecnologia}, \textbf{persone}, \textbf{struttura} e \textbf{compiti} -- siano interdipendenti e in equilibrio dinamico. L'introduzione di cambiamenti in una di esse genera pressioni di adattamento su tutte le altre: modificare la tecnologia senza adeguare la struttura organizzativa, i profili di competenza delle persone o la distribuzione dei compiti produce invariabilmente resistenze, inefficienze e, in molti casi, il fallimento dell'iniziativa \parencite{Nograsek2014}. Per i sistemi di \gls{ia} nella \gls{pa}, questo significa che l'implementazione tecnica e la trasformazione organizzativa non sono processi sequenziali -- prima si installa il sistema, poi si adatta l'organizzazione -- ma processi che devono procedere in parallelo e in modo integrato, con una leadership manageriale che sia al contempo committente tecnologico e agente di cambiamento organizzativo.
+ 
+ L'adozione del modello di Cordella e Tempini sull'e-government e il cambiamento organizzativo consente di approfondire ulteriormente questa dimensione nel contesto italiano. Sulla base di un caso studio del Comune di Venezia, \textcite{Cordella2015} hanno dimostrato che le tecnologie digitali non riducono necessariamente la burocrazia -- come il discorso politico tenderebbe a sostenere -- ma possono supportare e rafforzare le operazioni burocratiche attraverso processi di semplificazione funzionale e standardizzazione. Questo risultato, apparentemente controintuitivo, suggerisce che la \gls{pa} italiana può trovare nell'\gls{ia} non un sostituto delle proprie strutture, ma uno strumento per renderle più efficienti e coerenti, a condizione che la progettazione dei sistemi parta da un'analisi critica dei processi esistenti piuttosto che dalla mera automazione degli stessi.
+ 
+@@ -112,11 +112,11 @@ La ricerca di \textcite{Mikalef2023} -- condotta su un ampio campione di organiz
+ 
+ Accanto ai framework teorici di derivazione accademica, tre riferimenti normativi e tecnici stanno ridefinendo in modo convergente le condizioni di governance dell'\gls{ia} per le amministrazioni pubbliche europee: il \textit{NIST Artificial Intelligence Risk Management Framework} (\gls{nistrmf}), la norma \gls{iso42001} e -- con forza cogente di diritto positivo -- l'Allegato III del Regolamento \gls{aiact}. La loro lettura congiunta non è un esercizio di compliance formale: è lo strumento attraverso cui i dirigenti pubblici possono comprendere quale modello di governance dell'\gls{ia} è oggi non solo auspicabile, ma esigibile \parencite{Wirtz2020}.
+ 
+-Il \gls{nistrmf}, pubblicato dal \textit{National Institute of Standards and Technology} nel gennaio 2023 \parencite{NIST_AI_RMF}, struttura la gestione del rischio dei sistemi \gls{ia} attorno a quattro funzioni fondamentali: \textbf{GOVERN} (definire la governance, le politiche e la cultura organizzativa), \textbf{MAP} (identificare e contestualizzare i rischi), \textbf{MEASURE} (analizzare e valutare) e \textbf{MANAGE} (affrontare e ridurre i rischi attraverso piani d'azione prioritizzati). La funzione GOVERN è quella più direttamente trasformativa per la \gls{pa}: essa richiede che la leadership assuma responsabilità esplicita, visibile e documentabile per le scelte sui sistemi \gls{ia}, spostando il centro di gravità decisionale dal fornitore tecnologico al dirigente pubblico. Questo spostamento è tanto più rilevante quanto più il sistema \gls{ia} è acquisito come servizio esterno: in quel caso, la responsabilità di governance rimane in capo all'amministrazione ma la capacità di esercitarla dipende interamente dalla trasparenza del fornitore, generando una asimmetria informativa strutturalmente critica.
++Il \gls{nistrmf}, pubblicato dal \textit{National Institute of Standards and Technology} nel gennaio 2023 \parencite{NIST_AI_RMF}, struttura la gestione del rischio dei sistemi \gls{ia} attorno a quattro funzioni fondamentali: \textbf{GOVERN} (definire la governance, le politiche e la cultura organizzativa), \textbf{MAP} (identificare e contestualizzare i rischi), \textbf{MEASURE} (analizzare e valutare) e \textbf{MANAGE} (affrontare e ridurre i rischi attraverso piani d'azione prioritizzati). La funzione GOVERN è quella più direttamente trasformativa per la \gls{pa}: essa richiede che la leadership assuma responsabilità esplicita, visibile e documentabile per le scelte sui sistemi \gls{ia}, spostando il centro di gravità decisionale dal fornitore tecnologico al dirigente pubblico. Questo spostamento è tanto più rilevante quanto più il sistema \gls{ia} è acquisito come servizio esterno: in quel caso, la responsabilità di governance rimane in capo all'amministrazione ma la capacità di esercitarla dipende interamente dalla trasparenza del fornitore, generando un'asimmetria informativa strutturalmente critica.
+ 
+ La norma \gls{iso42001}, pubblicata nel dicembre 2023, rappresenta il primo standard internazionale certificabile per i sistemi di gestione dell'\gls{ia} \parencite{ISO42001}. Strutturata secondo il ciclo \textit{Plan-Do-Check-Act} e compatibile con la norma \gls{iso27001} già diffusa nelle \gls{pa} italiane, essa prevede trentotto controlli specifici che affrontano la valutazione dell'impatto, la governance dei dati di addestramento, la trasparenza dei modelli e la gestione dei fornitori. Per un'amministrazione che ha scelto il deployment \gls{onpremise}, la certificazione \gls{iso42001} trasforma un vincolo di compliance in un fattore di differenziazione istituzionale: dimostra ai cittadini, agli organi di controllo e alle istituzioni sovranazionali una capacità di presidio interno che nessun contratto con un fornitore esterno può sostituire.
+ 
+-Il quadro si completa con le implicazioni manageriali dell'Allegato III del Regolamento \gls{aiact} \parencite{AIAct2024}, che elenca otto categorie di sistemi di \gls{ia} classificati ex lege come ad alto rischio in ragione del dominio applicativo: biometria, infrastrutture critiche, istruzione e formazione, gestione del lavoro, accesso a prestazioni e servizi pubblici essenziali, attività di contrasto, migrazione e frontiere, amministrazione della giustizia e processi democratici. La rilevanza di questo elenco per la \gls{pa} italiana è immediata e non teorica: almeno cinque delle otto categorie coincidono con funzioni istituzionali ordinarie delle amministrazioni italiane. Un ateneo che utilizza sistemi di \gls{ia} per valutare l'accesso ai corsi di studio ricade nella categoria «istruzione»; un comune che automatizza l'istruttoria per l'assegnazione di sussidi ricade nella categoria «servizi pubblici essenziali»; un ufficio del personale che impiega algoritmi di screening nelle procedure concorsuali ricade nella categoria «gestione del lavoro». In tutti questi casi, il Regolamento classifica l'amministrazione come \textbf{deployer} di un sistema ad alto rischio, assoggettandola a obblighi operativi precisi -- supervisione umana qualificata, conservazione dei log, valutazione d'impatto sui diritti fondamentali (\textit{Fundamental Rights Impact Assessment}) -- che entrano in vigore il 2 febbraio 2026 e che non possono essere delegati contrattualmente al fornitore \parencite{AIAct2024}.
++Il quadro si completa con le implicazioni manageriali dell'Allegato III del Regolamento \gls{aiact} \parencite{AIAct2024}, che elenca otto categorie di sistemi di \gls{ia} classificati ex lege come ad alto rischio in ragione del dominio applicativo: biometria, infrastrutture critiche, istruzione e formazione, gestione del lavoro, accesso a prestazioni e servizi pubblici essenziali, attività di contrasto, migrazione e frontiere, amministrazione della giustizia e processi democratici. La rilevanza di questo elenco per la \gls{pa} italiana è immediata e non teorica: almeno cinque delle otto categorie coincidono con funzioni istituzionali ordinarie delle amministrazioni italiane. Un ateneo che utilizza sistemi di \gls{ia} per valutare l'accesso ai corsi di studio ricade nella categoria «istruzione»; un comune che automatizza l'istruttoria per l'assegnazione di sussidi ricade nella categoria «servizi pubblici essenziali»; un ufficio del personale che impiega algoritmi di screening nelle procedure concorsuali ricade nella categoria «gestione del lavoro». In tutti questi casi, il Regolamento classifica l'amministrazione come \textbf{deployer} di un sistema ad alto rischio, assoggettandola a obblighi operativi precisi -- supervisione umana qualificata, conservazione dei log, valutazione d'impatto sui diritti fondamentali (\textit{Fundamental Rights Impact Assessment}) -- che entrano in vigore il 2 agosto 2026 e che non possono essere delegati contrattualmente al fornitore \parencite{AIAct2024}.
+ 
+ La conseguenza manageriale di questo quadro è di notevole portata: la scelta del modello di deployment non è più una variabile tecnologica neutrale, ma una \textbf{decisione di governance} con effetti diretti sulla capacità dell'amministrazione di adempiere ai propri obblighi legali. Un sistema \gls{ia} ad alto rischio gestito in modalità \gls{onpremise} consente al dirigente pubblico di esercitare concretamente le funzioni di supervisione, monitoraggio e documentazione che il Regolamento attribuisce al deployer. Un sistema equivalente acquisito come servizio \textit{cloud} da un fornitore esterno trasferisce di fatto queste capacità operative al fornitore, pur mantenendo formalmente la responsabilità giuridica in capo all'ente: una contraddizione che il \gls{nistrmf} (analizzato nel dettaglio nel Capitolo~3, §\ref{subsec:nist-airmf}), l'\gls{iso42001} e l'Allegato III dell'\gls{aiact} rendono collettivamente insostenibile per qualsiasi amministrazione che voglia governare -- e non subire -- la propria transizione verso l'\gls{ia}.
+ 
+diff --git a/chapters/capitolo3.tex b/chapters/capitolo3.tex
+index 4fcc608..4d34e8a 100644
+--- a/chapters/capitolo3.tex
++++ b/chapters/capitolo3.tex
+@@ -101,7 +101,7 @@ delle tecnologie digitali nelle organizzazioni \parencite{DESI2024}.
+ Per la componente \textit{Open Data Maturity}, oggetto di un monitoraggio specifico
+ all'interno del DESI, l'Italia si colloca per la terza edizione consecutiva nel cluster
+ \textit{Fast Tracker}, con un punteggio complessivo superiore alla media UE. Tale dato
+-aggregato nasconde tuttavia una asimmetria importante: le amministrazioni centrali
++aggregato nasconde tuttavia un'asimmetria importante: le amministrazioni centrali
+ trainano la classifica, mentre le amministrazioni locali e gli atenei presentano livelli
+ di maturità significativamente inferiori nelle dimensioni della \textit{data quality} e
+ del \textit{data reuse}. Il dato sul singolo ateneo è in larga misura non misurato a
+@@ -134,7 +134,7 @@ adattiva diventa \textit{deployer} di un sistema \textit{high-risk} --- come gi
+ analizzato nel Capitolo~2 (§\ref{sec:cap2-governance-ia}) in termini di scelte
+ strategiche di \textit{deployment} --- soggetto agli obblighi di registrazione nel
+ database UE, valutazione d'impatto, supervisione umana significativa e conservazione
+-dei \textit{log} per almeno dieci anni \parencite{Hohmann2025AIActGDPR}.
++dei \textit{log} per almeno dieci anni \parencite{HohmannKollar2025}.
+ 
+ Il punto cruciale, da un punto di vista manageriale, è che tali obblighi richiedono un
+ \textbf{controllo diretto sull'infrastruttura}. La supervisione umana non è verificabile
+@@ -312,7 +312,7 @@ con la garanzia aggiuntiva di un disegno architetturale \textit{on-premise}
+ \textit{man-in-the-loop} che rende effettivamente esigibili i diritti previsti dalla
+ norma.
+ 
+-La tabella seguente sintetizza il confronto tra i quattro \textit{framework} analizzati,
++La Tabella~\ref{tab:framework-governance} sintetizza il confronto tra i quattro \textit{framework} analizzati,
+ evidenziandone i livelli primari, l'applicabilità al contesto PA e il contributo
+ specifico al paradigma \textit{on-premise}.
+ 
+@@ -548,7 +548,7 @@ primo luogo, dimostra che l'architettura ibrida non è solo una soluzione per co
+ ad alto rischio come la ricerca biomedica: è praticabile e sostenibile anche per
+ applicazioni didattiche ordinarie, purché il management accademico abbia chiarito ex ante
+ la classificazione dei dati trattati e le responsabilità del \textit{deployer}
+-\parencite{Hohmann2025AIActGDPR}. In secondo luogo, il programma \textit{100 Days of
++\parencite{HohmannKollar2025}. In secondo luogo, il programma \textit{100 Days of
+ Data for Learning} è un esempio compiuto di \textbf{governance partecipata}: il
+ \textit{whitepaper} documenta il coinvolgimento sistematico di docenti, studenti e
+ \textit{stakeholder} istituzionali, in coerenza con la funzione \textit{Govern} del NIST
+@@ -565,8 +565,8 @@ contesto italiano e, per certi aspetti, uno dei modelli più avanzati in Europa
+ \textit{on-premise} collettivo per la ricerca universitaria. Fondato nel 1969 e
+ partecipato da oltre settanta atenei italiani e da enti pubblici di ricerca, CINECA
+ gestisce il \textbf{supercomputer Leonardo}, installato presso la sede di Casalecchio di
+-Reno (Bologna) nel 2022 e classificato tra i dieci sistemi HPC più potenti al mondo
+-secondo la lista Top500 \parencite{EuroHPC_Leonardo}.
++Reno (Bologna) nel 2022 e classificato tra i primi cinque sistemi HPC più potenti al mondo
++al momento dell'entrata in esercizio, secondo la lista Top500 \parencite{EuroHPC_Leonardo}.
+ 
+ Il modello CINECA è, da un punto di vista architetturale, un'infrastruttura
+ \textit{on-premise} governata da un consorzio di istituzioni pubbliche italiane, con
+diff --git a/chapters/capitolo4.tex b/chapters/capitolo4.tex
+index 04b8dcc..b8d3230 100644
+--- a/chapters/capitolo4.tex
++++ b/chapters/capitolo4.tex
+@@ -16,8 +16,8 @@ modalità \textit{on-premise}, e quali lezioni manageriali generalizzabili emerg
+ da queste esperienze? Il Capitolo~1 ha ricostruito il paradigma del \textit{Digital
+ Government} e la tensione strutturale tra i principi di \textit{cloud first} e
+ sovranità digitale. Il Capitolo~2 ha analizzato i \textit{framework} teorici che
+-spiegano l'adozione dell'IA nella PA --- TOE, \textit{Dynamic Capabilities},
+-\textit{Transaction Cost Economics}, SAM --- e ha proposto un modello decisionale per
++spiegano l'adozione dell'IA nella PA --- TOE, \textit{Dynamic Capabilities} e
++\textit{Transaction Cost Economics} --- e ha proposto un modello decisionale per
+ il management pubblico. Il Capitolo~3 ha esaminato la \textit{data governance}
+ negli atenei europei, identificando quattro \textit{gap} critici e tre
+ \textit{benchmark} verificati (KU Leuven, TU Delft, CINECA). Il presente capitolo
+@@ -28,7 +28,7 @@ precedenti.
+ 
+ L'impostazione metodologica adottata risponde alle indicazioni del relatore, che ha
+ ritenuto l'approccio comparativo sui casi europei ``metodologicamente e strutturalmente
+-più solido'' rispetto a una proposta architettuale specifica, ``oltre che maggiormente
++più solido'' rispetto a una proposta architetturale specifica, ``oltre che maggiormente
+ coerente con l'impianto complessivo del lavoro''. In questa prospettiva, ogni caso
+ è analizzato non come narrazione descrittiva di un progetto tecnologico, ma come
+ \textbf{unità di analisi manageriale}: un'istanza della tensione tra vincoli
+@@ -63,7 +63,7 @@ osservati sono ancora in corso di sviluppo, le variabili sono numerose e
+ difficilmente isolabili, e il contesto istituzionale è determinante per la
+ comprensione degli esiti \parencite{Mergel2019}. Nel campo dell'adozione dell'IA
+ nella Pubblica Amministrazione, questa metodologia è esplicitamente raccomandata
+-dalla revisione sistematica della letteratura condotta da \textcite{MadanAshok2022}
++dalla revisione sistematica della letteratura condotta da \textcite{Madan2023}
+ su 210 articoli pubblicati tra il 2012 e il 2021, che identifica nel
+ ``\textit{lack of comparative institutional analysis}'' uno dei principali
+ \textit{gap} della ricerca in questo dominio.
+@@ -151,7 +151,7 @@ oltre la semplice digitalizzazione dei servizi: il paese ha costruito, a partire
+ sistema X-Road (2001), un'infrastruttura di scambio dati federata in cui ogni
+ istituzione mantiene la propria base dati --- \textit{on-premise}, nel perimetro
+ dell'ente --- e condivide solo le interrogazioni strutturate attraverso un protocollo
+-standardizzato e auditabile. La filosofia architettuale che sottende X-Road è quella
++standardizzato e auditabile. La filosofia architetturale che sottende X-Road è quella
+ della \textbf{sovranità istituzionale del dato}: nessuna amministrazione centrale
+ aggrega i dati degli altri enti; ogni dato rimane dove è stato prodotto, ed è
+ accessibile agli altri solo attraverso una transazione tracciata e autorizzata
+@@ -169,7 +169,7 @@ a condizione di rispettare l'architettura federata originale \parencite{OECDGove
+ 
+ Dal punto di vista del TOE framework, il caso estone illustra con chiarezza
+ il ruolo del contesto \textbf{ambientale} come determinante primario della scelta
+-architettuale. Le ridotte dimensioni del paese (1,3 milioni di abitanti) e la
++architetturale. Le ridotte dimensioni del paese (1,3 milioni di abitanti) e la
+ necessità di gestire i dati di una PA pluralistica con risorse limitate hanno
+ prodotto, per pressione contestuale, un'architettura che distribuisce i costi
+ di gestione e concentra la responsabilità del dato in capo all'ente proprietario.
+@@ -212,7 +212,7 @@ richiesta \parencite{OECDAIChapter2025}.
+ L'analisi al livello \textbf{meso} del caso francese rivela un pattern di governance
+ fortemente \textbf{centralizzata} al livello dello Stato, con redistribuzione
+ federata verso le singole amministrazioni: Albert è sviluppato e mantenuto dalla
+-DINUM come infrastruttura condivisa (\textit{gouvernement-as-a-platform}), ma
++DINUM come infrastruttura condivisa (\textit{government as a platform}), ma
+ ogni ministero o ente che lo utilizza ne gestisce autonomamente le configurazioni
+ per i propri casi d'uso, senza cedere al centro i dati trattati. Questo modello
+ --- intermedio tra l'\textit{on-premise} istituzionale (come nel caso estone) e
+@@ -338,7 +338,7 @@ pensionamento) in cui si concentrano i bisogni di servizi pubblici, e
+ proattivamente offre o pre-compila le richieste pertinenti, con il consenso esplicito
+ del cittadino e nel rispetto del GDPR \parencite{OECDGoverningAI2025}.
+ 
+-L'aspetto più rilevante per la presente analisi è la scelta architettuale di AuroraAI:
++L'aspetto più rilevante per la presente analisi è la scelta architetturale di AuroraAI:
+ l'infrastruttura di integrazione è pubblica e gestita da un consorzio di enti
+ governativi finlandesi (\textit{Valtori}, l'agenzia governativa per i servizi
+ digitali, insieme a Kela per la previdenza e ai ministeri coinvolti), mentre
+@@ -388,7 +388,7 @@ modelli, riducendo il TCO pro-capite con una logica analoga a quella consortile
+ di CINECA nel contesto italiano, ma con un focus specifico sull'inferenza LLM
+ per applicazioni universitarie.
+ 
+-La filosofia architettuale di Aristote è quella della \textbf{federazione
++La filosofia architetturale di Aristote è quella della \textbf{federazione
+ asimmetrica}: gli atenei più grandi contribuiscono capacità computazionale
+ (\textit{provider}), quelli più piccoli consumano servizi (\textit{consumer}),
+ e tutti condividono la governance del sistema attraverso un CdA paritetico.
+diff --git a/frontmatter/acronimi.tex b/frontmatter/acronimi.tex
+index 0cb7825..bcc3bd1 100644
+--- a/frontmatter/acronimi.tex
++++ b/frontmatter/acronimi.tex
+@@ -52,3 +52,13 @@
+ \newacronym{toe}{TOE}{Technology-Organization-Environment framework}
+ \newacronym{utaut}{UTAUT}{Unified Theory of Acceptance and Use of Technology}
+ \newacronym{vrin}{VRIN}{Valuable, Rare, Inimitable, Non-substitutable}
++
++% --- Acronimi aggiunti in revisione (audit) ---
++\newacronym{acn}{ACN}{Agenzia per la Cybersicurezza Nazionale}
++\newacronym{capex}{CAPEX}{Capital Expenditure}
++\newacronym{digg}{DIGG}{Myndigheten för digital förvaltning (Agenzia svedese per il governo digitale)}
++\newacronym{dinum}{DINUM}{Direction Interministérielle du Numérique (Francia)}
++\newacronym{eurohpc}{EuroHPC}{European High Performance Computing Joint Undertaking}
++\newacronym{mlops}{MLOps}{Machine Learning Operations}
++\newacronym{opex}{OPEX}{Operational Expenditure}
++\newacronym{sam}{SAM}{Strategic Alignment Model}
+diff --git a/frontmatter/conclusioni.tex b/frontmatter/conclusioni.tex
+index d7cffef..0d75fc5 100644
+--- a/frontmatter/conclusioni.tex
++++ b/frontmatter/conclusioni.tex
+@@ -56,7 +56,7 @@ Il Capitolo~4 ha completato il percorso con l'evidenza empirica più ampia: otto
+ esperienze europee --- cinque nazionali e tre istituzionali --- analizzate secondo
+ il \textit{framework} comparativo macro-meso-micro di
+ \textcite{ValleCruzMacroMesoMicro2024}. I quattro \textit{pattern} ricorrenti
+-identificati (sovranità-prima, consortile, \textit{governance-first} e proattivo)
++identificati (normativa come \textit{driver} architetturale, consorzialità, separazione tra dato e output, gradualità dell'adozione)
+ convergono verso una conclusione comune: le amministrazioni che hanno adottato
+ con successo sistemi AI \textit{on-premise} non hanno aspettato condizioni ideali,
+ ma hanno costruito progressivamente le capacità organizzative necessarie ---
+@@ -162,5 +162,4 @@ istituzionale, le competenze organizzative necessarie per governare --- e non su
+ --- la transizione verso l'intelligenza artificiale. Questa è, in ultima istanza,
+ la lezione più generale che il paradigma JANUS-OP distilla dall'esperienza europea:
+ guardare al passato per comprendere le condizioni del presente, guardare al futuro
+-per costruire le capacità necessarie ad affrontarlo. Come Giano insegna da due
+-millenni e mezzo.
++per costruire le capacità necessarie ad affrontarlo.
+diff --git a/frontmatter/introduzione.tex b/frontmatter/introduzione.tex
+index 553241d..cdd18bc 100644
+--- a/frontmatter/introduzione.tex
++++ b/frontmatter/introduzione.tex
+@@ -9,7 +9,7 @@
+ La trasformazione digitale della Pubblica Amministrazione rappresenta una delle sfide strategiche più rilevanti del panorama europeo e italiano. La progressiva maturazione del \textit{Digital Government} --- dal governo che eroga servizi in rete al governo che decide attraverso i dati --- ha reso l'adozione dell'Intelligenza Artificiale non più una prospettiva futuribile, bensì un imperativo operativo per le amministrazioni che intendano restare al passo con le aspettative dei cittadini e con i vincoli di efficienza imposti dalla legislazione europea.
+ 
+ % --- Significato del sottotitolo ---
+-Il presente lavoro è identificato con l'acronimo \textbf{JANUS-OP}, che prende ispirazione dalla divinità romana Giano (\textit{Ianus}), tradizionalmente raffigurata con due volti rivolti in direzioni opposte: simbolo della capacità di osservare simultaneamente passato e futuro per supportare decisioni strategiche consapevoli. La scelta di questo riferimento non è ornamentale. Come Giano presiedeva i passaggi soglia, così un sistema di Intelligenza Artificiale \textit{on-premise} (\textit{OP}) al servizio della Pubblica Amministrazione deve saper leggere la memoria documentale istituzionale accumulata nel tempo e, contemporaneamente, orientare le scelte verso scenari futuri, coniugando continuità istituzionale e capacità predittiva. Il termine \textit{on-premise} richiama al contempo la seconda dimensione dell'acronimo: la scelta deliberata di un paradigma di \textit{deployment} che mantiene infrastruttura, dati e algoritmi all'interno del perimetro giuridico e fisico dell'ente, restituendo alla Pubblica Amministrazione quella sovranità tecnologica che l'esternalizzazione indiscriminata rischia di erodere.
++Il presente lavoro è identificato con l'acronimo \textbf{JANUS-OP}, che prende ispirazione dalla divinità romana Giano (\textit{Ianus}), tradizionalmente raffigurata con due volti rivolti in direzioni opposte: simbolo della capacità di osservare simultaneamente passato e futuro per supportare decisioni strategiche consapevoli. La scelta di questo riferimento non è ornamentale. Come Giano presiedeva i passaggi soglia, così un sistema di Intelligenza Artificiale \textit{on-premise} (\textit{OP}) al servizio della Pubblica Amministrazione deve saper leggere la memoria documentale istituzionale accumulata nel tempo e, contemporaneamente, orientare le scelte verso scenari futuri, coniugando continuità istituzionale e capacità predittiva. Il termine \textit{on-premise} richiama al contempo la seconda dimensione dell'acronimo: la scelta deliberata di un paradigma di \textit{deployment} che mantiene infrastruttura, dati e algoritmi all'interno del perimetro giuridico e fisico dell'ente, restituendo alla Pubblica Amministrazione quella sovranità tecnologica che l'esternalizzazione indiscriminata rischia di erodere. A questa dimensione infrastrutturale si affianca il principio del controllo umano sulle decisioni algoritmiche --- quello che nei capitoli successivi sarà definito \textit{man-in-the-loop} ---: insieme all'\textit{on-premise}, esso costituisce il nucleo valoriale del paradigma JANUS-OP.
+ 
+ % --- Problema di ricerca ---
+ In tale contesto, la scelta del modello di \textit{deployment} --- \textit{cloud}, \textit{on-premise} o ibrido --- assume un ruolo cruciale, soprattutto in relazione ai requisiti di sovranità digitale, protezione dei dati, \textit{compliance} normativa e continuità operativa. Il paradigma \textit{on-premise}, pur presentando sfide in termini di costi, competenze e sostenibilità organizzativa, offre vantaggi strategici significativi per le amministrazioni che trattano dati sensibili, che ricadono nelle categorie di \textit{deployer} di sistemi ad alto rischio ai sensi dell'AI Act europeo, e che necessitano di pieno controllo sulle infrastrutture tecnologiche. La tesi che guida questo lavoro è che il paradigma \textit{on-premise} non rappresenti semplicemente una scelta tecnica di infrastruttura informatica, ma una \textbf{decisione strategica multidimensionale} con implicazioni sulla governance dei dati, sull'autonomia organizzativa, sulla sovranità digitale e sulla sostenibilità economica delle istituzioni pubbliche.
+@@ -26,7 +26,7 @@ Il \textbf{Capitolo~2} affronta l'intelligenza artificiale nella Pubblica Ammini
+ 
+ Il \textbf{Capitolo~3} è dedicato alla \textit{data governance} e alla maturità digitale negli atenei, con il duplice obiettivo di applicare il quadro teorico del Capitolo~2 a una categoria specifica di PA e di costruire le basi empiriche per la proposta del Capitolo~4. Il capitolo analizza i framework internazionali di riferimento (DAMA-DMBOK, ISO/IEC~38505, ISO/IEC~27001, NIST AI RMF) e i \textit{maturity model} per la PA, con particolare attenzione al CMMI-DMM e al modello AI-readiness a quattro livelli sviluppato per gli atenei. La sezione dedicata ai benchmark europei esamina le esperienze di TU Delft, KU Leuven e CINECA come casi verificati di adozione di architetture ibride e \textit{federated learning} negli atenei europei. Il capitolo si conclude con una \textit{gap analysis} sistematica che identifica quattro criticità strutturali degli atenei italiani medi (governance del dato, certificazione di sicurezza, governance del rischio algoritmico, competenze MLOps), le quali definiscono il perimetro di intervento della proposta JANUS-OP.
+ 
+-Il \textbf{Capitolo~4} conduce un'analisi comparativa delle esperienze di adozione di IA \textit{on-premise} maturate nella Pubblica Amministrazione e negli atenei europei, attraverso sette casi nazionali e istituzionali: Estonia, Francia, Germania, Paesi Bassi, Finlandia, Svezia/Scozia e Italia (CINECA/EuroHPC). La metodologia adottata è quella del \textit{comparative case study framework}, articolato su tre livelli di analisi macro-meso-micro, integrato con il TOE framework, il \textit{Strategic Alignment Model} e la \textit{Dynamic Capabilities} theory. Dal confronto emergono quattro \textit{pattern} ricorrenti e una tassonomia di otto modelli di adozione che forniscono all'Italia --- e agli atenei italiani in particolare --- mappe strategiche già collaudate nello stesso spazio normativo europeo. Il capitolo si chiude con quattro raccomandazioni manageriali per la PA italiana e con la valutazione del contributo dei casi europei al paradigma JANUS-OP, di cui dimostrano la praticabilità empirica.
++Il \textbf{Capitolo~4} conduce un'analisi comparativa delle esperienze di adozione di IA \textit{on-premise} maturate nella Pubblica Amministrazione e negli atenei europei, attraverso otto casi: cinque nazionali (Estonia, Francia, Germania, Paesi Bassi, Finlandia) e tre istituzionali (il consorzio Aristote, la rete Helmholtz-CINECA e l'esperienza Svezia/DIGG-Scozia). La metodologia adottata è quella del \textit{comparative case study framework}, articolato su tre livelli di analisi macro-meso-micro, integrato con il TOE framework, il \textit{Strategic Alignment Model} e la \textit{Dynamic Capabilities} theory. Dal confronto emergono quattro \textit{pattern} ricorrenti e una tassonomia di otto modelli di adozione che forniscono all'Italia --- e agli atenei italiani in particolare --- mappe strategiche già collaudate nello stesso spazio normativo europeo. Il capitolo si chiude con quattro raccomandazioni manageriali per la PA italiana e con la valutazione del contributo dei casi europei al paradigma JANUS-OP, di cui dimostrano la praticabilità empirica.
+ 
+ % --- Nota metodologica ---
+-La metodologia adottata si basa su un approccio di analisi documentale, \textit{framework}-based e comparativa, con riferimento a fonti normative, istituzionali, accademiche e a rapporti di organismi europei e nazionali. I benchmark europei del Capitolo~3 sono stati selezionati sulla base della verificabilità delle fonti primarie e della rilevanza dei pattern architetturali per il contesto della PA italiana. I casi europei del Capitolo~4 sono stati selezionati sulla base della verificabilità delle fonti primarie, della diversità dei modelli di adozione e della loro trasferibilità al contesto della PA italiana. Lo sforzo metodologico che attraversa l'intera tesi è quello di non restare sul piano descrittivo-normativo, ma di portare i framework teorici a contatto con l'evidenza empirica europea, producendo strumenti analitici --- la tassonomia dei sette modelli e le quattro raccomandazioni manageriali --- che i dirigenti pubblici possano riutilizzare in contesti analoghi.
++La metodologia adottata si basa su un approccio di analisi documentale, \textit{framework}-based e comparativa, con riferimento a fonti normative, istituzionali, accademiche e a rapporti di organismi europei e nazionali. I benchmark europei del Capitolo~3 sono stati selezionati sulla base della verificabilità delle fonti primarie e della rilevanza dei pattern architetturali per il contesto della PA italiana. I casi europei del Capitolo~4 sono stati selezionati sulla base della verificabilità delle fonti primarie, della diversità dei modelli di adozione e della loro trasferibilità al contesto della PA italiana. Lo sforzo metodologico che attraversa l'intera tesi è quello di non restare sul piano descrittivo-normativo, ma di portare i framework teorici a contatto con l'evidenza empirica europea, producendo strumenti analitici --- la tassonomia degli otto modelli e le quattro raccomandazioni manageriali --- che i dirigenti pubblici possano riutilizzare in contesti analoghi.
+diff --git a/main.tex b/main.tex
+index ad6b874..f66b266 100644
+--- a/main.tex
++++ b/main.tex
+@@ -177,15 +177,12 @@
+ \printbibliography[heading=bibintoc,title={Bibliografia}]
+ \cleardoublepage
+ 
+-% === ELENCO FIGURE ===
+-\listoffigures
+-\cleardoublepage
+-
+ % === ELENCO TABELLE ===
+ \listoftables
+ \cleardoublepage
+ 
+ % === ELENCO ACRONIMI ===
++\glsaddall  % include tutti gli acronimi definiti, anche se non richiamati con \gls
+ \printglossary[type=\acronymtype,title=Elenco degli Acronimi]
+ \cleardoublepage
+ 
+-- 
+2.34.1
+
