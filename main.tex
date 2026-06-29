@@ -88,15 +88,17 @@
 \usepackage{appendix}
 
 % === Intestazioni e piè di pagina ===
+% Font intestazioni/piè di pagina ridotto a 9pt (3pt in meno del corpo)
+\newcommand{\headfootfont}{\fontsize{9}{11}\selectfont}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\nouppercase{\leftmark}}
-\fancyhead[R]{\thepage}
+\fancyhead[L]{\headfootfont\nouppercase{\leftmark}}
+\fancyhead[R]{\headfootfont\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{%
   \fancyhf{}
-  \fancyfoot[C]{\thepage}
+  \fancyfoot[C]{\headfootfont\thepage}
   \renewcommand{\headrulewidth}{0pt}
 }
 
