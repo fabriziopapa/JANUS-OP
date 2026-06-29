@@ -49,6 +49,7 @@
   bookmarks=true,
   bookmarksopen=false
 ]{hyperref}
+\usepackage{xurl}            % spezza gli URL lunghi nella bibliografia
 
 % === Listati di codice ===
 \usepackage{listings}
@@ -136,10 +137,17 @@
 \input{frontmatter/acronimi}
 
 % ============================================================
+% === Tabelle leggibili: testo a bandiera, interlinea singola, font ridotto ===
+\renewcommand\tabularxcolumn[1]{>{\raggedright\arraybackslash}p{#1}}
+\AtBeginEnvironment{tabularx}{\small\setstretch{1}\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.3}}
+
 \begin{document}
+
+\pagenumbering{roman}   % front matter in numeri romani
 
 % --- Frontespizio ---
 \input{frontmatter/frontespizio}
+\setcounter{page}{2}   % il frontespizio occupa la pagina i; si riprende da ii
 \cleardoublepage
 
 % --- Dedica (opzionale) ---
@@ -155,6 +163,7 @@
 \cleardoublepage
 
 % === INTRODUZIONE ===
+\pagenumbering{arabic}   % corpo della tesi in numeri arabi
 \input{frontmatter/introduzione}
 \cleardoublepage
 
