@@ -14,21 +14,21 @@ soggette agli stessi vincoli normativi che gravano su ogni ente pubblico --- e
 \textit{policy-maker} di fatto, perché formano i quadri tecnici e dirigenziali che
 guideranno la digitalizzazione delle altre amministrazioni. A questa duplice condizione
 si aggiunge una terza dimensione, decisiva per il presente lavoro: gli atenei sono
-laboratori privilegiati di sperimentazione di sistemi di IA applicati a processi
+laboratori privilegiati di sperimentazione di sistemi di \gls{ia} applicati a processi
 decisionali istituzionali, perché dispongono di patrimoni informativi ricchi, di
 competenze scientifiche interne e di un margine di autonomia organizzativa che altre
-PA non possiedono.
+\gls{pa} non possiedono.
 
 Il presente capitolo affronta tale condizione da un'angolatura squisitamente
 manageriale, evitando le derive tecnico-informatiche e mantenendo costante il riferimento
-al paradigma \textit{on-premise} \textit{man-in-the-loop} che attraversa l'intera tesi.
+al paradigma \gls{onpremise} \textit{man-in-the-loop} che attraversa l'intera tesi.
 La prima sezione (\S\ref{sec:universita-transizione}) ricostruisce il ruolo strategico
 degli atenei nella transizione digitale, collocandoli nel quadro del Digital Economy and
-Society Index (DESI) 2024. La seconda sezione (\S\ref{sec:framework-governance})
+Society Index (\gls{desi}) 2024. La seconda sezione (\S\ref{sec:framework-governance})
 analizza i \textit{framework} internazionali di \textit{data governance} ---
 DAMA-DMBOK, ISO/IEC\,38505, ISO/IEC\,27001 --- e introduce il NIST AI Risk Management
-Framework come quarto pilastro specificamente dedicato alla governance dei sistemi di IA.
-La terza sezione (\S\ref{sec:maturity-model}) discute i \textit{maturity model} per la PA
+Framework come quarto pilastro specificamente dedicato alla governance dei sistemi di \gls{ia}.
+La terza sezione (\S\ref{sec:maturity-model}) discute i \textit{maturity model} per la \gls{pa}
 e propone un modello sintetico di \textit{AI-readiness} a quattro livelli, esplicitamente
 allineato al CMMI Data Management Maturity Model. La quarta sezione
 (\S\ref{sec:benchmark-europei}) analizza tre benchmark europei verificati ---
@@ -44,7 +44,7 @@ JANUS-OP.
 
 \subsection{Gli atenei come motori strategici della digitalizzazione pubblica}
 
-La trasformazione digitale della PA europea, accelerata dopo il 2020 dai dispositivi di
+La trasformazione digitale della \gls{pa} europea, accelerata dopo il 2020 dai dispositivi di
 ripresa post-pandemica, ha individuato negli atenei un nodo strategico per ragioni
 strutturali e non meramente strumentali. Sul piano strutturale, le università sono
 istituzioni \textit{knowledge-intensive} e \textit{data-intensive}: la loro attività
@@ -52,7 +52,7 @@ ordinaria produce, raccoglie e trasforma volumi di dati di magnitudo paragonabil
 quella delle grandi amministrazioni centrali, ma con una varietà tipologica e una densità
 semantica nettamente superiori. Sul piano strumentale, gli atenei sono il principale
 canale attraverso cui le competenze digitali si diffondono nel sistema-Paese: la
-qualità della trasformazione digitale della PA italiana, nei prossimi due decenni,
+qualità della trasformazione digitale della \gls{pa} italiana, nei prossimi due decenni,
 sarà funzione diretta della capacità degli atenei di formare profili professionali capaci
 di governare dati e algoritmi nel rispetto dei vincoli normativi europei
 \parencite{NunezCanal2026}.
@@ -74,15 +74,15 @@ sempre più, i modelli di \textit{machine learning} addestrati su dati istituzio
 Questa stratificazione informativa non è neutra rispetto alle scelte architetturali.
 Come osservano \textcite{Aguilar2026}, la \textit{data governance} centrata sul dato
 --- anziché limitata alla sola sicurezza informatica --- costituisce la precondizione per
-la creazione di valore organizzativo responsabile nelle PA europee. Applicato al contesto
+la creazione di valore organizzativo responsabile nelle \gls{pa} europee. Applicato al contesto
 universitario, questo principio implica che la scelta di un modello di \textit{deployment}
-dell'IA non possa prescindere dalla natura e dalla classificazione del dato trattato: un
+dell'\gls{ia} non possa prescindere dalla natura e dalla classificazione del dato trattato: un
 sistema di supporto alla valutazione degli studenti opera su dati del secondo livello;
 un modello predittivo applicato a flussi di ricerca può coinvolgere dati del terzo. In
 entrambi i casi, la dipendenza da infrastrutture \textit{cloud} esterne espone l'ateneo a
 rischi di perdita di controllo sul patrimonio informativo che la normativa europea
---- in primo luogo il GDPR e l'AI Act --- non consente di sottovalutare. È qui che il
-paradigma \textit{on-premise} \textit{man-in-the-loop} trova la propria giustificazione
+--- in primo luogo il \gls{gdpr} e l'\gls{aiact} --- non consente di sottovalutare. È qui che il
+paradigma \gls{onpremise} \textit{man-in-the-loop} trova la propria giustificazione
 manageriale: non come preferenza tecnologica, ma come traduzione architetturale di un
 modello di sovranità sul dato istituzionale.
 
@@ -99,7 +99,7 @@ strutturalmente inferiori per le \textit{Digital Skills} di base e per l'integra
 delle tecnologie digitali nelle organizzazioni \parencite{DESI2024}.
 
 Per la componente \textit{Open Data Maturity}, oggetto di un monitoraggio specifico
-all'interno del DESI, l'Italia si colloca per la terza edizione consecutiva nel cluster
+all'interno del \gls{desi}, l'Italia si colloca per la terza edizione consecutiva nel cluster
 \textit{Fast Tracker}, con un punteggio complessivo superiore alla media UE. Tale dato
 aggregato nasconde tuttavia un'asimmetria importante: le amministrazioni centrali
 trainano la classifica, mentre le amministrazioni locali e gli atenei presentano livelli
@@ -111,7 +111,7 @@ classificazione del patrimonio dati, nell'integrazione dei sistemi e nella dispo
 di competenze interne di \textit{data engineering} \parencite{McNicol2024DataEthics}.
 
 Il quadro che emerge è quello di un sistema universitario italiano potenzialmente
-collocabile al livello di \textit{follower} qualificato all'interno del DESI ma
+collocabile al livello di \textit{follower} qualificato all'interno del \gls{desi} ma
 penalizzato da una distribuzione fortemente eterogenea della maturità tra i singoli
 atenei. La concentrazione delle competenze digitali avanzate in un nucleo ristretto di
 poli universitari --- prevalentemente settentrionali, con eccezioni qualificate nel
@@ -121,14 +121,14 @@ condivisione infrastrutturale e di trasferimento di competenze.
 
 \subsection{Obblighi normativi e responsabilità del \textit{deployer}}
 
-Il quadro regolatorio europeo ha introdotto, con il Regolamento (UE) 2024/1689 (AI Act),
+Il quadro regolatorio europeo ha introdotto, con il Regolamento (UE) 2024/1689 (\gls{aiact}),
 un elemento di discontinuità rilevante per gli atenei: la classificazione come
-\textbf{sistemi ad alto rischio} di tutti i sistemi di IA utilizzati in ambito
+\textbf{sistemi ad alto rischio} di tutti i sistemi di \gls{ia} utilizzati in ambito
 educativo e formativo. L'Allegato III, al punto\,3, elenca tra i sistemi
 \textit{high-risk} quelli impiegati per «determinare l'accesso o l'ammissione a istituti
 di istruzione e formazione professionale», per «valutare i partecipanti a test e fissare
 risultati di apprendimento» e per «rilevare comportamenti vietati durante esami»
-\parencite{AIAct2024}. Ne consegue che ogni ateneo europeo che adotti sistemi di IA per
+\parencite{AIAct2024}. Ne consegue che ogni ateneo europeo che adotti sistemi di \gls{ia} per
 l'ammissione ai corsi, per il riconoscimento automatico dei crediti o per la valutazione
 adattiva diventa \textit{deployer} di un sistema \textit{high-risk} --- come già
 analizzato nel Capitolo~2 (§\ref{sec:cap2-governance-ia}) in termini di scelte
@@ -141,23 +141,23 @@ Il punto cruciale, da un punto di vista manageriale, è che tali obblighi richie
 se i dati di inferenza transitano per server di fornitori terzi privi di obblighi di
 trasparenza equivalenti. La conservazione dei \textit{log} non è garantibile se
 l'architettura \textit{cloud} del fornitore non prevede la portabilità e l'esportazione
-dei \textit{log} stessi. L'\textit{on-premise} --- o l'architettura ibrida con componente
-di inferenza \textit{on-premise} --- non è dunque una preferenza tecnologica ma una
+dei \textit{log} stessi. L'\gls{onpremise} --- o l'architettura ibrida con componente
+di inferenza \gls{onpremise} --- non è dunque una preferenza tecnologica ma una
 risposta strutturale a un vincolo normativo. È in questa logica che il paradigma
 \textit{man-in-the-loop}, nucleo concettuale della proposta JANUS-OP, trova la sua
-giustificazione: la supervisione umana richiesta dall'AI Act non è effettiva se
+giustificazione: la supervisione umana richiesta dall'\gls{aiact} non è effettiva se
 l'operatore non dispone di accesso pieno ai dati, ai modelli e ai \textit{log} su cui
 deve esercitare il proprio sindacato.
 
 Al di là dei vincoli normativi, esiste una ragione strategica per cui gli atenei europei
 stanno ripensando il proprio rapporto con l'infrastruttura dati. La ricerca di
 \textcite{NunezCanal2026} dimostra empiricamente che la competenza del corpo docente in
-materia di IA è correlata positivamente alla capacità istituzionale dell'ateneo di
+materia di \gls{ia} è correlata positivamente alla capacità istituzionale dell'ateneo di
 innovare i propri processi decisionali. Questo risultato suggerisce che la
 \textbf{governance del dato} non è una funzione tecnica separata dalla strategia
 accademica: è una capacità organizzativa abilitante (\textit{organizational capability})
 che determina la qualità delle decisioni istituzionali \parencite{Dabbous2026AIReadiness}.
-L'ateneo che esternalizza l'infrastruttura IA senza un'adeguata contrattualizzazione dei
+L'ateneo che esternalizza l'infrastruttura \gls{ia} senza un'adeguata contrattualizzazione dei
 diritti sui dati e dei \textit{log} di inferenza non sta compiendo una scelta
 tecnologica: sta cedendo la propria capacità di \textit{data stewardship}, con
 conseguenze dirette sulla compliance normativa e sulla sovranità istituzionale.
@@ -173,8 +173,8 @@ misurabili. Nessuno dei \textit{framework} disponibili è autosufficiente: ciasc
 una porzione specifica del problema. Per questo motivo le organizzazioni mature adottano
 una combinazione integrata di standard, di cui i quattro qui analizzati --- DAMA-DMBOK,
 ISO/IEC\,38505, ISO/IEC\,27001 e NIST AI Risk Management Framework --- rappresentano i
-pilastri di riferimento per gli atenei europei che intendano implementare IA in modalità
-\textit{on-premise} con supervisione umana significativa.
+pilastri di riferimento per gli atenei europei che intendano implementare \gls{ia} in modalità
+\gls{onpremise} con supervisione umana significativa.
 
 \subsection{DAMA-DMBOK: la mappa delle responsabilità organizzative}
 
@@ -182,15 +182,15 @@ Il \textit{Data Management Body of Knowledge} (DAMA-DMBOK), nella sua seconda ed
 2017 \parencite{DAMA_DMBOK}, rappresenta il riferimento più diffuso a livello
 internazionale per la strutturazione della \textit{data governance}. Il \textit{framework}
 organizza le funzioni di gestione del dato attorno a undici aree di conoscenza, tra le
-quali le più rilevanti per il contesto universitario \textit{on-premise} sono:
+quali le più rilevanti per il contesto universitario \gls{onpremise} sono:
 l'\textbf{architettura dei dati} (\textit{Data Architecture}), che definisce dove
 risiedono i dati e come si relazionano tra loro; la \textbf{sicurezza dei dati}
 (\textit{Data Security}), che governa accessi, cifratura e tracciabilità; il
 \textbf{management dei metadati} (\textit{Metadata Management}), che garantisce la
 tracciabilità delle trasformazioni subite dai dati, incluse quelle operate da algoritmi
-di IA.
+di \gls{ia}.
 
-Quest'ultima area assume un rilievo particolare alla luce dell'AI Act: la documentazione
+Quest'ultima area assume un rilievo particolare alla luce dell'\gls{aiact}: la documentazione
 tecnica obbligatoria per i sistemi \textit{high-risk} (art.\,11) richiede esattamente la
 tracciabilità dei \textit{dataset} utilizzati nell'addestramento, che il \textit{Metadata
 Management} del DAMA-DMBOK è progettato per garantire. Un ateneo che non abbia
@@ -204,7 +204,7 @@ Accademico, Rettore) definisce le politiche; il livello \textbf{tattico} (CIO, D
 alla Transizione Digitale, DPO) traduce le politiche in processi; il livello
 \textbf{operativo} (amministratori di sistema, \textit{data steward} di dipartimento)
 implementa i processi e segnala le anomalie. La coerenza tra questi tre livelli è la
-condizione necessaria per la sostenibilità di un sistema di IA \textit{on-premise}, che
+condizione necessaria per la sostenibilità di un sistema di \gls{ia} \gls{onpremise}, che
 richiede competenze distribuite e non centralizzate in un singolo fornitore esterno.
 
 \subsection{ISO/IEC\,38505: la governance del dato come funzione di \textit{board}}
@@ -218,7 +218,7 @@ alla governance finanziaria.
 
 Applicato agli atenei, questo principio implica che il Consiglio di Amministrazione
 valuti (\textit{Evaluate}) le politiche di utilizzo del dato istituzionale --- incluse le
-decisioni sul modello di \textit{deployment} dell'IA ---; che indirizzi (\textit{Direct})
+decisioni sul modello di \textit{deployment} dell'\gls{ia} ---; che indirizzi (\textit{Direct})
 il management nella loro attuazione; e che monitorizzi (\textit{Monitor}) i risultati
 attraverso indicatori definiti. Il Nucleo di Valutazione, previsto dalla normativa
 ANVUR, può svolgere la funzione di \textit{Monitor} esterno, verificando la coerenza tra
@@ -226,11 +226,11 @@ le dichiarazioni dell'ateneo in materia di \textit{data governance} e le pratich
 effettive \parencite{ISO38505}.
 
 La norma ISO/IEC\,38505 è particolarmente rilevante perché fornisce il fondamento per
-trattare la scelta \textit{on-premise} come una \textbf{decisione di governance}, non
+trattare la scelta \gls{onpremise} come una \textbf{decisione di governance}, non
 come una scelta tecnica. Il CdA che delibera di adottare un'infrastruttura
-\textit{on-premise} per i sistemi di IA che trattano dati sensibili degli studenti sta
+\gls{onpremise} per i sistemi di \gls{ia} che trattano dati sensibili degli studenti sta
 esercitando la funzione di \textit{Evaluate} prevista dalla norma, assumendosi la
-responsabilità istituzionale che l'AI Act attribuisce al \textit{deployer}. Il paradigma
+responsabilità istituzionale che l'\gls{aiact} attribuisce al \textit{deployer}. Il paradigma
 \textit{man-in-the-loop} si colloca, in questa prospettiva, all'interno della funzione di
 \textit{Monitor}: la supervisione umana non è solo un controllo operativo sull'output del
 modello, ma una componente strutturale del sistema di governance.
@@ -246,10 +246,10 @@ perimetro italiano, le università che gestiscono infrastrutture di ricerca crit
 partecipano al Polo Strategico Nazionale --- la certificazione ISO/IEC\,27001 è diventata
 un requisito di fatto.
 
-Nel contesto dell'IA \textit{on-premise}, la norma assume un ruolo di
-\textbf{prerequisito infrastrutturale}: un sistema di IA che inferisce su dati personali
+Nel contesto dell'\gls{ia} \gls{onpremise}, la norma assume un ruolo di
+\textbf{prerequisito infrastrutturale}: un sistema di \gls{ia} che inferisce su dati personali
 in un ambiente non certificato secondo ISO/IEC\,27001 non soddisfa i requisiti di
-sicurezza dell'AI Act per i sistemi \textit{high-risk}. Viceversa, un ateneo certificato
+sicurezza dell'\gls{aiact} per i sistemi \textit{high-risk}. Viceversa, un ateneo certificato
 dispone già del sistema di gestione della sicurezza delle informazioni (ISMS) necessario
 per documentare e auditare i processi di \textit{training}, \textit{fine-tuning} e
 inferenza dei modelli.
@@ -267,32 +267,32 @@ algoritmico}
 
 Se DAMA-DMBOK e ISO/IEC\,38505 governano il dato e ISO/IEC\,27001 governa la sicurezza
 dell'infrastruttura, resta scoperto un dominio specifico: il \textbf{rischio algoritmico}
-introdotto dai sistemi di IA in produzione. Questo dominio non è riducibile né alla
+introdotto dai sistemi di \gls{ia} in produzione. Questo dominio non è riducibile né alla
 governance del dato né alla sicurezza informatica tradizionale, perché i rischi tipici
-dell'IA --- \textit{bias} sistematici, \textit{drift} dei modelli, opacità decisionale,
+dell'\gls{ia} --- \textit{bias} sistematici, \textit{drift} dei modelli, opacità decisionale,
 allucinazioni nei sistemi generativi --- richiedono strumenti analitici e procedure
 operative specifiche. Il NIST AI Risk Management Framework, pubblicato dal National
 Institute of Standards and Technology nella sua versione 1.0 nel gennaio 2023, costituisce
 il primo \textit{framework} internazionale di portata generale dedicato esclusivamente
 alla governance del rischio algoritmico \parencite{NIST_AI_RMF}.
 
-Il NIST AI RMF si articola attorno a quattro funzioni interconnesse: \textit{Govern},
+Il \gls{nistrmf} si articola attorno a quattro funzioni interconnesse: \textit{Govern},
 \textit{Map}, \textit{Measure}, \textit{Manage}. La funzione \textit{Govern} stabilisce
 la struttura organizzativa e culturale del rischio, definendo ruoli, responsabilità e
 politiche di accountability; opera quindi al livello che, nel linguaggio della
 ISO/IEC\,38505, corrisponde a \textit{Evaluate} e \textit{Direct}. La funzione
-\textit{Map} contestualizza l'applicazione dell'IA all'interno dei processi
+\textit{Map} contestualizza l'applicazione dell'\gls{ia} all'interno dei processi
 organizzativi, identificando gli stakeholder, gli impatti potenziali e i confini del
 sistema. La funzione \textit{Measure} definisce le metriche di rischio --- accuratezza,
 equità, robustezza, trasparenza, sicurezza, privacy --- e i protocolli di misurazione
 ripetibile. La funzione \textit{Manage} traduce i rischi misurati in piani di mitigazione,
 escalation e ritiro del sistema.
 
-Applicato agli atenei europei, il NIST AI RMF offre alcuni vantaggi metodologici rilevanti.
+Applicato agli atenei europei, il \gls{nistrmf} offre alcuni vantaggi metodologici rilevanti.
 In primo luogo, si tratta di un \textit{framework} \textbf{volontario, modulare e
 neutrale rispetto alle giurisdizioni}: non duplica gli obblighi normativi europei ma li
 integra, fornendo strumenti operativi che il regolamento europeo formula in termini
-generali. In secondo luogo, il NIST AI RMF è esplicitamente progettato per il
+generali. In secondo luogo, il \gls{nistrmf} è esplicitamente progettato per il
 \textbf{ciclo di vita completo} del sistema --- dalla progettazione al ritiro --- e
 include sezioni dedicate alle interazioni con esseri umani, particolarmente rilevanti per
 i sistemi \textit{man-in-the-loop}. In terzo luogo, il NIST RMF è coerente con la logica
@@ -300,21 +300,21 @@ del \textbf{Generative AI Profile} pubblicato dallo stesso NIST nel 2024, che ad
 \textit{framework} ai sistemi generativi, oggi al centro della sperimentazione
 universitaria.
 
-La complementarità tra NIST AI RMF e AI Act è particolarmente significativa per gli atenei
+La complementarità tra \gls{nistrmf} e \gls{aiact} è particolarmente significativa per gli atenei
 \textit{deployer} di sistemi \textit{high-risk}: gli obblighi di valutazione d'impatto
 sui diritti fondamentali (FRIA), di sorveglianza umana e di gestione del rischio nel
-ciclo di vita previsti dall'AI Act trovano nel NIST RMF una traduzione operativa
+ciclo di vita previsti dall'\gls{aiact} trovano nel NIST RMF una traduzione operativa
 collaudata, che riduce il costo di adeguamento alle nuove norme. Un ateneo che adotta
 contestualmente ISO/IEC\,27001 (sicurezza dell'infrastruttura), DAMA-DMBOK
-(governance del dato) e NIST AI RMF (governance del rischio algoritmico) dispone della
-copertura organizzativa completa richiesta dall'AI Act per i sistemi \textit{high-risk},
-con la garanzia aggiuntiva di un disegno architetturale \textit{on-premise}
+(governance del dato) e \gls{nistrmf} (governance del rischio algoritmico) dispone della
+copertura organizzativa completa richiesta dall'\gls{aiact} per i sistemi \textit{high-risk},
+con la garanzia aggiuntiva di un disegno architetturale \gls{onpremise}
 \textit{man-in-the-loop} che rende effettivamente esigibili i diritti previsti dalla
 norma.
 
 La Tabella~\ref{tab:framework-governance} sintetizza il confronto tra i quattro \textit{framework} analizzati,
-evidenziandone i livelli primari, l'applicabilità al contesto PA e il contributo
-specifico al paradigma \textit{on-premise}.
+evidenziandone i livelli primari, l'applicabilità al contesto \gls{pa} e il contributo
+specifico al paradigma \gls{onpremise}.
 
 \begin{table}[H]
 \centering
@@ -348,7 +348,7 @@ operativa di FRIA e sorveglianza umana & Strumenti per \textit{man-in-the-loop} 
 Il concetto di \textbf{maturità digitale} --- inteso come la capacità di
 un'organizzazione di adottare, integrare e valorizzare le tecnologie digitali in modo
 sistematico e misurabile --- ha assunto un ruolo centrale nella letteratura di
-\textit{Information Systems} e nel dibattito sulla trasformazione della PA europea. I
+\textit{Information Systems} e nel dibattito sulla trasformazione della \gls{pa} europea. I
 \textit{maturity model} non sono mere classificazioni descrittive: sono
 \textbf{strumenti decisionali} che consentono al management di identificare il \textit{gap}
 tra lo stato corrente e lo stato obiettivo, di pianificare interventi prioritari e di
@@ -356,12 +356,12 @@ allocare risorse in modo coerente con la traiettoria di sviluppo istituzionale
 \parencite{Torichnyi2025StrategicMgmt}.
 
 Nel caso specifico degli atenei, la maturità digitale condiziona direttamente la
-fattibilità dell'IA \textit{on-premise}: un ateneo privo di un inventario strutturato del
+fattibilità dell'\gls{ia} \gls{onpremise}: un ateneo privo di un inventario strutturato del
 proprio patrimonio dati, di un sistema di gestione della sicurezza certificato e di
 competenze interne di \textit{data engineering} non è in grado di operare e mantenere un
-sistema di IA su infrastruttura propria. Il \textit{maturity model} consente di rendere
+sistema di \gls{ia} su infrastruttura propria. Il \textit{maturity model} consente di rendere
 questo \textit{gap} visibile e quantificabile, trasformandolo da ostacolo percepito a
-piano di sviluppo programmabile. Per la PA in generale, e per gli atenei in particolare,
+piano di sviluppo programmabile. Per la \gls{pa} in generale, e per gli atenei in particolare,
 la maturità non è un dato statico ma un percorso: il valore del modello sta nel definire
 la traiettoria, non solo la posizione di partenza.
 
@@ -381,7 +381,7 @@ unico, esso valuta sei \textit{categorie di processo} in modo indipendente ---
 dimensioni. In terzo luogo, il DMM utilizza i cinque livelli classici del CMMI
 (\textit{Performed}, \textit{Managed}, \textit{Defined}, \textit{Measured},
 \textit{Optimized}), familiari alla cultura manageriale internazionale e già adottati in
-ambito PA per altri standard.
+ambito \gls{pa} per altri standard.
 
 Per un ateneo italiano medio, il DMM consente di diagnosticare la propria capacità
 organizzativa su ciascuna dimensione in modo asimmetrico: tipicamente, un ateneo può
@@ -390,25 +390,25 @@ piattaforme operative (ESSE3, U-GOV) ma al livello\,1 (\textit{Performed}) per l
 \textit{Platform \& Architecture} ai fini AI. Questa asimmetria è informativa per il
 management, perché indica con precisione dove concentrare gli investimenti e quali aree
 hanno bisogno di consolidamento prima di poter sostenere un \textit{deployment}
-\textit{on-premise} di sistemi di IA.
+\gls{onpremise} di sistemi di \gls{ia}.
 
 A integrazione del CMMI DMM, due ulteriori riferimenti meritano menzione. Il modello della
 \textbf{maturità della \textit{records governance}} proposto da
-\textcite{Abdallah2026ARMA}, basato sul framework ARMA e applicato in un contesto di PA
+\textcite{Abdallah2026ARMA}, basato sul framework ARMA e applicato in un contesto di \gls{pa}
 locale, evidenzia che la maturità documentale è un predittore affidabile della maturità
 digitale complessiva: le organizzazioni che non governano efficacemente i propri documenti
-strutturati difficilmente governano i \textit{dataset} necessari all'IA. L'\textbf{Open
-Data Maturity Index} della Commissione Europea, integrato nel monitoraggio DESI 2024
+strutturati difficilmente governano i \textit{dataset} necessari all'\gls{ia}. L'\textbf{Open
+Data Maturity Index} della Commissione Europea, integrato nel monitoraggio \gls{desi} 2024
 \parencite{DESI2024}, fornisce invece un benchmark esterno verificabile sulla dimensione
 specifica della pubblicazione e del riuso dei dati aperti.
 
 \subsection{Un modello sintetico di \textit{AI-readiness} per gli atenei: proposta
 dell'autore}
 
-A partire dai modelli CMMI DMM, DAMA-DMBOK, ISO/IEC\,38505 e NIST AI RMF, si propone un
+A partire dai modelli CMMI DMM, DAMA-DMBOK, ISO/IEC\,38505 e \gls{nistrmf}, si propone un
 \textbf{modello sintetico di \textit{AI-readiness}} a quattro livelli, calibrato sulle
-specificità degli atenei europei che intendano adottare sistemi di IA con componente
-\textit{on-premise}. Il modello non sostituisce i \textit{framework} di riferimento ma li
+specificità degli atenei europei che intendano adottare sistemi di \gls{ia} con componente
+\gls{onpremise}. Il modello non sostituisce i \textit{framework} di riferimento ma li
 sintetizza in una griglia diagnostica applicabile con risorse limitate, orientata al
 \textit{decision-making} del management accademico. I quattro livelli proposti riprendono
 intenzionalmente l'etichettatura del CMMI DMM nei primi quattro stadi, garantendo
@@ -445,8 +445,8 @@ cessa di essere un sottoprodotto amministrativo e diventa un \textbf{asset strat
 governato}. Il passaggio dal livello\,3 al livello\,4 è prevalentemente tecnologico e
 finanziario: presuppone che il cambio culturale e organizzativo sia già avvenuto e che
 l'ateneo disponga --- o abbia accesso consortile --- a infrastrutture HPC adeguate
-all'addestramento e all'esecuzione di modelli di IA in produzione. È al livello\,3 che
-il paradigma \textit{on-premise} \textit{man-in-the-loop} diventa praticabile: i
+all'addestramento e all'esecuzione di modelli di \gls{ia} in produzione. È al livello\,3 che
+il paradigma \gls{onpremise} \textit{man-in-the-loop} diventa praticabile: i
 prerequisiti di governance e di sicurezza sono soddisfatti, mentre l'investimento
 infrastrutturale può essere graduale e orientato all'inferenza prima che al
 \textit{training} su larga scala.
@@ -461,7 +461,7 @@ I benchmark analizzati in questa sezione sono stati selezionati sulla base di tr
 convergenti: (a) \textbf{verificabilità delle fonti} --- sono stati inclusi solo atenei o
 consorzi con documentazione pubblica accessibile, incluse pubblicazioni accademiche,
 \textit{whitepaper} istituzionali e \textit{dataset} aperti; (b) \textbf{rilevanza
-architetturale} --- i casi presentano componenti \textit{on-premise} o ibride
+architetturale} --- i casi presentano componenti \gls{onpremise} o ibride
 significative, non il semplice utilizzo di piattaforme SaaS; (c) \textbf{pertinenza
 manageriale} --- ogni caso illustra almeno uno dei tre cardini della presente tesi:
 sovranità digitale, compliance normativa, modello organizzativo \textit{man-in-the-loop}.
@@ -469,7 +469,7 @@ sovranità digitale, compliance normativa, modello organizzativo \textit{man-in-
 I tre benchmark selezionati --- KU Leuven (Belgio), TU Delft (Paesi Bassi), CINECA
 (Italia) --- rappresentano configurazioni architetturali differenti ma riconducibili ad
 una matrice comune: il \textit{federated learning} per la ricerca biomedica
-multi-istituzionale, l'architettura ibrida con inferenza \textit{on-premise} per il
+multi-istituzionale, l'architettura ibrida con inferenza \gls{onpremise} per il
 \textit{learning analytics}, il modello consortile di HPC per la ricerca pubblica.
 L'analisi che segue è condotta da una prospettiva manageriale, tralasciando i dettagli
 tecnico-implementativi non rilevanti per le decisioni di governance.
@@ -480,18 +480,18 @@ biomedica}
 La Katholieke Universiteit Leuven è uno degli atenei europei più attivi nello sviluppo di
 architetture di \textit{federated learning} applicate alla ricerca biomedica. Il contesto
 normativo è quello della ricerca clinica multi-istituzionale: i dati dei pazienti ---
-regolati dal GDPR e, per la ricerca sperimentale, dai requisiti dei comitati etici
+regolati dal \gls{gdpr} e, per la ricerca sperimentale, dai requisiti dei comitati etici
 nazionali --- non possono essere centralizzati in un'unica infrastruttura senza il
 consenso esplicito degli interessati, consenso che nella pratica della ricerca
 distribuita è spesso impraticabile da ottenere.
 
 La risposta architetturale adottata da KU Leuven, in collaborazione con partner di
 ricerca europei nell'ambito di progetti Horizon Europe, è il \textit{federated learning}:
-i modelli di IA vengono addestrati \textbf{localmente} su ciascun nodo ospedaliero o
+i modelli di \gls{ia} vengono addestrati \textbf{localmente} su ciascun nodo ospedaliero o
 universitario, e solo i \textit{gradient updates} --- aggregati e resi anonimi ---
 vengono condivisi con il coordinatore del consorzio \parencite{GadekalluFL2026}. Il dato
 grezzo non abbandona mai il perimetro fisico e giuridico dell'istituzione che lo possiede:
-è questa la garanzia di sovranità che rende il modello conforme al GDPR senza richiedere
+è questa la garanzia di sovranità che rende il modello conforme al \gls{gdpr} senza richiedere
 il consenso esplicito per ogni singolo dato.
 
 Dal punto di vista manageriale, l'esperienza di KU Leuven illustra un principio generale:
@@ -517,7 +517,7 @@ documentato nel \textit{whitepaper} istituzionale di \textcite{Specht2023DataLea
 Il programma costituisce un benchmark significativo perché affronta in modo sistematico
 il problema dell'uso etico, sicuro e conforme dei dati degli studenti per finalità di
 \textit{learning analytics} in ambito ingegneristico, esplicitando la tensione tra le
-opportunità di personalizzazione dell'apprendimento e i vincoli imposti da GDPR, etica
+opportunità di personalizzazione dell'apprendimento e i vincoli imposti da \gls{gdpr}, etica
 istituzionale e diritti degli studenti.
 
 Il \textit{whitepaper} di TU Delft documenta sei aree applicative principali per i dati
@@ -529,7 +529,7 @@ design} sulla base dell'uso effettivo; la personalizzazione adattiva dei percors
 formativi; la valutazione formativa basata sui dati; il monitoraggio dell'equità e
 dell'inclusione \parencite{Specht2023DataLearning}. Per ciascuna area, il programma
 identifica esplicitamente le \textbf{sfide etiche, giuridiche e organizzative}: il
-rispetto del GDPR, la trasparenza verso gli studenti, la prevenzione di
+rispetto del \gls{gdpr}, la trasparenza verso gli studenti, la prevenzione di
 \textit{bias} algoritmici, la necessità di consenso informato e di garanzie sulla
 \textit{privacy by design}.
 
@@ -537,7 +537,7 @@ Sul piano architetturale, il programma evidenzia un'esigenza ricorrente: i dati
 \textit{learning} degli studenti, in quanto potenzialmente rivelatori di condizioni
 cognitive, di disagio o di difficoltà socio-economica, devono essere trattati in ambienti
 sotto pieno controllo istituzionale. L'architettura emergente dal programma è coerente
-con il principio della \textbf{\textit{privacy by design}} (art.\,25 GDPR) e della
+con il principio della \textbf{\textit{privacy by design}} (art.\,25 \gls{gdpr}) e della
 \textit{data minimisation} (art.\,5, par.\,1, lett.\,c): i dati grezzi degli studenti
 risiedono su infrastruttura dell'ateneo; il \textit{feature engineering} e il
 \textit{model training} avvengono in ambiente controllato; solo le viste aggregate ---
@@ -553,23 +553,23 @@ Data for Learning} è un esempio compiuto di \textbf{governance partecipata}: il
 \textit{whitepaper} documenta il coinvolgimento sistematico di docenti, studenti e
 \textit{stakeholder} istituzionali, in coerenza con la funzione \textit{Govern} del NIST
 AI RMF \parencite{NIST_AI_RMF}. Il sistema di \textit{learning analytics} che ne
-deriva, classificabile come \textit{high-risk} ex AI Act Annex III, dispone già di
+deriva, classificabile come \textit{high-risk} ex \gls{aiact} Annex III, dispone già di
 gran parte degli elementi richiesti per la documentazione tecnica e per la registrazione
 nel database UE.
 
 \subsection{Benchmark C --- CINECA e gli atenei italiani: l'HPC consortile come
-\textit{on-premise} collettivo}
+\gls{onpremise} collettivo}
 
 Il Consorzio Interuniversitario CINECA rappresenta il benchmark più rilevante per il
 contesto italiano e, per certi aspetti, uno dei modelli più avanzati in Europa di
-\textit{on-premise} collettivo per la ricerca universitaria. Fondato nel 1969 e
+\gls{onpremise} collettivo per la ricerca universitaria. Fondato nel 1969 e
 partecipato da oltre settanta atenei italiani e da enti pubblici di ricerca, CINECA
 gestisce il \textbf{supercomputer Leonardo}, installato presso la sede di Casalecchio di
 Reno (Bologna) nel 2022 e classificato tra i primi cinque sistemi HPC più potenti al mondo
 al momento dell'entrata in esercizio, secondo la lista Top500 \parencite{EuroHPC_Leonardo}.
 
 Il modello CINECA è, da un punto di vista architetturale, un'infrastruttura
-\textit{on-premise} governata da un consorzio di istituzioni pubbliche italiane, con
+\gls{onpremise} governata da un consorzio di istituzioni pubbliche italiane, con
 piena sovranità giuridica nazionale sui dati e sui sistemi. Gli atenei aderenti accedono
 alle risorse computazionali attraverso un sistema di allocazione a progetto, simile al
 modello dei \textit{cloud provider} ma con la differenza fondamentale che l'infrastruttura
@@ -580,7 +580,7 @@ a consegnare i dati alle autorità americane su richiesta, non si applica a CINE
 
 Dal punto di vista manageriale, il modello CINECA offre agli atenei italiani medi ---
 che non dispongono delle risorse per infrastrutture GPU proprietarie di scala --- la
-possibilità di operare sistemi di IA in modalità \textit{on-premise} collettivo,
+possibilità di operare sistemi di \gls{ia} in modalità \gls{onpremise} collettivo,
 condividendo i costi fissi dell'infrastruttura e mantenendo la sovranità sul dato.
 \textcite{Madhavan2025Storage} identificano nel modello consortile una delle
 configurazioni ottimali per bilanciare costi finanziari, compliance normativa e
@@ -596,8 +596,8 @@ I tre benchmark analizzati mostrano configurazioni architetturali differenti ---
 \textit{federated} (KU Leuven), ibrida (TU Delft), consortile (CINECA) --- ma convergono
 su tre pattern ricorrenti che costituiscono le lezioni manageriali fondamentali per il
 contesto italiano: la \textbf{normativa come driver architetturale} (la scelta
-\textit{on-premise} non nasce da una preferenza tecnologica ma da un vincolo di
-compliance); la \textbf{condivisione consortile come soluzione al problema del TCO}
+\gls{onpremise} non nasce da una preferenza tecnologica ma da un vincolo di
+compliance); la \textbf{condivisione consortile come soluzione al problema del \gls{tco}}
 (i costi fissi dell'infrastruttura vengono distribuiti su un numero elevato di
 istituzioni); la \textbf{separazione tra dato grezzo e output del modello} (il dato
 personale grezzo non abbandona mai il perimetro istituzionale, mentre solo le predizioni
@@ -636,8 +636,8 @@ istituzionale del dato esplicita e sostenuta da un mandato di vertice, una certi
 o un equivalente sostanziale di ISO/IEC\,27001 sull'infrastruttura, la presenza di
 competenze interne di \textit{data engineering} e \textit{MLOps}, l'accesso a
 infrastrutture HPC sovrane (proprietarie o consortili). A queste si aggiunge, nei casi di
-maggiore maturità, un disegno organizzativo coerente con il NIST AI RMF, che traduce in
-processi operativi gli obblighi di sorveglianza umana previsti dall'AI Act.
+maggiore maturità, un disegno organizzativo coerente con il \gls{nistrmf}, che traduce in
+processi operativi gli obblighi di sorveglianza umana previsti dall'\gls{aiact}.
 
 Confrontato con questo profilo di riferimento, l'ateneo italiano medio si colloca
 prevalentemente al livello\,2 (\textit{Managed}) del modello proposto, con eccezioni
@@ -654,7 +654,7 @@ gruppi di ricerca, senza traduzione in capacità organizzativa permanente.
 
 Il confronto tra i benchmark europei e gli atenei italiani medi mette in evidenza
 quattro \textit{gap} critici, ognuno dei quali rappresenta una barriera all'adozione di
-sistemi di IA \textit{on-premise} \textit{man-in-the-loop} a supporto dei processi
+sistemi di \gls{ia} \gls{onpremise} \textit{man-in-the-loop} a supporto dei processi
 decisionali strategici.
 
 Il \textbf{primo gap è di natura organizzativa e attiene alla governance del dato}.
@@ -672,13 +672,13 @@ sicurezza}. La certificazione ISO/IEC\,27001:2022 sull'intera catena infrastrutt
 non solo sull'\textit{infrastructure-as-a-service} fornita da CINECA, ma anche
 sull'infrastruttura interna che ospita i sistemi applicativi e i dati operativi --- è
 ancora minoritaria tra gli atenei italiani. Senza tale certificazione, il
-\textit{deployment} di sistemi di IA \textit{high-risk} \textit{on-premise} non è
-conforme ai requisiti dell'AI Act, indipendentemente dalla qualità tecnica della
+\textit{deployment} di sistemi di \gls{ia} \textit{high-risk} \gls{onpremise} non è
+conforme ai requisiti dell'\gls{aiact}, indipendentemente dalla qualità tecnica della
 soluzione adottata.
 
 Il \textbf{terzo gap è di natura culturale e attiene alla governance del rischio
-algoritmico}. L'adozione di un \textit{framework} esplicito come il NIST AI RMF richiede
-una cultura organizzativa che riconosca l'IA come fonte di rischio sistemico, e non solo
+algoritmico}. L'adozione di un \textit{framework} esplicito come il \gls{nistrmf} richiede
+una cultura organizzativa che riconosca l'\gls{ia} come fonte di rischio sistemico, e non solo
 come opportunità di efficienza. Negli atenei italiani medi, la riflessione sul rischio
 algoritmico è ancora limitata a singoli docenti, senza traduzione in procedure
 istituzionali di \textit{Govern}, \textit{Map}, \textit{Measure}, \textit{Manage}. Questo
@@ -691,7 +691,7 @@ e \textit{MLOps} che garantiscono la continuità del ciclo di vita dei modelli -
 \textit{training}, \textit{deployment}, monitoraggio, \textit{retraining}, ritiro. Negli
 atenei italiani medi, queste competenze sono presenti come capacità individuali di alcuni
 docenti, raramente formalizzate in strutture organizzative stabili. La conseguenza è che
-i sistemi di IA, anche quando prototipati con successo nei laboratori di ricerca,
+i sistemi di \gls{ia}, anche quando prototipati con successo nei laboratori di ricerca,
 faticano a transitare verso un esercizio amministrativo continuativo.
 
 \begin{table}[H]
@@ -725,7 +725,7 @@ Salto culturale dal livello\,2 al livello\,3 \\
 I quattro \textit{gap} identificati interagiscono in modo non additivo. La governance del
 dato (primo gap) è prerequisito della governance del rischio algoritmico (terzo gap); la
 certificazione di sicurezza (secondo gap) è prerequisito infrastrutturale di qualsiasi
-\textit{deployment} \textit{on-premise}; le competenze interne (quarto gap) sono
+\textit{deployment} \gls{onpremise}; le competenze interne (quarto gap) sono
 condizione di sostenibilità nel tempo. Un piano di chiusura dei \textit{gap} non può
 essere costruito affrontando una dimensione alla volta in modo isolato: richiede un
 disegno organizzativo integrato, deliberato dal vertice e accompagnato da investimenti
@@ -734,21 +734,21 @@ mirati.
 \textcite{Torichnyi2025StrategicMgmt} identificano nella strategia di \textit{innovative
 leadership} --- caratterizzata dall'integrazione tra visione strategica di vertice,
 capacità organizzative di \textit{middle management} e investimenti tecnologici mirati ---
-il modello più efficace per la trasformazione digitale della PA. Applicato agli atenei
+il modello più efficace per la trasformazione digitale della \gls{pa}. Applicato agli atenei
 italiani, questo modello implica che la chiusura dei \textit{gap} qui identificati sia
 deliberata dal CdA (livello strategico), tradotta in un piano operativo dal Delegato
 alla Transizione Digitale e dal CDO/DPO (livello tattico) e implementata da strutture
 tecniche con competenze di \textit{data engineering} e \textit{MLOps} (livello
-operativo). \textcite{Pham2025MACSRG} dimostrano, in un'analisi empirica su PA di diversi
+operativo). \textcite{Pham2025MACSRG} dimostrano, in un'analisi empirica su \gls{pa} di diversi
 paesi, che l'integrazione tra sistemi di controllo della gestione e governance del rischio
-è positivamente correlata alla resilienza organizzativa: per gli atenei che adottano IA
-\textit{on-premise} \textit{man-in-the-loop}, la governance del rischio algoritmico
+è positivamente correlata alla resilienza organizzativa: per gli atenei che adottano \gls{ia}
+\gls{onpremise} \textit{man-in-the-loop}, la governance del rischio algoritmico
 diventa parte integrante del sistema di controllo manageriale, non un adempimento
 normativo separato.
 
 A queste implicazioni manageriali si affiancano due criticità trasversali. La prima è la
-\textbf{sostenibilità finanziaria dell'\textit{on-premise} per gli atenei medi}: anche
-sfruttando il modello consortile CINECA, l'\textit{on-premise} richiede investimenti
+\textbf{sostenibilità finanziaria dell'\gls{onpremise} per gli atenei medi}: anche
+sfruttando il modello consortile CINECA, l'\gls{onpremise} richiede investimenti
 ricorrenti in personale specializzato, formazione e aggiornamento dell'infrastruttura
 applicativa interna. La seconda è il \textbf{rischio di lock-in inverso}: la dipendenza
 quasi monopolistica da un unico consorzio HPC nazionale produce, sul lungo periodo, una
@@ -760,31 +760,31 @@ adeguati.
 
 I \textit{gap} qui identificati non hanno valore meramente diagnostico: definiscono
 la griglia analitica con cui il Capitolo\,4 interpreterà le esperienze europee di
-adozione di IA \textit{on-premise} nella PA. JANUS-OP --- acronimo che richiama, da un
+adozione di \gls{ia} \gls{onpremise} nella \gls{pa}. JANUS-OP --- acronimo che richiama, da un
 lato, la figura mitologica del Giano bifronte che guarda contemporaneamente al passato
 e al futuro, e dall'altro la combinazione di \textit{On-Premise} e \textit{man-in-the-loop}
 come pilastri del paradigma --- non nasce come proposta a priori, ma come sintesi di ciò
 che l'evidenza europea dimostra praticabile: governance del dato istituzionalizzata,
 certificazione di sicurezza dell'infrastruttura, governance del rischio algoritmico
-secondo il NIST AI RMF, sviluppo di competenze interne sostenibili nel tempo.
+secondo il \gls{nistrmf}, sviluppo di competenze interne sostenibili nel tempo.
 
 In questa logica, il presente capitolo non è una rassegna comparativa autonoma: è la
 fase analitica di una catena che dalla ricognizione dei \textit{framework}
 (\S\ref{sec:framework-governance}) e dei \textit{maturity model}
 (\S\ref{sec:maturity-model}) ha condotto, attraverso i benchmark europei
 (\S\ref{sec:benchmark-europei}), all'identificazione dei \textit{gap} critici degli
-atenei italiani medi. Il paradigma \textit{on-premise} \textit{man-in-the-loop} emerso
+atenei italiani medi. Il paradigma \gls{onpremise} \textit{man-in-the-loop} emerso
 dall'analisi non è un dogma tecnologico ma il punto d'incontro tra vincoli normativi
-(AI Act, GDPR, NIS\,2), opportunità manageriali (sovranità del dato, riduzione del
+(\gls{aiact}, \gls{gdpr}, NIS\,2), opportunità manageriali (sovranità del dato, riduzione del
 \textit{vendor lock-in}) e capacità organizzative (governance del dato e del rischio
 algoritmico).
 
 Il Capitolo\,4 risponde a questa esigenza comparativa conducendo un'analisi sistematica
-delle esperienze di adozione di IA \textit{on-premise} maturate in otto realtà istituzionali
+delle esperienze di adozione di \gls{ia} \gls{onpremise} maturate in otto realtà istituzionali
 europee --- nazionali e universitarie --- che hanno affrontato, in un contesto normativo
 analogo a quello italiano, le stesse tensioni tra sovranità del dato, \textit{compliance}
-all'AI Act e vincoli di bilancio che caratterizzano gli atenei italiani medi. I quattro
+all'\gls{aiact} e vincoli di bilancio che caratterizzano gli atenei italiani medi. I quattro
 \textit{gap} qui identificati costituiscono la chiave di lettura con cui quelle esperienze
 saranno valutate: non solo nella loro specificità contestuale, ma in relazione alla loro
 trasferibilità al sistema universitario italiano. Il paradigma JANUS-OP emerge da questo
-confronto come la traduzione manageriale di ciò che l'evidenza europea ha già dimostrato praticabile e normativamente adeguata nell'unico spazio normativo europeo che accomuna PA e atenei italiani.
+confronto come la traduzione manageriale di ciò che l'evidenza europea ha già dimostrato praticabile e normativamente adeguata nell'unico spazio normativo europeo che accomuna \gls{pa} e atenei italiani.
